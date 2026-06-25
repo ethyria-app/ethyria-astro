@@ -51,6 +51,7 @@ jobs:
 
       - name: Purge Cloudflare cache
         if: success()
+        continue-on-error: true
         run: |
           curl -s -X POST \
             "https://api.cloudflare.com/client/v4/zones/${{ secrets.CF_ZONE_ID }}/purge_cache" \
