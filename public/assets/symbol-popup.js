@@ -31,7 +31,14 @@ function spBack() {
     _spOrig = null;
   }
 }
+function _spCleanUrl(h) {
+  // Convert legacy .html symbol URLs to clean Astro URLs
+  h = h.replace(/\/symbols\/([a-z]{2})\/([a-z-]+)\.html$/, '/$1/symbols/$2/');
+  h = h.replace(/\/symbols\/([a-z][a-z-]+)\.html$/, '/symbols/$1/');
+  return h;
+}
 function spLoadDetail(href) {
+  href = _spCleanUrl(href);
   if (window.ethyriaTrack) {
     var sym = href.replace(/.*symbols\/([^/.]+).*/, '$1');
     window.ethyriaTrack('Symbol Viewed', { symbol: sym });

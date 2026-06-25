@@ -1,0 +1,46 @@
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is Ethyria really free?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, the app is free to use and includes optional in-app purchases for premium features."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How safe is my dream data?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Your privacy is our priority. All dream data stays on your device; there is no cloud requirement or data tracking."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does the AI dream analysis work?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ethyria uses advanced AI models to interpret your dreams based on psychological methods like C.G. Jung and Sigmund Freud."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which analysis modes does Ethyria offer?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ethyria offers 5 analysis perspectives: Symbol Analysis, Emotion Profile, Pattern Recognition, Scientific Classification, and an Overall Synthesis."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which devices is Ethyria available on?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ethyria is currently available for Android. An iOS version is in development."
+      }
+    }
+  ]
+}

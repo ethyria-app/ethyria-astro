@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="500" height="500">
+  <defs>
+    <radialGradient id="sym-bg" cx="50%" cy="50%" r="75%">
+      <stop offset="0%" stop-color="#151840"/>
+      <stop offset="55%" stop-color="#0F1035"/>
+      <stop offset="100%" stop-color="#060915"/>
+    </radialGradient>
+    <filter id="sym-figGlow" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur stdDeviation="5" in="SourceGraphic" result="blur"/>
+      <feFlood flood-color="#01BFFF" flood-opacity="0.5" result="color"/>
+      <feComposite in="color" in2="blur" operator="in" result="shadow"/>
+      <feMerge><feMergeNode in="shadow"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="sym-lineGlow" x="-10%" y="-10%" width="120%" height="120%">
+      <feGaussianBlur stdDeviation="1.8" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <pattern id="sym-grid" width="25" height="25" patternUnits="userSpaceOnUse">
+      <path d="M 25 0 L 0 0 0 25" fill="none" stroke="#161d5a" stroke-width="0.4"/>
+    </pattern>
+    <radialGradient id="sym-aura" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#01BFFF" stop-opacity="0.13"/>
+      <stop offset="70%" stop-color="#01BFFF" stop-opacity="0.04"/>
+      <stop offset="100%" stop-color="#01BFFF" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="sym-vig" cx="50%" cy="50%" r="70%">
+      <stop offset="30%" stop-color="transparent"/>
+      <stop offset="100%" stop-color="#040710" stop-opacity="0.78"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="500" height="500" fill="url(#sym-bg)"/>
+  <rect width="500" height="500" fill="url(#sym-grid)" opacity="0.55"/>
+  <rect x="18" y="18" width="464" height="464" fill="none" stroke="#1a2e70" stroke-width="1" opacity="0.7"/>
+
+  <!-- RING 1 — TOP opening at x 205-295 -->
+  <line x1="68" y1="68"  x2="205" y2="68"  stroke="#1e3f90" stroke-width="1.4" filter="url(#sym-lineGlow)"/>
+  <line x1="295" y1="68" x2="432" y2="68"  stroke="#1e3f90" stroke-width="1.4" filter="url(#sym-lineGlow)"/>
+  <line x1="68" y1="68"  x2="68"  y2="432" stroke="#1e3f90" stroke-width="1.4" filter="url(#sym-lineGlow)"/>
+  <line x1="68" y1="432" x2="432" y2="432" stroke="#1e3f90" stroke-width="1.4" filter="url(#sym-lineGlow)"/>
+  <line x1="432" y1="68" x2="432" y2="432" stroke="#1e3f90" stroke-width="1.4" filter="url(#sym-lineGlow)"/>
+
+  <!-- RING 2 — RIGHT opening at y 295-382 -->
+  <line x1="108" y1="108" x2="392" y2="108" stroke="#2550b0" stroke-width="1.25" filter="url(#sym-lineGlow)"/>
+  <line x1="108" y1="108" x2="108" y2="392" stroke="#2550b0" stroke-width="1.25" filter="url(#sym-lineGlow)"/>
+  <line x1="108" y1="392" x2="392" y2="392" stroke="#2550b0" stroke-width="1.25" filter="url(#sym-lineGlow)"/>
+  <line x1="392" y1="108" x2="392" y2="295" stroke="#2550b0" stroke-width="1.25" filter="url(#sym-lineGlow)"/>
+  <line x1="392" y1="382" x2="392" y2="392" stroke="#2550b0" stroke-width="1.25" filter="url(#sym-lineGlow)"/>
+
+  <!-- RING 3 — BOTTOM opening at x 168-252 -->
+  <line x1="148" y1="148" x2="352" y2="148" stroke="#2d62c8" stroke-width="1.1" filter="url(#sym-lineGlow)"/>
+  <line x1="148" y1="148" x2="148" y2="352" stroke="#2d62c8" stroke-width="1.1" filter="url(#sym-lineGlow)"/>
+  <line x1="148" y1="352" x2="168" y2="352" stroke="#2d62c8" stroke-width="1.1" filter="url(#sym-lineGlow)"/>
+  <line x1="252" y1="352" x2="352" y2="352" stroke="#2d62c8" stroke-width="1.1" filter="url(#sym-lineGlow)"/>
+  <line x1="352" y1="148" x2="352" y2="352" stroke="#2d62c8" stroke-width="1.1" filter="url(#sym-lineGlow)"/>
+
+  <!-- RING 4 — LEFT opening at y 215-278 -->
+  <line x1="188" y1="188" x2="312" y2="188" stroke="#3872e0" stroke-width="1.0" filter="url(#sym-lineGlow)"/>
+  <line x1="188" y1="188" x2="188" y2="215" stroke="#3872e0" stroke-width="1.0" filter="url(#sym-lineGlow)"/>
+  <line x1="188" y1="278" x2="188" y2="312" stroke="#3872e0" stroke-width="1.0" filter="url(#sym-lineGlow)"/>
+  <line x1="188" y1="312" x2="312" y2="312" stroke="#3872e0" stroke-width="1.0" filter="url(#sym-lineGlow)"/>
+  <line x1="312" y1="188" x2="312" y2="312" stroke="#3872e0" stroke-width="1.0" filter="url(#sym-lineGlow)"/>
+
+  <!-- Inner chamber -->
+  <rect x="220" y="220" width="60" height="60" fill="none" stroke="#4a87e8" stroke-width="0.7" opacity="0.65"/>
+
+  <!-- Passage connector lines -->
+  <line x1="250" y1="18"  x2="250" y2="68"  stroke="#1a3570" stroke-width="0.7" opacity="0.5"/>
+  <line x1="392" y1="338" x2="432" y2="338" stroke="#1e3f90" stroke-width="0.7" opacity="0.5"/>
+  <line x1="210" y1="352" x2="210" y2="392" stroke="#2550b0" stroke-width="0.7" opacity="0.5"/>
+  <line x1="148" y1="246" x2="188" y2="246" stroke="#2d62c8" stroke-width="0.7" opacity="0.5"/>
+
+  <!-- Room partitions -->
+  <line x1="68"  y1="90"  x2="432" y2="90"  stroke="#16326a" stroke-width="0.55" opacity="0.4"/>
+  <line x1="140" y1="68"  x2="140" y2="108" stroke="#1e3f90" stroke-width="0.7" opacity="0.5"/>
+  <line x1="360" y1="68"  x2="360" y2="108" stroke="#1e3f90" stroke-width="0.7" opacity="0.5"/>
+  <line x1="68"  y1="140" x2="108" y2="140" stroke="#1e3f90" stroke-width="0.7" opacity="0.5"/>
+  <line x1="68"  y1="360" x2="108" y2="360" stroke="#1e3f90" stroke-width="0.7" opacity="0.5"/>
+  <line x1="392" y1="140" x2="432" y2="140" stroke="#1e3f90" stroke-width="0.7" opacity="0.5"/>
+  <line x1="140" y1="432" x2="140" y2="392" stroke="#1e3f90" stroke-width="0.7" opacity="0.5"/>
+  <line x1="360" y1="432" x2="360" y2="392" stroke="#1e3f90" stroke-width="0.7" opacity="0.5"/>
+
+  <!-- DOOR ICONS (arch shapes) -->
+  <path d="M 55,215 L 55,240 L 72,240 L 72,215 Q 63.5,206 55,215 Z" fill="#0C1030" stroke="#3872e0" stroke-width="0.95" opacity="0.85"/>
+  <path d="M 348,54 L 348,72 L 365,72 L 365,54 Q 356.5,45 348,54 Z" fill="#0C1030" stroke="#3872e0" stroke-width="0.95" opacity="0.8"/>
+  <path d="M 218,379 L 218,396 L 236,396 L 236,379 Q 227,370 218,379 Z" fill="#0C1030" stroke="#3872e0" stroke-width="0.95" opacity="0.8"/>
+  <path d="M 339,245 L 339,262 L 356,262 L 356,245 Q 347.5,236 339,245 Z" fill="#0C1030" stroke="#3872e0" stroke-width="0.9" opacity="0.8"/>
+  <path d="M 240,299 L 240,316 L 258,316 L 258,299 Q 249,290 240,299 Z" fill="#0C1030" stroke="#4a87e8" stroke-width="0.9" opacity="0.8"/>
+  <path d="M 114,145 L 114,162 L 132,162 L 132,145 Q 123,136 114,145 Z" fill="#0C1030" stroke="#2d62c8" stroke-width="0.9" opacity="0.75"/>
+
+  <!-- CENTER AURA -->
+  <circle cx="250" cy="250" r="70" fill="url(#sym-aura)"/>
+
+  <!-- BARE-FOOT HUMAN FIGURE in cyan -->
+  <circle cx="250" cy="212" r="10" fill="#01BFFF" opacity="0.88" filter="url(#sym-figGlow)"/>
+  <line x1="250" y1="222" x2="250" y2="260" stroke="#01BFFF" stroke-width="3.5" stroke-linecap="round" filter="url(#sym-figGlow)"/>
+  <line x1="250" y1="234" x2="232" y2="248" stroke="#01BFFF" stroke-width="2.5" stroke-linecap="round" filter="url(#sym-figGlow)"/>
+  <line x1="250" y1="234" x2="268" y2="248" stroke="#01BFFF" stroke-width="2.5" stroke-linecap="round" filter="url(#sym-figGlow)"/>
+  <line x1="250" y1="260" x2="240" y2="282" stroke="#01BFFF" stroke-width="2.5" stroke-linecap="round" filter="url(#sym-figGlow)"/>
+  <line x1="250" y1="260" x2="260" y2="282" stroke="#01BFFF" stroke-width="2.5" stroke-linecap="round" filter="url(#sym-figGlow)"/>
+  <!-- Bare feet — horizontal stubs, no shoes -->
+  <line x1="240" y1="282" x2="230" y2="285" stroke="#01BFFF" stroke-width="2" stroke-linecap="round" filter="url(#sym-figGlow)"/>
+  <line x1="260" y1="282" x2="270" y2="285" stroke="#01BFFF" stroke-width="2" stroke-linecap="round" filter="url(#sym-figGlow)"/>
+
+  <!-- BLUEPRINT CORNER MARKS -->
+  <g stroke="#2a4fa8" stroke-width="1" opacity="0.7">
+    <line x1="10" y1="18" x2="32" y2="18"/><line x1="18" y1="10" x2="18" y2="32"/>
+    <line x1="468" y1="18" x2="490" y2="18"/><line x1="482" y1="10" x2="482" y2="32"/>
+    <line x1="10" y1="482" x2="32" y2="482"/><line x1="18" y1="468" x2="18" y2="490"/>
+    <line x1="468" y1="482" x2="490" y2="482"/><line x1="482" y1="468" x2="482" y2="490"/>
+  </g>
+  <g fill="#2550b0" opacity="0.75">
+    <circle cx="18" cy="18" r="2.5"/>
+    <circle cx="482" cy="18" r="2.5"/>
+    <circle cx="18" cy="482" r="2.5"/>
+    <circle cx="482" cy="482" r="2.5"/>
+  </g>
+
+  <!-- Ring corner node dots -->
+  <g fill="#2d62c8" opacity="0.55">
+    <circle cx="68"  cy="68"  r="2.5"/><circle cx="432" cy="68"  r="2.5"/>
+    <circle cx="68"  cy="432" r="2.5"/><circle cx="432" cy="432" r="2.5"/>
+    <circle cx="108" cy="108" r="2"/><circle cx="392" cy="108" r="2"/>
+    <circle cx="108" cy="392" r="2"/><circle cx="392" cy="392" r="2"/>
+    <circle cx="148" cy="148" r="1.8"/><circle cx="352" cy="148" r="1.8"/>
+    <circle cx="148" cy="352" r="1.8"/><circle cx="352" cy="352" r="1.8"/>
+    <circle cx="188" cy="188" r="1.5"/><circle cx="312" cy="188" r="1.5"/>
+    <circle cx="188" cy="312" r="1.5"/><circle cx="312" cy="312" r="1.5"/>
+  </g>
+
+  <rect width="500" height="500" fill="url(#sym-vig)"/>
+</svg>

@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="500" height="500">
+  <defs>
+    <!-- Deep dark background -->
+    <radialGradient id="tot-bg" cx="50%" cy="50%" r="75%">
+      <stop offset="0%" stop-color="#0c1030"/>
+      <stop offset="55%" stop-color="#070812"/>
+      <stop offset="100%" stop-color="#020408"/>
+    </radialGradient>
+
+    <!-- Hub center glow -->
+    <radialGradient id="tot-hubAura" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#01BFFF" stop-opacity="0.22"/>
+      <stop offset="50%" stop-color="#0060FF" stop-opacity="0.10"/>
+      <stop offset="100%" stop-color="#01BFFF" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Light beam gradient: cyan at base → gold at tip -->
+    <linearGradient id="tot-beam" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="#01BFFF" stop-opacity="0.55"/>
+      <stop offset="60%" stop-color="#6AEFFF" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#FFD700" stop-opacity="0.08"/>
+    </linearGradient>
+
+    <!-- Star glow filter -->
+    <filter id="tot-starGlow" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feFlood flood-color="#FFD700" flood-opacity="0.7" result="color"/>
+      <feComposite in="color" in2="blur" operator="in" result="shadow"/>
+      <feMerge><feMergeNode in="shadow"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+
+    <!-- Hub wireframe glow -->
+    <filter id="tot-hubGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+
+    <!-- Stream glow -->
+    <filter id="tot-streamGlow" x="-5%" y="-5%" width="110%" height="110%">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+
+    <!-- Cyan glow for symbols -->
+    <filter id="tot-symGlow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+
+    <!-- Vignette -->
+    <radialGradient id="tot-vig" cx="50%" cy="50%" r="70%">
+      <stop offset="25%" stop-color="transparent"/>
+      <stop offset="100%" stop-color="#020408" stop-opacity="0.82"/>
+    </radialGradient>
+
+    <!-- Circuit pattern background -->
+    <pattern id="tot-circuit" width="50" height="50" patternUnits="userSpaceOnUse">
+      <path d="M 0 25 L 12 25 L 12 12 L 38 12 L 38 25 L 50 25" fill="none" stroke="#01BFFF" stroke-width="0.28" opacity="0.12"/>
+      <circle cx="12" cy="12" r="1.5" fill="#01BFFF" opacity="0.1"/>
+      <circle cx="38" cy="38" r="1.5" fill="#01BFFF" opacity="0.1"/>
+    </pattern>
+  </defs>
+
+  <!-- BACKGROUND -->
+  <rect width="500" height="500" fill="url(#tot-bg)"/>
+  <rect width="500" height="500" fill="url(#tot-circuit)"/>
+
+  <!-- ===== LIGHT BEAM — cone from hub upward ===== -->
+  <!-- Wide outer cone -->
+  <polygon points="250,188 195,38 305,38" fill="url(#tot-beam)" opacity="0.55"/>
+  <!-- Narrow inner cone (brighter center) -->
+  <polygon points="250,192 235,72 265,72" fill="url(#tot-beam)" opacity="0.45"/>
+
+  <!-- Beam center line -->
+  <line x1="250" y1="192" x2="250" y2="38" stroke="#01BFFF" stroke-width="0.8" stroke-opacity="0.35" stroke-dasharray="6,5"/>
+
+  <!-- ===== HUB AURA ===== -->
+  <circle cx="250" cy="270" r="100" fill="url(#tot-hubAura)"/>
+  <circle cx="250" cy="270" r="65" fill="#01BFFF" opacity="0.04"/>
+
+  <!-- ===== DECORATIVE OUTER ORBIT RINGS ===== -->
+  <circle cx="250" cy="270" r="130" fill="none" stroke="#01BFFF" stroke-width="0.5" stroke-opacity="0.18" stroke-dasharray="6,10"/>
+  <circle cx="250" cy="270" r="160" fill="none" stroke="#01BFFF" stroke-width="0.4" stroke-opacity="0.12" stroke-dasharray="3,14"/>
+
+  <!-- ===== HUB — outer wireframe ring ===== -->
+  <circle cx="250" cy="270" r="58" fill="none" stroke="#01BFFF" stroke-width="1.8" filter="url(#tot-hubGlow)"/>
+  <!-- Hub inner ring -->
+  <circle cx="250" cy="270" r="44" fill="none" stroke="#01BFFF" stroke-width="0.9" stroke-opacity="0.65" filter="url(#tot-hubGlow)"/>
+  <!-- Hub core -->
+  <circle cx="250" cy="270" r="22" fill="#01BFFF" opacity="0.10" filter="url(#tot-hubGlow)"/>
+  <circle cx="250" cy="270" r="9" fill="#01BFFF" opacity="0.48" filter="url(#tot-hubGlow)"/>
+  <circle cx="250" cy="270" r="4" fill="#ffffff" opacity="0.55"/>
+
+  <!-- Hub internal radial spokes (8-way neural engine) -->
+  <g stroke="#01BFFF" stroke-width="0.85" stroke-opacity="0.6" filter="url(#tot-hubGlow)">
+    <!-- Cardinal spokes -->
+    <line x1="250" y1="226" x2="250" y2="244"/>
+    <line x1="250" y1="296" x2="250" y2="314"/>
+    <line x1="206" y1="270" x2="224" y2="270"/>
+    <line x1="276" y1="270" x2="294" y2="270"/>
+    <!-- Diagonal spokes -->
+    <line x1="219" y1="239" x2="231" y2="251"/>
+    <line x1="281" y1="239" x2="269" y2="251"/>
+    <line x1="219" y1="301" x2="231" y2="289"/>
+    <line x1="281" y1="301" x2="269" y2="289"/>
+  </g>
+  <!-- Hub spoke tip nodes -->
+  <g fill="#01BFFF" opacity="0.8">
+    <circle cx="250" cy="226" r="2.5"/><circle cx="250" cy="314" r="2.5"/>
+    <circle cx="206" cy="270" r="2.5"/><circle cx="294" cy="270" r="2.5"/>
+    <circle cx="218" cy="238" r="2"/><circle cx="282" cy="238" r="2"/>
+    <circle cx="218" cy="302" r="2"/><circle cx="282" cy="302" r="2"/>
+  </g>
+
+  <!-- ===== DATA STREAMS (5 input flows into hub) ===== -->
+  <!-- Stream 1: top-left → hub NW (Door symbol) -->
+  <path d="M 70,112 C 110,130 160,170 219,239" fill="none" stroke="#5B6FF6" stroke-width="1.6" stroke-dasharray="5,4" opacity="0.72" filter="url(#tot-streamGlow)"/>
+  <!-- Stream 2: left → hub W (Bare-foot symbol) -->
+  <path d="M 28,270 C 85,270 150,270 206,270" fill="none" stroke="#7B52E8" stroke-width="1.6" stroke-dasharray="5,4" opacity="0.72" filter="url(#tot-streamGlow)"/>
+  <!-- Stream 3: bottom-left → hub SW (Gear) -->
+  <path d="M 70,428 C 110,408 158,368 219,301" fill="none" stroke="#5B6FF6" stroke-width="1.6" stroke-dasharray="5,4" opacity="0.72" filter="url(#tot-streamGlow)"/>
+  <!-- Stream 4: bottom-right → hub SE (Room/Arch) -->
+  <path d="M 430,428 C 390,408 342,368 281,301" fill="none" stroke="#5B6FF6" stroke-width="1.6" stroke-dasharray="5,4" opacity="0.72" filter="url(#tot-streamGlow)"/>
+  <!-- Stream 5: right → hub E (Abstract grid) -->
+  <path d="M 472,270 C 415,270 352,270 294,270" fill="none" stroke="#7B52E8" stroke-width="1.6" stroke-dasharray="5,4" opacity="0.72" filter="url(#tot-streamGlow)"/>
+
+  <!-- Stream particle dots -->
+  <g fill="#01BFFF" opacity="0.45">
+    <!-- Stream 1 particles -->
+    <circle cx="97"  cy="124" r="2"/><circle cx="138" cy="150" r="1.5"/><circle cx="182" cy="194" r="2"/>
+    <!-- Stream 2 particles -->
+    <circle cx="85"  cy="270" r="2"/><circle cx="140" cy="270" r="1.5"/><circle cx="185" cy="270" r="2"/>
+    <!-- Stream 3 particles -->
+    <circle cx="97"  cy="417" r="2"/><circle cx="138" cy="390" r="1.5"/><circle cx="180" cy="357" r="2"/>
+    <!-- Stream 4 particles -->
+    <circle cx="403" cy="417" r="2"/><circle cx="365" cy="390" r="1.5"/><circle cx="322" cy="357" r="2"/>
+    <!-- Stream 5 particles -->
+    <circle cx="415" cy="270" r="2"/><circle cx="365" cy="270" r="1.5"/><circle cx="315" cy="270" r="2"/>
+  </g>
+
+  <!-- ===== ENDPOINT SYMBOLS (dream fragments) ===== -->
+
+  <!-- Symbol 1: DOOR (top-left) — Haus der tausend Türen -->
+  <g transform="translate(48,90)" filter="url(#tot-symGlow)">
+    <path d="M 0,0 L 0,32 L 22,32 L 22,0 Q 11,-10 0,0 Z" fill="none" stroke="#5B6FF6" stroke-width="1.3" opacity="0.8"/>
+    <circle cx="18" cy="16" r="2.2" fill="#5B6FF6" opacity="0.8"/>
+    <!-- Door grain lines -->
+    <line x1="4" y1="8" x2="18" y2="8" stroke="#5B6FF6" stroke-width="0.5" opacity="0.4"/>
+    <line x1="4" y1="16" x2="18" y2="16" stroke="#5B6FF6" stroke-width="0.5" opacity="0.4"/>
+  </g>
+
+  <!-- Symbol 2: BARE FEET (left) — barfuß im Traum -->
+  <g transform="translate(10,255)" filter="url(#tot-symGlow)">
+    <!-- Left foot -->
+    <path d="M 2,0 Q -1,5 1,10 Q 3,14 8,14 L 15,14 Q 18,13 18,8 L 18,0 Z" fill="none" stroke="#8B5CF6" stroke-width="1.2" opacity="0.78"/>
+    <!-- Right foot (slightly offset) -->
+    <path d="M 4,17 Q 1,22 3,27 Q 5,31 10,31 L 17,31 Q 20,30 20,25 L 20,17 Z" fill="none" stroke="#8B5CF6" stroke-width="1.2" opacity="0.78"/>
+  </g>
+
+  <!-- Symbol 3: GEAR (bottom-left) — Bahnhof/Museum machinery -->
+  <g transform="translate(50,408)" filter="url(#tot-symGlow)">
+    <circle cx="10" cy="10" r="11" fill="none" stroke="#5B6FF6" stroke-width="1.2" opacity="0.78"/>
+    <circle cx="10" cy="10" r="5"  fill="none" stroke="#5B6FF6" stroke-width="1.2" opacity="0.78"/>
+    <!-- Gear teeth - 8 stubs -->
+    <g stroke="#5B6FF6" stroke-width="1.2" opacity="0.78" stroke-linecap="round">
+      <line x1="10" y1="-4"  x2="10" y2="-1"/>
+      <line x1="10" y1="21"  x2="10" y2="24"/>
+      <line x1="-4" y1="10"  x2="-1" y2="10"/>
+      <line x1="21" y1="10"  x2="24" y2="10"/>
+      <line x1="-0.5" y1="-0.5" x2="1.5" y2="1.5"/>
+      <line x1="18.5" y1="20.5" x2="20.5" y2="22.5"/>
+      <line x1="20.5" y1="-0.5" x2="18.5" y2="1.5"/>
+      <line x1="-0.5" y1="20.5" x2="1.5" y2="18.5"/>
+    </g>
+  </g>
+
+  <!-- Symbol 4: ARCH/ROOM (bottom-right) — museum hall -->
+  <g transform="translate(410,408)" filter="url(#tot-symGlow)">
+    <path d="M 0,30 L 0,10 Q 12,-2 24,10 L 24,30 Z" fill="none" stroke="#5B6FF6" stroke-width="1.3" opacity="0.78"/>
+    <!-- Interior window cross -->
+    <line x1="12" y1="4" x2="12" y2="24" stroke="#5B6FF6" stroke-width="0.7" opacity="0.4"/>
+    <line x1="4"  y1="16" x2="20" y2="16" stroke="#5B6FF6" stroke-width="0.7" opacity="0.4"/>
+    <circle cx="12" cy="20" r="2" fill="#5B6FF6" opacity="0.5"/>
+  </g>
+
+  <!-- Symbol 5: ABSTRACT GRID (right) — station/museum grid -->
+  <g transform="translate(456,255)" filter="url(#tot-symGlow)">
+    <g stroke="#8B5CF6" stroke-width="1.1" opacity="0.78">
+      <line x1="0" y1="0"  x2="24" y2="0"/>
+      <line x1="0" y1="9"  x2="24" y2="9"/>
+      <line x1="0" y1="18" x2="24" y2="18"/>
+      <line x1="0" y1="0"  x2="0"  y2="18"/>
+      <line x1="12" y1="0" x2="12" y2="18"/>
+      <line x1="24" y1="0" x2="24" y2="18"/>
+    </g>
+  </g>
+
+  <!-- ===== STAR BURST at beam apex ===== -->
+  <!-- 4-point star -->
+  <path d="M 250,18 L 253.5,28 L 263,30 L 253.5,32 L 250,42 L 246.5,32 L 237,30 L 246.5,28 Z"
+        fill="#FFD700" opacity="0.88" filter="url(#tot-starGlow)"/>
+  <!-- 4-point secondary (rotated 45°) -->
+  <path d="M 250,22 L 252,28 L 258,30 L 252,32 L 250,38 L 248,32 L 242,30 L 248,28 Z"
+        fill="#FFF0A0" opacity="0.55" filter="url(#tot-starGlow)"/>
+  <!-- Star inner core -->
+  <circle cx="250" cy="30" r="4" fill="#FFD700" opacity="0.9" filter="url(#tot-starGlow)"/>
+  <circle cx="250" cy="30" r="2" fill="#ffffff" opacity="0.7"/>
+
+  <!-- ===== FRAME ===== -->
+  <rect x="8" y="8" width="484" height="484" fill="none" stroke="#0e1838" stroke-width="1" opacity="0.8"/>
+
+  <!-- VIGNETTE -->
+  <rect width="500" height="500" fill="url(#tot-vig)"/>
+</svg>

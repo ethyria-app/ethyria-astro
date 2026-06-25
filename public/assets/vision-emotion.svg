@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="500" height="500">
+  <defs>
+    <!-- Near-black background -->
+    <linearGradient id="emo-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#060608"/>
+      <stop offset="50%" stop-color="#080810"/>
+      <stop offset="100%" stop-color="#050505"/>
+    </linearGradient>
+
+    <!-- EKG gradient: red-orange left → violet-cyan right -->
+    <linearGradient id="emo-ekgGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%"   stop-color="#FF2200"/>
+      <stop offset="22%"  stop-color="#FF5733"/>
+      <stop offset="42%"  stop-color="#FF8C00"/>
+      <stop offset="52%"  stop-color="#9B33FF"/>
+      <stop offset="72%"  stop-color="#5B6FF6"/>
+      <stop offset="100%" stop-color="#01BFFF"/>
+    </linearGradient>
+
+    <!-- Red glow filter for left zone -->
+    <filter id="emo-redGlow" x="-15%" y="-100%" width="130%" height="300%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+
+    <!-- Blue glow for right zone -->
+    <filter id="emo-blueGlow" x="-15%" y="-100%" width="130%" height="300%">
+      <feGaussianBlur stdDeviation="4.5" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+
+    <!-- Combined EKG glow -->
+    <filter id="emo-ekgGlow" x="-5%" y="-150%" width="110%" height="400%">
+      <feGaussianBlur stdDeviation="3.5" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+
+    <!-- Glassmorphism panel -->
+    <linearGradient id="emo-glass" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.06"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0.02"/>
+    </linearGradient>
+
+    <!-- Vignette -->
+    <radialGradient id="emo-vig" cx="50%" cy="50%" r="70%">
+      <stop offset="25%" stop-color="transparent"/>
+      <stop offset="100%" stop-color="#030305" stop-opacity="0.75"/>
+    </radialGradient>
+
+    <!-- Clip so EKG stays in bounds -->
+    <clipPath id="emo-clip">
+      <rect x="0" y="0" width="500" height="500"/>
+    </clipPath>
+  </defs>
+
+  <!-- BACKGROUND -->
+  <rect width="500" height="500" fill="url(#emo-bg)"/>
+
+  <!-- OSCILLOSCOPE GRID (subtle scanlines) -->
+  <g stroke="#13132a" stroke-width="0.6" opacity="0.7">
+    <line x1="0" y1="100" x2="500" y2="100"/>
+    <line x1="0" y1="160" x2="500" y2="160"/>
+    <line x1="0" y1="220" x2="500" y2="220"/>
+    <line x1="0" y1="250" x2="500" y2="250"/>
+    <line x1="0" y1="280" x2="500" y2="280"/>
+    <line x1="0" y1="340" x2="500" y2="340"/>
+    <line x1="0" y1="400" x2="500" y2="400"/>
+  </g>
+  <g stroke="#13132a" stroke-width="0.6" opacity="0.5">
+    <line x1="100" y1="0" x2="100" y2="500"/>
+    <line x1="200" y1="0" x2="200" y2="500"/>
+    <line x1="250" y1="0" x2="250" y2="500"/>
+    <line x1="300" y1="0" x2="300" y2="500"/>
+    <line x1="400" y1="0" x2="400" y2="500"/>
+  </g>
+
+  <!-- CENTER HORIZONTAL AXIS (baseline) -->
+  <line x1="20" y1="250" x2="480" y2="250" stroke="#1a1a3a" stroke-width="0.8" opacity="0.6"/>
+
+  <!-- ZONE LABELS (top) -->
+  <rect x="22" y="58" width="155" height="26" rx="5" fill="#FF220018" stroke="#FF222244" stroke-width="0.6"/>
+  <rect x="323" y="58" width="155" height="26" rx="5" fill="#01BFFF16" stroke="#01BFFF33" stroke-width="0.6"/>
+
+  <!-- EKG MAIN GLOW LAYER (wider, diffuse) -->
+  <!-- Left stress zone echo -->
+  <path d="
+    M 22,250 L 42,250
+    L 46,265 L 50,235 L 53,250
+    L 57,250 L 60,278 L 63,222 L 67,295 L 70,182 L 74,318 L 77,168 L 81,250
+    L 85,250 L 89,290 L 92,210 L 96,302 L 99,172 L 103,325 L 107,158 L 110,250
+    L 114,250 L 118,285 L 121,215 L 125,298 L 128,175 L 131,308 L 135,162 L 138,250
+    L 143,250 L 147,278 L 150,222 L 154,290 L 158,182 L 162,250 L 167,250
+  " fill="none" stroke="#FF4400" stroke-width="5" stroke-opacity="0.18" filter="url(#emo-redGlow)" clip-path="url(#emo-clip)"/>
+
+  <!-- Right calm zone echo -->
+  <path d="
+    M 205,250 L 220,250
+    C 232,250 237,218 248,218
+    C 259,218 264,282 275,282
+    C 286,282 291,228 302,228
+    C 313,228 318,272 329,272
+    C 340,272 345,240 356,240
+    C 367,240 372,260 383,260
+    C 394,260 399,246 410,246
+    C 421,246 426,254 437,254
+    C 448,254 453,250 465,250 L 478,250
+  " fill="none" stroke="#01BFFF" stroke-width="5" stroke-opacity="0.18" filter="url(#emo-blueGlow)" clip-path="url(#emo-clip)"/>
+
+  <!-- MAIN EKG LINE with full gradient -->
+  <path d="
+    M 22,250 L 42,250
+    L 46,265 L 50,235 L 53,250
+    L 57,250 L 60,278 L 63,222 L 67,295 L 70,182 L 74,318 L 77,168 L 81,250
+    L 85,250 L 89,290 L 92,210 L 96,302 L 99,172 L 103,325 L 107,158 L 110,250
+    L 114,250 L 118,285 L 121,215 L 125,298 L 128,175 L 131,308 L 135,162 L 138,250
+    L 143,250 L 147,278 L 150,222 L 154,290 L 158,182 L 162,250 L 167,250
+    L 172,266 L 176,234 L 180,258 L 185,242 L 190,252 L 196,248 L 202,250 L 218,250
+    C 232,250 237,218 248,218
+    C 259,218 264,282 275,282
+    C 286,282 291,228 302,228
+    C 313,228 318,272 329,272
+    C 340,272 345,240 356,240
+    C 367,240 372,260 383,260
+    C 394,260 399,246 410,246
+    C 421,246 426,254 437,254
+    C 448,254 453,250 465,250 L 478,250
+  " fill="none" stroke="url(#emo-ekgGrad)" stroke-width="2.8" filter="url(#emo-ekgGlow)" clip-path="url(#emo-clip)"/>
+
+  <!-- Vertical divider: transition zone -->
+  <line x1="200" y1="80" x2="200" y2="420" stroke="#ffffff" stroke-width="0.5" stroke-opacity="0.08" stroke-dasharray="4,6"/>
+
+  <!-- ZONE LABEL TEXT -->
+  <text x="100" y="76" fill="#FF5733" font-family="monospace" font-size="8.5" opacity="0.65" text-anchor="middle" letter-spacing="2">STRESS</text>
+  <text x="400" y="76" fill="#01BFFF" font-family="monospace" font-size="8.5" opacity="0.65" text-anchor="middle" letter-spacing="2">FLOW STATE</text>
+
+  <!-- Decorative jagged marks in background (left zone atmosphere) -->
+  <g stroke="#FF4400" stroke-width="0.7" opacity="0.14">
+    <line x1="38" y1="140" x2="43" y2="128"/><line x1="43" y1="128" x2="49" y2="142"/>
+    <line x1="82" y1="132" x2="87" y2="120"/><line x1="87" y1="120" x2="93" y2="134"/>
+    <line x1="130" y1="136" x2="136" y2="122"/><line x1="136" y1="122" x2="142" y2="137"/>
+    <line x1="40" y1="355" x2="45" y2="368"/><line x1="45" y1="368" x2="51" y2="354"/>
+    <line x1="85" y1="362" x2="91" y2="375"/><line x1="91" y1="375" x2="97" y2="360"/>
+  </g>
+
+  <!-- Calm floating particles (right zone atmosphere) -->
+  <g fill="#01BFFF" opacity="0.3">
+    <circle cx="335" cy="148" r="1.8"/>
+    <circle cx="368" cy="168" r="1.2"/>
+    <circle cx="398" cy="145" r="1.8"/>
+    <circle cx="428" cy="160" r="1.2"/>
+    <circle cx="455" cy="148" r="1.8"/>
+    <circle cx="302" cy="160" r="1"/>
+    <circle cx="338" cy="345" r="1.5"/>
+    <circle cx="370" cy="360" r="1"/>
+    <circle cx="405" cy="348" r="1.5"/>
+    <circle cx="440" cy="355" r="1.2"/>
+  </g>
+
+  <!-- GLASSMORPHISM PANEL bottom -->
+  <rect x="115" y="392" width="270" height="72" rx="12" fill="url(#emo-glass)" stroke="#ffffff" stroke-width="0.5" stroke-opacity="0.12"/>
+  <line x1="250" y1="398" x2="250" y2="458" stroke="#ffffff" stroke-width="0.5" stroke-opacity="0.14"/>
+
+  <!-- LEFT ICON: Lightning bolt (Stress) -->
+  <path d="M 170,405 L 162,422 L 170,422 L 162,440 L 180,420 L 170,420 L 178,405 Z"
+        fill="#FF5733" opacity="0.82"/>
+
+  <!-- RIGHT ICON: Infinity wave (Flow) -->
+  <path d="M 293,422 C 293,413 300,408 308,413 C 316,418 323,413 323,422 C 323,431 316,426 308,421 C 300,416 293,422 293,431"
+        fill="none" stroke="#01BFFF" stroke-width="2.2" stroke-linecap="round" opacity="0.82"/>
+
+  <!-- Icon labels -->
+  <text x="170" y="455" fill="#FF5733" font-family="monospace" font-size="7" opacity="0.55" text-anchor="middle" letter-spacing="1">STRESS PEAK</text>
+  <text x="308" y="455" fill="#01BFFF" font-family="monospace" font-size="7" opacity="0.55" text-anchor="middle" letter-spacing="1">STATE OF FLOW</text>
+
+  <!-- Frame border -->
+  <rect x="8" y="8" width="484" height="484" fill="none" stroke="#1a1a35" stroke-width="1" opacity="0.7"/>
+
+  <!-- VIGNETTE -->
+  <rect width="500" height="500" fill="url(#emo-vig)"/>
+</svg>
