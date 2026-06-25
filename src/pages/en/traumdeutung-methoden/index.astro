@@ -1,0 +1,190 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+const _body = `<nav class="sticky top-0 z-50 flex items-center px-6 py-3" style="backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);background:rgba(16,12,31,0.75);border-bottom:1px solid rgba(255,255,255,0.06);" aria-label="Navigation">
+      <a href="/en/" class="text-gray-400 hover:text-white transition-colors" aria-label="Back to Ethyria homepage">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 6L8 12L14 18"/></svg>
+      </a>
+      <span class="flex-1 text-center text-sm font-semibold tracking-wider uppercase text-gray-300" style="font-family:Poppins,Arial,sans-serif">Dream Interpretation: Freud, Jung and Spiritual</span>
+      <div style="position:relative;" id="langSw">
+      <button style="background:none;border:1px solid rgba(255,255,255,0.15);color:#9ca3af;padding:4px 10px;border-radius:8px;font-size:0.75rem;cursor:pointer;font-family:Poppins,Arial,sans-serif;line-height:1.4;">EN ▾</button>
+      <div id="langDrop" hidden style="position:absolute;right:0;top:calc(100% + 4px);background:#1a1533;border:1px solid rgba(255,255,255,0.1);border-radius:10px;overflow:hidden;min-width:70px;z-index:200;box-shadow:0 8px 24px rgba(0,0,0,0.4);">
+        <a href="/traumdeutung-methoden/" style="display:block;padding:7px 14px;font-size:0.75rem;color:#9ca3af;text-decoration:none;font-family:Poppins,Arial,sans-serif;">DE</a>
+        <a href="/en/traumdeutung-methoden/" style="display:block;padding:7px 14px;font-size:0.75rem;color:#22d3ee;font-weight:600;text-decoration:none;font-family:Poppins,Arial,sans-serif;" aria-current="page">EN</a>
+        <a href="/fr/traumdeutung-methoden/" style="display:block;padding:7px 14px;font-size:0.75rem;color:#9ca3af;text-decoration:none;font-family:Poppins,Arial,sans-serif;">FR</a>
+        <a href="/es/traumdeutung-methoden/" style="display:block;padding:7px 14px;font-size:0.75rem;color:#9ca3af;text-decoration:none;font-family:Poppins,Arial,sans-serif;">ES</a>
+        <a href="/ru/traumdeutung-methoden/" style="display:block;padding:7px 14px;font-size:0.75rem;color:#9ca3af;text-decoration:none;font-family:Poppins,Arial,sans-serif;">RU</a>
+      </div>
+      </div>
+    </nav>
+
+    <nav aria-label="Breadcrumb" class="max-w-3xl mx-auto px-6 pt-4 pb-0">
+      <ol class="flex items-center gap-2 text-xs text-gray-500" style="font-family:Inter,sans-serif;">
+        <li><a href="/en/" class="hover:text-cyan-400 transition-colors">Ethyria</a></li>
+        <li aria-hidden="true" class="text-gray-600">›</li>
+        <li><a href="/en/traumdeutung-methoden/" class="text-cyan-400" aria-current="page">Dream Interpretation Methods</a></li>
+      </ol>
+    </nav>
+
+    <main class="max-w-3xl mx-auto px-6 py-12">
+      <!-- 7-Grid: Pillar-Prosa-Kolumne vollbreit (col-7) -->
+      <div class="grid-7">
+      <div class="text-center mb-12">
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 ethyria-gradient-text" style="font-family:Poppins,Arial,sans-serif;">
+          Dream Interpretation: Freud vs Jung vs Spiritual,Why the Same Dream Can Have Three Different Meanings
+        </h1>
+        <p class="text-lg text-gray-300 leading-relaxed max-w-2xl mx-auto">
+          You dream of a house you have never entered, with rooms you have never explored. For Sigmund Freud this would be an image of your psyche with repressed drives behind locked doors. For Carl Gustav Jung it would be an invitation to individuation, a symbol of unexplored aspects of the self. For a spiritual dream interpreter it would be a gateway to soul fragments ready to step into the light. Three schools. Three radically different answers. And all three can be simultaneously true for one and the same dreamer.
+        </p>
+      </div>
+
+      <section class="mb-10 p-6 rounded-2xl" style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.1);">
+        <h2 class="text-xl font-bold mb-4" style="font-family:Poppins,Arial,sans-serif;color:#f0abfc;">
+          Two Schools, One Dream
+        </h2>
+        <div class="text-gray-300 leading-relaxed space-y-4">
+          <p>Dream interpretation is not a single discipline. It is a family of approaches that share one subject but diverge on everything else: the nature of the unconscious, the purpose of dreaming, and what a symbol actually means. Understanding these differences is not an academic exercise,it is the practical question of which lens gives you the clearest view of your own inner life.</p>
+          <p>Research by psychologist G. William Domhoff (UC Santa Cruz) shows that approximately 65% of adults report recurring dreams, suggesting the unconscious persistently flags unresolved themes,regardless of which theory you use to explain them. The choice of method determines which meaning-layer you access, not what the dream shows.</p>
+          <p>Related: <a href="/en/traumsymbole-guide/" class="text-cyan-400 hover:underline">Dream Symbols and Their Meaning</a> · <a href="/en/luzides-traeumen/" class="text-cyan-400 hover:underline">Lucid Dreaming: Techniques and Science</a></p>
+        </div>
+      </section>
+
+      <section class="mb-10 p-6 rounded-2xl" style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.1);">
+        <h2 class="text-xl font-bold mb-4" style="font-family:Poppins,Arial,sans-serif;color:#22d3ee;">
+          Dream Interpretation According to Sigmund Freud: Repression as the Key
+        </h2>
+        <div class="text-gray-300 leading-relaxed space-y-4">
+          <p><strong>Freud's core thesis:</strong> The dream is the via regia,the royal road to the unconscious. What appears in a dream is never what it seems to be. Sigmund Freud established the foundation of modern dream psychology in 1899 with The Interpretation of Dreams. The manifest dream content (what you remember in the morning) is a disguise. The latent dream content,the actual message,lies hidden beneath.</p>
+          <p>Freud identified four encoding mechanisms: <strong>condensation</strong> (multiple contents compressed into one symbol), <strong>displacement</strong> (an innocuous content carries the emotional weight of another), <strong>considerations of representability</strong> (abstract conflicts translated into images), and <strong>secondary revision</strong> (the mind smooths the chaos of the dream into a coherent story).</p>
+          <p>Freud's system is extraordinarily precise in analysing anxiety dreams, repetitive dreams and erotic dreams. It tends towards over-reduction however: not every snake is phallic. The strength of the Freudian method lies in the depth of exploration, not in the schematic of symbolism. For a full overview of common dream symbols and their psychological meanings, see the <a href="/en/symbols/" class="text-cyan-400 hover:underline">Ethyria Dream Symbol Lexicon</a>.</p>
+        </div>
+      </section>
+
+      <section class="mb-10 p-6 rounded-2xl" style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.1);">
+        <h2 class="text-xl font-bold mb-4" style="font-family:Poppins,Arial,sans-serif;color:#60a5fa;">
+          Dream Interpretation According to Carl Gustav Jung: Archetypes and the Collective Unconscious
+        </h2>
+        <div class="text-gray-300 leading-relaxed space-y-4">
+          <p><strong>Jung's core thesis:</strong> The unconscious is not merely a receptacle for repressed wishes,it is an autonomous creative force with its own intelligence. Carl Gustav Jung began as Freud's most promising student and ended as his sharpest critic.</p>
+          <p>Jung distinguished the personal unconscious from the collective unconscious,a layer common to all human beings containing the archetypes: the <strong>Shadow</strong> (dark mirror of consciousness), the <strong>Anima/Animus</strong> (contrasexual soul-figures), the <strong>Self</strong> (centre of the total psyche) and the <strong>Persona</strong> (social mask). For Jung, the dream is an organ of equilibrium: the unconscious compensates for what consciousness neglects.</p>
+          <p>Jung's approach is less deterministic than Freud's and opens dream interpretation to existential questions, creativity and cultural mythology. Dream researcher Ernest Hartmann (Boston University) confirms that dreams process emotional experiences,a finding that supports Jung's compensation thesis. Allan Hobson's (Harvard Medical School) activation-synthesis model further validates that dreams carry emotional-regulatory function beyond mere wish-fulfilment.</p>
+        </div>
+      </section>
+
+      <section class="mb-10 p-6 rounded-2xl" style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.1);">
+        <h2 class="text-xl font-bold mb-4" style="font-family:Poppins,Arial,sans-serif;color:#a78bfa;">
+          Spiritual Dream Interpretation: Dreams as Transpersonal Messages
+        </h2>
+        <div class="text-gray-300 leading-relaxed space-y-4">
+          <p><strong>Core thesis:</strong> Dreams are not purely processing events,they provide access to knowledge that goes beyond personal biography. Spiritual dream interpretation treats dreams as a communication channel between consciousness and higher levels of reality (soul, higher self, collective field).</p>
+          <p>Common to all spiritual approaches: symbols are not representatives of psychic conflicts but messages with direct spiritual content. The question is not "What am I repressing?" but "What does this experience want to show me?"</p>
+          <p>Ethyria's Spiritual analysis connects transpersonal psychology with chakra symbolism and archetypal imagery,particularly suited to dreamers who want to use their dream world as part of their spiritual practice.</p>
+        </div>
+      </section>
+
+      <section class="mb-10 p-6 rounded-2xl" style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.1);">
+        <h2 class="text-xl font-bold mb-3" style="font-family:Poppins,Arial,sans-serif;color:#34d399;">
+          Method Comparison: Freud vs. Jung vs. Spiritual vs. Biosynchronous
+        </h2>
+        <div class="overflow-x-auto">
+          <table class="w-full text-sm" aria-label="Comparison of dream interpretation methods: Freud, Jung, Spiritual, Biosynchronous">
+            <thead><tr style="border-bottom:1px solid rgba(255,255,255,0.12);"><th class="text-left py-2 pr-4 text-xs font-semibold text-gray-400 whitespace-nowrap" style="font-family:Poppins,Arial,sans-serif;">Aspect</th><th class="text-left py-2 pr-4 text-xs font-semibold text-gray-400 whitespace-nowrap" style="font-family:Poppins,Arial,sans-serif;">Freud</th><th class="text-left py-2 pr-4 text-xs font-semibold text-gray-400 whitespace-nowrap" style="font-family:Poppins,Arial,sans-serif;">Jung</th><th class="text-left py-2 pr-4 text-xs font-semibold text-gray-400 whitespace-nowrap" style="font-family:Poppins,Arial,sans-serif;">Spiritual</th><th class="text-left py-2 pr-4 text-xs font-semibold text-gray-400 whitespace-nowrap" style="font-family:Poppins,Arial,sans-serif;">Biosynchronous</th></tr></thead>
+            <tbody>
+          <tr style="border-bottom:1px solid rgba(255,255,255,0.05);"><td class="py-2 pr-4 text-xs" style="font-weight:600;color:#d1d5db;">Origin of symbols</td><td class="py-2 pr-4 text-xs" style="color:#9ca3af;">Repression</td><td class="py-2 pr-4 text-xs" style="color:#9ca3af;">Archetypes</td><td class="py-2 pr-4 text-xs" style="color:#9ca3af;">Higher Self</td><td class="py-2 pr-4 text-xs" style="color:#9ca3af;">Body data</td></tr>
+          <tr style="border-bottom:1px solid rgba(255,255,255,0.05);"><td class="py-2 pr-4 text-xs" style="font-weight:600;color:#d1d5db;">Goal</td><td class="py-2 pr-4 text-xs" style="color:#9ca3af;">Uncover conflict</td><td class="py-2 pr-4 text-xs" style="color:#9ca3af;">Integration</td><td class="py-2 pr-4 text-xs" style="color:#9ca3af;">Receive message</td><td class="py-2 pr-4 text-xs" style="color:#9ca3af;">Recognise stress patterns</td></tr>
+          <tr style="border-bottom:1px solid rgba(255,255,255,0.05);"><td class="py-2 pr-4 text-xs" style="font-weight:600;color:#d1d5db;">Key concept</td><td class="py-2 pr-4 text-xs" style="color:#9ca3af;">Latent content</td><td class="py-2 pr-4 text-xs" style="color:#9ca3af;">Individuation</td><td class="py-2 pr-4 text-xs" style="color:#9ca3af;">Soul language</td><td class="py-2 pr-4 text-xs" style="color:#9ca3af;">HRV correlation</td></tr>
+          <tr style="border-bottom:1px solid rgba(255,255,255,0.05);"><td class="py-2 pr-4 text-xs" style="font-weight:600;color:#d1d5db;">Scientific basis</td><td class="py-2 pr-4 text-xs" style="color:#9ca3af;">Psychoanalysis</td><td class="py-2 pr-4 text-xs" style="color:#9ca3af;">Analytical psychology</td><td class="py-2 pr-4 text-xs" style="color:#9ca3af;">Transpersonal</td><td class="py-2 pr-4 text-xs" style="color:#9ca3af;">Sleep research</td></tr>
+          <tr style="border-bottom:1px solid rgba(255,255,255,0.05);"><td class="py-2 pr-4 text-xs" style="font-weight:600;color:#d1d5db;">Strength</td><td class="py-2 pr-4 text-xs" style="color:#9ca3af;">Conflict analysis</td><td class="py-2 pr-4 text-xs" style="color:#9ca3af;">Symbolic depth</td><td class="py-2 pr-4 text-xs" style="color:#9ca3af;">Meaning-making</td><td class="py-2 pr-4 text-xs" style="color:#9ca3af;">Biometric precision</td></tr>
+          <tr style="border-bottom:1px solid rgba(255,255,255,0.05);"><td class="py-2 pr-4 text-xs" style="font-weight:600;color:#d1d5db;">Weakness</td><td class="py-2 pr-4 text-xs" style="color:#9ca3af;">Over-reduction</td><td class="py-2 pr-4 text-xs" style="color:#9ca3af;">Abstract</td><td class="py-2 pr-4 text-xs" style="color:#9ca3af;">Subjective</td><td class="py-2 pr-4 text-xs" style="color:#9ca3af;">Requires biometrics</td></tr>
+          <tr style="border-bottom:1px solid rgba(255,255,255,0.05);"><td class="py-2 pr-4 text-xs" style="font-weight:600;color:#d1d5db;">Available in Ethyria</td><td class="py-2 pr-4 text-xs" style="color:#9ca3af;">App + Web</td><td class="py-2 pr-4 text-xs" style="color:#9ca3af;">App + Web</td><td class="py-2 pr-4 text-xs" style="color:#9ca3af;">App + Web</td><td class="py-2 pr-4 text-xs" style="color:#9ca3af;">App only</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="mb-10">
+        <h2 class="text-2xl font-bold mb-6 text-center" style="font-family:Poppins,Arial,sans-serif;color:#22d3ee;">Frequently Asked Questions</h2>
+        <div class="faq-accordion" id="faqAccordion">
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false" aria-controls="bfaq1" id="bfaq1-label">
+              <span>What is the most important difference between Freud and Jung in dream interpretation?</span>
+              <svg class="faq-chevron" width="16" height="16" viewBox="0 0 22 22" aria-hidden="true"><polyline points="6,9 11,14 16,9" stroke="#00CFFF" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+            </button>
+            <div class="faq-answer" id="bfaq1" role="region" aria-labelledby="bfaq1-label">Freud sees dream symbols as disguises for repressed drives and wishes. Jung sees them as autonomous messages from a collective unconscious shared by all human beings. Freud analyses, Jung integrates. Both approaches complement each other and are available in Ethyria as separate analysis modes.</div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false" aria-controls="bfaq2" id="bfaq2-label">
+              <span>Which dream interpretation method is right for me?</span>
+              <svg class="faq-chevron" width="16" height="16" viewBox="0 0 22 22" aria-hidden="true"><polyline points="6,9 11,14 16,9" stroke="#00CFFF" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+            </button>
+            <div class="faq-answer" id="bfaq2" role="region" aria-labelledby="bfaq2-label">It depends on your goal. If you want to understand conflicts and anxieties, the Freudian approach is helpful. If you want to understand yourself as a whole and grow, Jung is stronger. If you are seeking spiritual meaning, the Spiritual mode provides the appropriate framework. Ethyria shows you all perspectives simultaneously so you can decide which one resonates.</div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false" aria-controls="bfaq3" id="bfaq3-label">
+              <span>Can I interpret a dream through both Freud and Jung at the same time?</span>
+              <svg class="faq-chevron" width="16" height="16" viewBox="0 0 22 22" aria-hidden="true"><polyline points="6,9 11,14 16,9" stroke="#00CFFF" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+            </button>
+            <div class="faq-answer" id="bfaq3" role="region" aria-labelledby="bfaq3-label">Yes, and this is actually recommended. The perspectives rarely contradict each other fundamentally. They illuminate different layers of the same dream. A symbol can simultaneously be a repressed emotion (Freud) and embody an archetype (Jung). Ethyria analyses the same dream from all five perspectives in a single session.</div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false" aria-controls="bfaq4" id="bfaq4-label">
+              <span>Does Jung's dream interpretation have scientific recognition?</span>
+              <svg class="faq-chevron" width="16" height="16" viewBox="0 0 22 22" aria-hidden="true"><polyline points="6,9 11,14 16,9" stroke="#00CFFF" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+            </button>
+            <div class="faq-answer" id="bfaq4" role="region" aria-labelledby="bfaq4-label">Jung's theories are contested in academic psychology but remain influential. Concepts such as archetypes and the collective unconscious are not empirically measurable but are heuristically valuable. Modern dream research (Hartmann, Hobson) confirms Jung's observation that dreams serve emotional and creative processing rather than merely expressing drives.</div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false" aria-controls="bfaq5" id="bfaq5-label">
+              <span>Is there a method that surpasses all others?</span>
+              <svg class="faq-chevron" width="16" height="16" viewBox="0 0 22 22" aria-hidden="true"><polyline points="6,9 11,14 16,9" stroke="#00CFFF" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+            </button>
+            <div class="faq-answer" id="bfaq5" role="region" aria-labelledby="bfaq5-label">No. Every method has blind spots. Freud misses the collective. Jung can drift into the abstract. Spiritual interpretation presupposes belief. Biosynchronous requires biometrics. The deepest insight emerges when multiple perspectives are applied simultaneously to the same dream, which is exactly what Ethyria does automatically.</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="mb-10 p-6 rounded-2xl" style="background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.07);">
+        <h2 class="text-lg font-bold mb-4" style="font-family:Poppins,Arial,sans-serif;color:#9ca3af;">Common Dream Symbols and Their Meaning</h2>
+        <p class="text-sm text-gray-400 mb-4">The method determines how a symbol is read. Here are the most common dream symbols with their psychological interpretation:</p>
+        <ul class="grid grid-cols-2 sm:grid-cols-3 gap-2 text-sm">
+          <li><a href="/symbols/en/wasser.html" class="text-cyan-400 hover:text-cyan-300 hover:underline transition-colors">Water in dreams</a></li>
+          <li><a href="/symbols/en/fallen.html" class="text-cyan-400 hover:text-cyan-300 hover:underline transition-colors">Falling in dreams</a></li>
+          <li><a href="/symbols/en/fliegen.html" class="text-cyan-400 hover:text-cyan-300 hover:underline transition-colors">Flying in dreams</a></li>
+          <li><a href="/symbols/en/schlangen.html" class="text-cyan-400 hover:text-cyan-300 hover:underline transition-colors">Snakes in dreams</a></li>
+          <li><a href="/symbols/en/zaehne-verlieren.html" class="text-cyan-400 hover:text-cyan-300 hover:underline transition-colors">Losing teeth</a></li>
+          <li><a href="/symbols/en/verfolgt-werden.html" class="text-cyan-400 hover:text-cyan-300 hover:underline transition-colors">Being chased</a></li>
+        </ul>
+        <p class="text-xs text-gray-500 mt-3"><a href="/symbols/en/" class="hover:text-gray-400 transition-colors">All 15 dream symbols in the lexicon →</a></p>
+      </section>
+
+      <section class="text-center py-16">
+        <h2 class="text-2xl sm:text-3xl font-bold mb-4" style="font-family:Poppins,Arial,sans-serif;">Analyse Your Dream with All 5 Perspectives</h2>
+        <p class="text-gray-300 mb-6 max-w-lg mx-auto">Freud, Jung, Spiritual, Biosynchronous and General,simultaneously. AI-powered. Stored privately on your device.</p>
+        <a href="/assets/Ethyria_v1.0_def.apk" download class="inline-block px-8 py-4 font-bold text-white rounded-2xl text-lg" style="font-family:Poppins,Arial,sans-serif;background:linear-gradient(135deg,#01bfff 0%,#0066ff 100%);box-shadow:0 6px 24px rgba(1,191,255,0.3);">
+          Download Ethyria Free
+        </a>
+        <p class="text-xs text-gray-500 mt-3">Or try directly in your browser: <a href="/en/#live-analyse" class="text-cyan-400 hover:underline">Start AI dream analysis without an app</a></p>
+      </section>
+          </div><!-- /grid-7 -->
+    </main>
+
+    <footer class="text-center py-8 text-xs text-gray-500 border-t border-white/5">
+      <p>Ethyria | <a href="/en/traumdeutung-methoden/" class="text-cyan-500 hover:underline">Dream Interpretation Methods</a> · <a href="/en/traumsymbole-guide/" class="text-cyan-500 hover:underline">Dream Symbols</a> · <a href="/en/luzides-traeumen/" class="text-cyan-500 hover:underline">Lucid Dreaming</a></p>
+      <p class="mt-1"><a href="https://ethyria.at/en/" class="text-cyan-500 hover:underline">ethyria.at</a> | <a href="mailto:support@ethyria.at" class="text-cyan-500 hover:underline">support@ethyria.at</a></p>
+      <p class="mt-2"><a href="/impressum.html" class="hover:text-gray-300 transition-colors">Impressum</a> &nbsp;·&nbsp; <a href="/datenschutz.html" class="hover:text-gray-300 transition-colors">Privacy</a></p>
+    </footer>
+    
+    <script src="/assets/faq-accordion.js?v=20260602" defer></script>
+    <script src="/assets/lang-switcher.js" defer></script>
+<script is:inline src="/assets/lang-switcher.js" defer></script>
+<script is:inline src="/assets/faq-accordion.js" defer></script>`;
+---
+
+<BaseLayout
+  lang="en"
+  title="Freud vs Jung Dream Interpretation: Complete Comparison | Ethyria"
+  description="Freud vs Jung in dream interpretation: the complete comparison. Methods, archetypes and how to choose the right approach. Analyse your dream free with all five perspectives."
+  keywords=""
+  path="/traumdeutung-methoden/"
+>
+  <Fragment set:html={_body} />
+</BaseLayout>

@@ -1,0 +1,64 @@
+{
+  "name": "Ethyria – KI Traumdeutung & Tagebuch",
+  "short_name": "Ethyria",
+  "description": "Kostenlose Traumdeutung App mit KI. Traumanalyse nach Freud & Jung, visuelles Traumtagebuch, 5 Analyse-Modi. Dein Unterbewusstsein verstehen.",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "theme_color": "#100c1f",
+  "background_color": "#100c1f",
+  "lang": "de",
+  "dir": "ltr",
+  "categories": ["health", "lifestyle", "medical"],
+  "icons": [
+    {
+      "src": "assets/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/Ethyria_new_app_icon.png",
+      "sizes": "1024x1024",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "assets/screenshots_new_1/analyse_de.webp",
+      "sizes": "460x920",
+      "type": "image/webp",
+      "form_factor": "narrow",
+      "label": "KI Traumanalyse – 5 Perspektiven auf deinen Traum"
+    },
+    {
+      "src": "assets/screenshots_new_1/aether_de.webp",
+      "sizes": "460x920",
+      "type": "image/webp",
+      "form_factor": "narrow",
+      "label": "Äther – Globale Traumtrends und Community"
+    },
+    {
+      "src": "assets/screenshots_new_1/statistic_de.webp",
+      "sizes": "460x920",
+      "type": "image/webp",
+      "form_factor": "narrow",
+      "label": "Statistiken – Schlafmuster und Traumtagebuch Analyse"
+    }
+  ],
+  "related_applications": [
+    {
+      "platform": "play",
+      "url": "https://play.google.com/store/apps/details?id=com.ethyria.app",
+      "id": "com.ethyria.app"
+    }
+  ],
+  "prefer_related_applications": false
+}

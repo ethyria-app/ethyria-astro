@@ -1,0 +1,230 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+const _body = `
+    <div class="bg-blob top-[-10%] left-[-10%]"></div>
+
+    <nav
+      class="container mx-auto px-6 py-6 flex justify-center items-center relative z-10"
+    >
+      <a href="index.html" class="nav-brand">
+        <img
+          src="assets/Logo_web.png"
+          alt="Ethyria zurück zur Startseite"
+          width="240"
+          height="57"
+          class="nav-brand-logo"
+          style="max-width: 240px" decoding="async"
+        />
+      </a>
+    </nav>
+
+    <main class="container mx-auto px-6 py-12 relative z-10 max-w-3xl">
+      <!-- 7-Grid: Pillar-Prosa-Kolumne vollbreit (col-7) -->
+      <div class="grid-7">
+      <h1 class="text-4xl font-bold mb-10 ethyria-gradient-text">
+        Allgemeine Geschäftsbedingungen
+      </h1>
+
+      <p class="text-gray-400 text-sm mb-10">Stand: März 2026</p>
+
+      <!-- 1 -->
+      <section class="mb-10">
+        <h2 class="text-xl font-bold mb-3 text-white">1. Geltungsbereich</h2>
+        <p class="text-gray-300 leading-relaxed mb-3">
+          Diese Allgemeinen Geschäftsbedingungen (AGB) gelten für die Nutzung
+          der mobilen Anwendung „Ethyria" sowie der zugehörigen Website
+          <a href="https://ethyria.at" class="text-cyan-400 hover:underline">ethyria.at</a>,
+          angeboten durch:
+        </p>
+        <div class="text-gray-300 leading-relaxed space-y-1 pl-4 border-l border-white/10">
+          <p><strong class="text-white">Oliver Stolz</strong></p>
+          <p>Ethyria Dream Analysis</p>
+          <p>Freistädter Str. 65</p>
+          <p>4040 Linz, Österreich</p>
+          <p>
+            E-Mail:
+            <a
+              href="mailto:support@ethyria.at"
+              class="text-cyan-400 hover:underline"
+              >support@ethyria.at</a
+            >
+          </p>
+        </div>
+      </section>
+
+      <!-- 2 -->
+      <section class="mb-10">
+        <h2 class="text-xl font-bold mb-3 text-white">2. Vertragsgegenstand</h2>
+        <p class="text-gray-300 leading-relaxed mb-3">
+          2.1 Die App stellt ein digitales Traumtagebuch mit KI-gestützten
+          Traumanalysen bereit. Der Umfang der Leistungen richtet sich nach dem
+          jeweils gebuchten Tarif (kostenlos / Premium-Abonnement).
+        </p>
+        <p class="text-gray-300 leading-relaxed">
+          2.2 Die App und Website richten sich ausschließlich an Personen ab
+          16 Jahren.
+        </p>
+      </section>
+
+      <!-- 3 -->
+      <section class="mb-10">
+        <h2 class="text-xl font-bold mb-3 text-white">3. Vertragsschluss</h2>
+        <p class="text-gray-300 leading-relaxed">
+          Der Vertrag kommt durch die Registrierung in der App und die
+          Bestätigung dieser AGB zustande. Bei Einzel-Analysen über die Website
+          kommt der Vertrag mit dem Abschluss des Zahlungsvorgangs über Stripe
+          zustande.
+        </p>
+      </section>
+
+      <!-- 4 -->
+      <section class="mb-10">
+        <h2 class="text-xl font-bold mb-3 text-white">
+          4. Leistungen und Abonnement
+        </h2>
+        <p class="text-gray-300 leading-relaxed mb-3">
+          4.1 <strong class="text-white">Kostenloser Tarif:</strong> Führen
+          eines Traumtagebuchs, bis zu 3 kostenlose KI-Analysen (Allgemein).
+        </p>
+        <p class="text-gray-300 leading-relaxed mb-3">
+          4.2 <strong class="text-white">Premium-Abonnement:</strong> Unbegrenzte
+          KI-Analysen (Allgemein, Freud, Jung, Spirituell), erweiterte
+          Statistiken und alle zukünftigen Premium-Funktionen.
+        </p>
+        <p class="text-gray-300 leading-relaxed mb-3">
+          4.3 Das Premium-Abonnement wird über den jeweiligen App-Store
+          (Google Play / Apple App Store) abgerechnet. Die aktuellen Preise
+          sind in der App einsehbar.
+        </p>
+        <p class="text-gray-300 leading-relaxed">
+          4.4 <strong class="text-white">Einzel-Analysen (Website):</strong>
+          Über die Website können Einzel-Traumanalysen per Einmalzahlung über
+          Stripe erworben werden. Die Analyse wird unmittelbar nach erfolgreicher
+          Zahlung bereitgestellt.
+        </p>
+      </section>
+
+      <!-- 5 -->
+      <section class="mb-10">
+        <h2 class="text-xl font-bold mb-3 text-white">
+          5. Laufzeit und Kündigung
+        </h2>
+        <p class="text-gray-300 leading-relaxed mb-3">
+          5.1 Das Premium-Abonnement läuft für den gewählten
+          Abrechnungszeitraum (monatlich / jährlich) und verlängert sich
+          automatisch, sofern es nicht fristgerecht gekündigt wird.
+        </p>
+        <p class="text-gray-300 leading-relaxed mb-3">
+          5.2 Die Kündigung erfolgt ausschließlich über den jeweiligen App-Store
+          mindestens 24 Stunden vor Ende der aktuellen Laufzeit.
+        </p>
+        <p class="text-gray-300 leading-relaxed">
+          5.3 Nach der Kündigung besteht Zugriff auf Premium-Inhalte bis zum
+          Ende des bezahlten Zeitraums.
+        </p>
+      </section>
+
+      <!-- 6 -->
+      <section class="mb-10">
+        <h2 class="text-xl font-bold mb-3 text-white">6. Nutzungsrechte</h2>
+        <p class="text-gray-300 leading-relaxed">
+          Dem Nutzer wird ein nicht übertragbares, nicht exklusives Recht zur
+          Nutzung der App und Website für private Zwecke eingeräumt. Jegliche
+          kommerzielle Nutzung, Vervielfältigung oder Weitergabe ist untersagt.
+        </p>
+      </section>
+
+      <!-- 7 -->
+      <section class="mb-10">
+        <h2 class="text-xl font-bold mb-3 text-white">7. Nutzerinhalte</h2>
+        <p class="text-gray-300 leading-relaxed mb-3">
+          7.1 Die eingegebenen Trauminhalte verbleiben im Eigentum des Nutzers.
+        </p>
+        <p class="text-gray-300 leading-relaxed mb-3">
+          7.2 Der Nutzer räumt Ethyria das Recht ein, Traumdaten ausschließlich
+          zur Erbringung der vertraglich vereinbarten KI-Analyseleistungen zu
+          verarbeiten.
+        </p>
+        <p class="text-gray-300 leading-relaxed">
+          7.3 Es ist untersagt, rechtswidrige oder die Rechte Dritter
+          verletzende Inhalte einzugeben.
+        </p>
+      </section>
+
+      <!-- 8 -->
+      <section class="mb-10">
+        <h2 class="text-xl font-bold mb-3 text-white">8. Haftung</h2>
+        <p class="text-gray-300 leading-relaxed mb-3">
+          8.1 Die KI-Analysen sind informativer Natur und stellen keine
+          psychologische, medizinische oder therapeutische Beratung dar.
+        </p>
+        <p class="text-gray-300 leading-relaxed mb-3">
+          8.2 Für leichte Fahrlässigkeit haften wir nur bei Verletzung
+          wesentlicher Vertragspflichten. Die Haftung ist auf den
+          vertragstypischen, vorhersehbaren Schaden begrenzt.
+        </p>
+        <p class="text-gray-300 leading-relaxed">
+          8.3 Die Haftung für Datenverlust ist auf den Schaden begrenzt, der
+          bei ordnungsgemäßer Datensicherung durch den Nutzer entstanden wäre.
+        </p>
+      </section>
+
+      <!-- 9 -->
+      <section class="mb-10">
+        <h2 class="text-xl font-bold mb-3 text-white">9. Änderungen der AGB</h2>
+        <p class="text-gray-300 leading-relaxed">
+          Wir behalten uns vor, diese AGB anzupassen. Wesentliche Änderungen
+          werden Ihnen mindestens 30 Tage vor Inkrafttreten mitgeteilt.
+        </p>
+      </section>
+
+      <!-- 10 -->
+      <section class="mb-10">
+        <h2 class="text-xl font-bold mb-3 text-white">
+          10. Anwendbares Recht
+        </h2>
+        <p class="text-gray-300 leading-relaxed">
+          Es gilt österreichisches Recht. Gerichtsstand ist der Sitz des
+          Anbieters in Linz, Österreich.
+        </p>
+      </section>
+
+      <div class="border-t border-white/10 pt-8 mt-8">
+        <a href="index.html" class="text-cyan-400 hover:underline text-sm"
+          >← Zurück zur Startseite</a
+        >
+        <span class="mx-4 text-white/20">|</span>
+        <a href="impressum.html" class="text-cyan-400 hover:underline text-sm"
+          >Impressum</a
+        >
+        <span class="mx-4 text-white/20">|</span>
+        <a href="datenschutz.html" class="text-cyan-400 hover:underline text-sm"
+          >Datenschutz</a
+        >
+      </div>
+          </div><!-- /grid-7 -->
+    </main>
+
+    <footer class="border-t border-white/5 py-8 text-center mt-16">
+      <div class="container mx-auto px-6">
+        <p class="text-gray-600 text-xs">
+          © Ethyria ·
+          <a href="impressum.html" class="hover:text-cyan-400">Impressum</a> ·
+          <a href="datenschutz.html" class="hover:text-cyan-400">Datenschutz</a> ·
+          <a href="agb.html" class="hover:text-cyan-400">AGB</a>
+        </p>
+      </div>
+    </footer>
+    
+  `;
+---
+
+<BaseLayout
+  lang="de"
+  title="AGB | Ethyria"
+  description=""
+  keywords=""
+  path="/agb/"
+>
+  <Fragment set:html={_body} />
+</BaseLayout>

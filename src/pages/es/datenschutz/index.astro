@@ -1,0 +1,127 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+const _body = `
+    <div class="bg-blob top-[-10%] left-[-10%]"></div>
+    <nav class="container mx-auto px-6 py-6 flex justify-center items-center relative z-10">
+      <a href="index.html" class="nav-brand">
+        <img src="/assets/Logo_web.png" alt="Ethyria" width="240" height="57" class="nav-brand-logo" style="max-width:240px" decoding="async" />
+      </a>
+    </nav>
+    <main class="container mx-auto px-6 py-12 relative z-10 max-w-3xl">
+      <!-- 7-Grid: Pillar-Prosa-Kolumne vollbreit (col-7) -->
+      <div class="grid-7">
+      <h1 class="text-4xl font-bold mb-10 ethyria-gradient-text">Política de privacidad</h1>
+      <p class="text-gray-400 text-sm mb-10">Última actualización: junio 2026</p>
+
+      <section class="mb-10">
+        <h2 class="text-xl font-bold mb-3 text-white">1. Responsable del tratamiento</h2>
+        <div class="text-gray-300 leading-relaxed space-y-1">
+          <p><strong class="text-white">Oliver Stolz</strong></p>
+          <p>Ethyria. Dream Analysis</p>
+          <p>Freistädter Str. 65, 4040 Linz, Austria</p>
+          <p>Correo electrónico: <!--email_off--><a href="mailto:support@ethyria.at" class="text-cyan-400 hover:underline">support@ethyria.at</a><!--/email_off--></p>
+        </div>
+      </section>
+
+      <section class="mb-10">
+        <h2 class="text-xl font-bold mb-3 text-white">2. Qué datos recopilamos y por qué</h2>
+
+        <h3 class="text-base font-bold mb-2 text-white/80">2.1 Dirección de correo electrónico (registro y contacto)</h3>
+        <p class="text-gray-300 leading-relaxed mb-4">Cuando te registras mediante el formulario o nos contactas por correo, recopilamos tu dirección de correo electrónico. La base jurídica es tu consentimiento explícito (art. 6, apdo. 1, lit. a RGPD). La utilizamos exclusivamente para el fin acordado. Sin compartir con terceros. Sin boletín sin consentimiento renovado.</p>
+
+        <h3 class="text-base font-bold mb-2 text-white/80">2.2 Análisis de sueños en vivo (sitio web)</h3>
+        <p class="text-gray-300 leading-relaxed mb-4">Los textos de sueños introducidos en el sitio web se transmiten a nuestra API (Cloudflare Workers) para su procesamiento por IA. Los textos no se almacenan de forma permanente ni se vinculan a ninguna persona. El límite de análisis se gestiona mediante el almacenamiento local del navegador (localStorage). Base jurídica: interés legítimo (art. 6, apdo. 1, lit. f RGPD).</p>
+
+        <h3 class="text-base font-bold mb-2 text-white/80">2.3 Gestión del consentimiento</h3>
+        <p class="text-gray-300 leading-relaxed mb-4">Antes de utilizar el análisis de sueños en vivo, aparece un diálogo de consentimiento. Tu consentimiento se almacena con un identificador único (UUID), marca de tiempo, versión e idioma en tu almacenamiento del navegador y en nuestro almacenamiento Cloudflare KV (período de retención: 3 años). Puedes retirar tu consentimiento en cualquier momento mediante el enlace en el pie de página. Base jurídica: art. 6, apdo. 1, lit. a RGPD en relación con el art. 7 RGPD.</p>
+
+        <h3 class="text-base font-bold mb-2 text-white/80">2.4 Datos de la aplicación (Android)</h3>
+        <p class="text-gray-300 leading-relaxed mb-4">Todas las entradas de sueños y análisis en la aplicación Ethyria permanecen almacenados localmente en tu dispositivo. No hay sincronización automática en la nube. El análisis de IA requiere una conexión a internet con la API. El texto del sueño se transmite temporalmente y no se almacena de forma permanente.</p>
+
+        <h3 class="text-base font-bold mb-2 text-white/80">2.5 Compras integradas (Google Play)</h3>
+        <p class="text-gray-300 leading-relaxed mb-4">Las compras en la aplicación Android (análisis individual, suscripción mensual o anual) se procesan exclusivamente a través de Google Play. No recibimos datos de pago. Google LLC procesa estos datos conforme a la <a href="https://policies.google.com/privacy" class="text-cyan-400 hover:underline" target="_blank" rel="noopener">Política de privacidad de Google</a>. Los pagos en el sitio web se procesan a través de Stripe Inc. No recibimos datos de tarjetas de crédito. Más información: <a href="https://stripe.com/es/privacy" class="text-cyan-400 hover:underline" target="_blank" rel="noopener">stripe.com/es/privacy</a>.</p>
+
+        <h3 class="text-base font-bold mb-2 text-white/80">2.6 Servicio de análisis (Plausible Analytics)</h3>
+        <p class="text-gray-300 leading-relaxed mb-4">Este sitio web utiliza Plausible Analytics (Plausible Insights OÜ, Tallinn, Estonia). Plausible no procesa datos personales, no utiliza cookies y cumple el RGPD sin necesidad de consentimiento. Todos los datos son anonimizados y no pueden vincularse a ninguna persona. Base jurídica: interés legítimo (art. 6, apdo. 1, lit. f RGPD).</p>
+
+        <h3 class="text-base font-bold mb-2 text-white/80">2.7 Seguimiento de errores (Sentry)</h3>
+        <p class="text-gray-300 leading-relaxed mb-4">Utilizamos Sentry (Functional Software Inc. dba Sentry) para detectar y corregir errores técnicos. Usamos el endpoint de ingesta de la UE (ingest.de.sentry.io). No se transmiten datos personales. Las direcciones IP e información de identificación de usuarios están desactivadas. Base jurídica: interés legítimo (art. 6, apdo. 1, lit. f RGPD).</p>
+
+        <h3 class="text-base font-bold mb-2 text-white/80">2.8 Registros del servidor y CDN</h3>
+        <p class="text-gray-300 leading-relaxed">Al visitar este sitio web, los datos de acceso técnicos (dirección IP, navegador, marca de tiempo) se registran en los registros de GitHub Pages y Cloudflare. Estos datos se eliminan después de un máximo de 7 días. Cloudflare actúa como CDN y capa de seguridad. Base jurídica: interés legítimo (art. 6, apdo. 1, lit. f RGPD).</p>
+      </section>
+
+      <section class="mb-10">
+        <h2 class="text-xl font-bold mb-3 text-white">3. Cookies y almacenamiento local</h2>
+        <p class="text-gray-300 leading-relaxed">Este sitio web utiliza únicamente almacenamiento técnicamente necesario (localStorage, sessionStorage) para gestionar créditos de análisis, consentimientos y caché de sesión. No se utilizan cookies de seguimiento ni de marketing. No se requiere un banner de consentimiento de cookies para el almacenamiento técnicamente necesario. El service worker permite el uso sin conexión mediante el almacenamiento en caché local de los recursos del sitio.</p>
+      </section>
+
+      <section class="mb-10">
+        <h2 class="text-xl font-bold mb-3 text-white">4. Procesamiento por IA y Reglamento Europeo de IA</h2>
+        <p class="text-gray-300 leading-relaxed mb-3">La interpretación de sueños se realiza mediante un modelo de IA conectado a través de nuestra API de Cloudflare Workers. Se aplican las siguientes obligaciones de transparencia:</p>
+        <ul class="text-gray-300 leading-relaxed space-y-1 list-disc list-inside">
+          <li>La naturaleza de IA de todos los análisis se comunica siempre claramente a los usuarios.</li>
+          <li>Los análisis de Ethyria no reemplazan el asesoramiento psicológico o terapéutico profesional.</li>
+          <li>Los textos introducidos se utilizan únicamente para generar el análisis y no se usan para entrenar modelos de IA.</li>
+          <li>La aplicación Ethyria y el análisis en vivo del navegador están clasificados como aplicaciones de IA de propósito general en el nivel de riesgo más bajo según el Reglamento Europeo de IA (Reglamento (UE) 2024/1689).</li>
+        </ul>
+      </section>
+
+      <section class="mb-10">
+        <h2 class="text-xl font-bold mb-3 text-white">5. Transferencias de datos a terceros países</h2>
+        <p class="text-gray-300 leading-relaxed mb-3">Los siguientes servicios transfieren datos a países fuera del EEE:</p>
+        <ul class="text-gray-300 leading-relaxed space-y-1 list-disc list-inside">
+          <li><strong class="text-white/80">Cloudflare (EE.UU.):</strong> Certificado EU-US Data Privacy Framework (DPF). Utilizado para nuestra API y CDN.</li>
+          <li><strong class="text-white/80">Stripe (EE.UU.):</strong> Certificado EU-US DPF. Procesamiento de pagos en el sitio web.</li>
+          <li><strong class="text-white/80">Google Play (EE.UU.):</strong> Procesamiento de compras integradas. Cláusulas contractuales tipo (CCT) según el art. 46 RGPD.</li>
+          <li><strong class="text-white/80">Sentry (EE.UU.):</strong> Endpoint de la UE activo. No se transmiten datos personales.</li>
+        </ul>
+        <p class="text-gray-300 leading-relaxed mt-3">Un nivel adecuado de protección de datos está garantizado mediante certificación DPF, cláusulas contractuales tipo o medidas técnicas.</p>
+      </section>
+
+      <section class="mb-10">
+        <h2 class="text-xl font-bold mb-3 text-white">6. Tus derechos</h2>
+        <p class="text-gray-300 leading-relaxed mb-3">Conforme al RGPD tienes los siguientes derechos:</p>
+        <ul class="text-gray-300 leading-relaxed space-y-1 list-disc list-inside">
+          <li>Derecho de acceso (art. 15 RGPD)</li>
+          <li>Derecho de rectificación (art. 16 RGPD)</li>
+          <li>Derecho de supresión (art. 17 RGPD)</li>
+          <li>Derecho a la limitación del tratamiento (art. 18 RGPD)</li>
+          <li>Derecho de oposición (art. 21 RGPD)</li>
+          <li>Derecho a la portabilidad de los datos (art. 20 RGPD)</li>
+          <li>Derecho a retirar el consentimiento (art. 7, apdo. 3 RGPD)</li>
+        </ul>
+        <p class="text-gray-300 leading-relaxed mt-3">Dirija sus solicitudes a: <!--email_off--><a href="mailto:support@ethyria.at" class="text-cyan-400 hover:underline">support@ethyria.at</a><!--/email_off--></p>
+        <p class="text-gray-300 leading-relaxed mt-3">También tiene derecho a presentar una reclamación ante la Autoridad austriaca de Protección de Datos: <a href="https://www.dsb.gv.at" class="text-cyan-400 hover:underline" target="_blank" rel="noopener">www.dsb.gv.at</a></p>
+      </section>
+
+      <section class="mb-10">
+        <h2 class="text-xl font-bold mb-3 text-white">7. Cambios en esta política</h2>
+        <p class="text-gray-300 leading-relaxed">Nos reservamos el derecho de actualizar esta Política de privacidad cuando sea necesario. La versión actual siempre está disponible en esta página. En caso de cambios importantes, los usuarios registrados serán notificados por correo electrónico.</p>
+      </section>
+
+      <div class="border-t border-white/10 pt-8 mt-8">
+        <a href="es/" class="text-cyan-400 hover:underline text-sm">← Volver al inicio</a>
+        <span class="mx-4 text-white/20">|</span>
+        <a href="impressum.es.html" class="text-cyan-400 hover:underline text-sm">Aviso legal</a>
+      </div>
+          </div><!-- /grid-7 -->
+    </main>
+    <footer class="border-t border-white/5 py-8 text-center mt-16">
+      <div class="container mx-auto px-6">
+        <p class="text-gray-600 text-xs">© Ethyria</p>
+      </div>
+    </footer>
+    
+  `;
+---
+
+<BaseLayout
+  lang="es"
+  title="Política de privacidad | Ethyria"
+  description=""
+  keywords=""
+  path="/datenschutz/"
+>
+  <Fragment set:html={_body} />
+</BaseLayout>

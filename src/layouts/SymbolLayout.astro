@@ -1,0 +1,246 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import SymbolSchema from '@/components/seo/SymbolSchema.astro';
+import type { Locale } from '@/i18n/ui';
+import { useTranslations, getLocalizedUrl } from '@/i18n/utils';
+
+export interface Props {
+  lang: Locale;
+  urlSlug: string;
+  title: string;
+  description: string;
+  keywords: string;
+  datePublished: string;
+  dateModified: string;
+  heroImage: string;
+  heroAlt: string;
+  freud: string;
+  jung: string;
+  spiritual: string;
+  biosync: string;
+  variants: Array<{ title: string; description: string; related: string[] }>;
+  faq: Array<{ question: string; answer: string }>;
+}
+
+const { lang, urlSlug, title, description, keywords, datePublished, dateModified, heroImage, heroAlt, freud, jung, spiritual, biosync, variants, faq } = Astro.props;
+const t = useTranslations(lang);
+
+const langPath = lang === 'de' ? '' : `/${lang}`;
+const symbolsHref = `${langPath}/symbols/`;
+const apkHref = '/assets/Ethyria_v1.0_def.apk';
+
+const LABELS: Record<string, Record<Locale, string>> = {
+  freud_h2: { de: 'Traumdeutung nach Freud', en: 'Dream Interpretation by Freud', fr: 'Interprétation des rêves selon Freud', es: 'Interpretación de sueños según Freud', ru: 'Толкование снов по Фрейду' },
+  jung_h2: { de: 'Traumdeutung nach Jung', en: 'Dream Interpretation by Jung', fr: 'Interprétation des rêves selon Jung', es: 'Interpretación de sueños según Jung', ru: 'Толкование снов по Юнгу' },
+  spiritual_h2: { de: 'Spirituelle Deutung', en: 'Spiritual Interpretation', fr: 'Interprétation spirituelle', es: 'Interpretación espiritual', ru: 'Духовное толкование' },
+  biosync_h2: { de: 'Biosynchrone Analyse', en: 'Biosynchronous Analysis', fr: 'Analyse biosynchrone', es: 'Análisis biosincrónico', ru: 'Биосинхронный анализ' },
+  biosync_badge: { de: 'Exklusiv bei Ethyria', en: 'Exclusive to Ethyria', fr: 'Exclusif à Ethyria', es: 'Exclusivo de Ethyria', ru: 'Эксклюзивно в Ethyria' },
+  biosync_cta: { de: 'Volle biosynchrone Analyse in der App', en: 'Full biosynchronous analysis in the app', fr: 'Analyse biosynchrone complète dans l\'app', es: 'Análisis biosincrónico completo en la app', ru: 'Полный биосинхронный анализ в приложении' },
+  community_h2: { de: 'Aus der Ethyria Community', en: 'From the Ethyria Community', fr: 'De la communauté Ethyria', es: 'De la comunidad Ethyria', ru: 'Из сообщества Ethyria' },
+  variants_h2: { de: 'Häufige Varianten', en: 'Common Variations', fr: 'Variantes fréquentes', es: 'Variantes frecuentes', ru: 'Частые вариации' },
+  variants_related: { de: 'Verwandt:', en: 'Related:', fr: 'Lié:', es: 'Relacionado:', ru: 'Связано:' },
+  faq_h2: { de: 'Häufige Fragen', en: 'Frequently Asked Questions', fr: 'Questions fréquentes', es: 'Preguntas frecuentes', ru: 'Частые вопросы' },
+  source_show: { de: 'Quelle anzeigen', en: 'Show source', fr: 'Afficher la source', es: 'Mostrar fuente', ru: 'Показать источник' },
+  pillar_link: { de: 'Freud, Jung und Spiritual: Alle Traumdeutungsmethoden im Vergleich', en: 'Freud, Jung and Spiritual: All dream interpretation methods compared', fr: 'Freud, Jung et Spirituel: Toutes les méthodes comparées', es: 'Freud, Jung y Espiritual: Todos los métodos comparados', ru: 'Фрейд, Юнг и Духовное: Все методы сравниваются' },
+  cta_h2: { de: 'Analysiere deinen Traum jetzt mit Ethyria', en: 'Analyze your dream now with Ethyria', fr: 'Analysez votre rêve maintenant avec Ethyria', es: 'Analiza tu sueño ahora con Ethyria', ru: 'Анализируйте свой сон сейчас с Ethyria' },
+  cta_sub: { de: '5 Analyseperspektiven. KI-gestützt. Privat und verschlüsselt. Dein Traumtagebuch mit Bedeutung.', en: '5 analysis perspectives. AI-powered. Private and encrypted. Your dream journal with meaning.', fr: '5 perspectives d\'analyse. Alimenté par IA. Privé et chiffré. Votre journal de rêves avec du sens.', es: '5 perspectivas de análisis. Con IA. Privado y cifrado. Tu diario de sueños con significado.', ru: '5 аналитических перспектив. На основе ИИ. Приватно и зашифровано. Ваш дневник снов со смыслом.' },
+  related_h3: { de: 'Verwandte Traumsymbole', en: 'Related Dream Symbols', fr: 'Symboles de rêves connexes', es: 'Símbolos de sueños relacionados', ru: 'Связанные символы снов' },
+  back_aria: { de: 'Zurück', en: 'Back', fr: 'Retour', es: 'Volver', ru: 'Назад' },
+  download_aria: { de: 'Ethyria APK für Android herunterladen', en: 'Download Ethyria for free', fr: 'Télécharger Ethyria gratuitement', es: 'Descargar Ethyria gratis', ru: 'Скачать Ethyria бесплатно' },
+};
+
+function l(key: string): string {
+  return LABELS[key]?.[lang] ?? LABELS[key]?.['de'] ?? key;
+}
+
+// Breadcrumb
+const breadcrumbHome = { de: 'Startseite', en: 'Home', fr: 'Accueil', es: 'Inicio', ru: 'Главная' };
+const breadcrumbSymbols = { de: 'Traumsymbole', en: 'Dream Symbols', fr: 'Symboles de rêves', es: 'Símbolos de sueños', ru: 'Символы снов' };
+
+// Pillar page link
+const pillarHref = `${langPath}/traumdeutung-methoden/`;
+---
+
+<BaseLayout
+  {lang}
+  {title}
+  {description}
+  {keywords}
+  path={`/symbols/${urlSlug}/`}
+  ogType="article"
+  lcpImage={`/symbols/img/${heroImage}`}
+>
+  <SymbolSchema
+    slot="schema"
+    {urlSlug}
+    {title}
+    {description}
+    {keywords}
+    {datePublished}
+    {dateModified}
+    {heroImage}
+    {lang}
+    {faq}
+  />
+
+  <!-- Sticky back-nav -->
+  <nav class="sticky top-0 z-50 flex items-center px-6 py-3" style="backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);background:rgba(16,12,31,0.75);border-bottom:1px solid rgba(255,255,255,0.06);" aria-label={l('back_aria')}>
+    <a href={symbolsHref} class="text-gray-400 hover:text-white transition-colors" aria-label={l('back_aria')}>
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 6L8 12L14 18"/></svg>
+    </a>
+    <span class="flex-1 text-center text-sm font-semibold tracking-wider uppercase text-gray-300" style="font-family:Poppins,Arial,sans-serif">{title}</span>
+    <span class="w-7" aria-hidden="true"></span>
+  </nav>
+
+  <main class="max-w-3xl mx-auto px-6 py-12">
+    <div class="grid-7">
+
+      <!-- Breadcrumb (visual) -->
+      <nav aria-label="Breadcrumb" class="mb-8 text-xs text-gray-500">
+        <ol class="flex items-center gap-2 flex-wrap justify-center">
+          <li><a href={`${langPath}/`} class="hover:text-cyan-400 transition">{breadcrumbHome[lang]}</a></li>
+          <li aria-hidden="true">›</li>
+          <li><a href={symbolsHref} class="hover:text-cyan-400 transition">{breadcrumbSymbols[lang]}</a></li>
+          <li aria-hidden="true">›</li>
+          <li class="text-gray-400">{title}</li>
+        </ol>
+      </nav>
+
+      <!-- Hero -->
+      <div class="text-center mb-12">
+        <img src={`/symbols/img/${heroImage}`} alt={heroAlt} class="symbol-hero-img" loading="eager" />
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 ethyria-gradient-text" style="font-family:Poppins,Arial,sans-serif">
+          <slot name="h1-display" />
+        </h1>
+        <p class="text-lg text-gray-300 leading-relaxed max-w-2xl mx-auto">
+          <slot name="intro" />
+        </p>
+      </div>
+
+      <!-- Freud -->
+      <section class="mb-10 text-center p-6 rounded-2xl" style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.1);">
+        <h2 class="text-xl font-bold mb-3 flex items-center gap-2" style="font-family:Poppins,Arial,sans-serif;color:#22d3ee;">
+          <i class="ph-duotone ph-brain"></i> {l('freud_h2')}
+        </h2>
+        <p class="text-gray-300 leading-relaxed" set:html={freud}></p>
+        <details class="mt-6" style="border-top:1px solid rgba(255,255,255,0.06);padding-top:12px;">
+          <summary class="text-xs text-gray-500 cursor-pointer hover:text-gray-400 transition-colors" style="font-family:Poppins,Arial,sans-serif;"><i class="ph-duotone ph-book-open"></i> {l('source_show')}</summary>
+          <slot name="freud-source" />
+        </details>
+      </section>
+
+      <!-- Jung -->
+      <section class="mb-10 text-center p-6 rounded-2xl" style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.1);">
+        <h2 class="text-xl font-bold mb-3 flex items-center gap-2" style="font-family:Poppins,Arial,sans-serif;color:#60a5fa;">
+          <i class="ph-duotone ph-magic-wand"></i> {l('jung_h2')}
+        </h2>
+        <p class="text-gray-300 leading-relaxed" set:html={jung}></p>
+        <details class="mt-6" style="border-top:1px solid rgba(255,255,255,0.06);padding-top:12px;">
+          <summary class="text-xs text-gray-500 cursor-pointer hover:text-gray-400 transition-colors" style="font-family:Poppins,Arial,sans-serif;"><i class="ph-duotone ph-book-open"></i> {l('source_show')}</summary>
+          <slot name="jung-source" />
+        </details>
+      </section>
+
+      <!-- Spiritual -->
+      <section class="mb-10 text-center p-6 rounded-2xl" style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.1);">
+        <h2 class="text-xl font-bold mb-3 flex items-center gap-2" style="font-family:Poppins,Arial,sans-serif;color:#a78bfa;">
+          <i class="ph-duotone ph-sparkle"></i> {l('spiritual_h2')}
+        </h2>
+        <p class="text-gray-300 leading-relaxed" set:html={spiritual}></p>
+        <details class="mt-6" style="border-top:1px solid rgba(255,255,255,0.06);padding-top:12px;">
+          <summary class="text-xs text-gray-500 cursor-pointer hover:text-gray-400 transition-colors" style="font-family:Poppins,Arial,sans-serif;"><i class="ph-duotone ph-book-open"></i> {l('source_show')}</summary>
+          <slot name="spiritual-source" />
+        </details>
+      </section>
+
+      <!-- Biosync -->
+      <section class="mb-10 text-center p-6 rounded-2xl relative overflow-hidden" style="background:linear-gradient(135deg,rgba(1,191,255,0.06) 0%,rgba(99,102,241,0.06) 100%);border:1px solid rgba(1,191,255,0.2);">
+        <span class="absolute top-4 right-4 text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full" style="background:rgba(1,191,255,0.15);color:#22d3ee;font-family:Poppins,Arial,sans-serif;">{l('biosync_badge')}</span>
+        <h2 class="text-xl font-bold mb-3 flex items-center gap-2" style="font-family:Poppins,Arial,sans-serif;color:#34d399;">
+          <i class="ph-duotone ph-lightning"></i> {l('biosync_h2')}
+        </h2>
+        <p class="text-gray-300 leading-relaxed" set:html={biosync}></p>
+        <a href={apkHref} download class="inline-block mt-4 text-sm font-semibold transition-colors hover:text-white" style="color:#22d3ee;font-family:Poppins,Arial,sans-serif;" aria-label={l('download_aria')}>
+          <i class="ph-duotone ph-arrow-right"></i> {l('biosync_cta')}
+        </a>
+      </section>
+
+      <!-- Variants -->
+      {variants.filter(v => v.title).length > 0 && (
+        <section class="mb-10 text-center">
+          <h2 class="text-2xl font-bold mb-6" style="font-family:Poppins,Arial,sans-serif;background:linear-gradient(90deg,#22d3ee,#a78bfa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">
+            <i class="ph-duotone ph-arrows-clockwise"></i> {l('variants_h2')}
+          </h2>
+          <div class="space-y-4">
+            {variants.filter(v => v.title).map(variant => (
+              <div class="px-6 pt-6 pb-5 rounded-2xl text-center" style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.1);">
+                <h3 class="text-lg font-bold text-cyan-300 mb-3" style="font-family:Poppins,Arial,sans-serif;">{variant.title}</h3>
+                <p class="text-gray-400 text-sm leading-relaxed mb-3">{variant.description}</p>
+                {variant.related.length > 0 && (
+                  <div class="flex flex-wrap gap-3 justify-center mt-4 pt-4 pb-0" style="border-top:1px solid rgba(255,255,255,0.05);">
+                    <span class="text-xs text-gray-500 mr-1">{l('variants_related')}</span>
+                    {variant.related.map(relSlug => (
+                      <a href={`${langPath}/symbols/${relSlug}/`} class="text-xs text-cyan-400 hover:text-cyan-300 transition-colors px-2 py-1 rounded-md">{relSlug}</a>
+                    ))}
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
+
+      <!-- FAQ -->
+      {faq.length > 0 && (
+        <section class="mb-10 text-center">
+          <h2 class="text-2xl font-bold mb-6" style="font-family:Poppins,Arial,sans-serif;color:#22d3ee;"><i class="ph-duotone ph-question"></i> {l('faq_h2')}</h2>
+          <div class="faq-accordion" id="faqAccordionSymbol">
+            {faq.map((item, i) => (
+              <div class="faq-item">
+                <button class="faq-question" aria-expanded="false" aria-controls={`sfaq${i+1}`} id={`sfaq${i+1}-label`}>
+                  <span>{item.question}</span>
+                  <svg class="faq-chevron" width="16" height="16" viewBox="0 0 22 22" aria-hidden="true"><polyline points="6,9 11,14 16,9" stroke="#00CFFF" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+                </button>
+                <div class="faq-answer" id={`sfaq${i+1}`} role="region" aria-labelledby={`sfaq${i+1}-label`}>
+                  {item.answer}
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
+
+      <!-- Pillar link -->
+      <div class="text-center mb-10">
+        <a href={pillarHref} class="inline-flex items-center gap-2 text-sm text-purple-300 hover:text-purple-200 transition-colors" style="background:rgba(139,92,246,0.1);border:1px solid rgba(139,92,246,0.25);border-radius:2rem;padding:0.5rem 1.25rem;cursor:pointer;font-family:inherit;">
+          <i class="ph-duotone ph-arrows-left-right"></i> <span>{l('pillar_link')}</span>
+        </a>
+      </div>
+
+      <!-- Download CTA -->
+      <section class="text-center py-16">
+        <h2 class="text-2xl sm:text-3xl font-bold mb-4" style="font-family:Poppins,Arial,sans-serif;">{l('cta_h2')}</h2>
+        <p class="text-gray-300 mb-6 max-w-lg mx-auto">{l('cta_sub')}</p>
+        <a href={apkHref} download class="glow-button download-btn inline-block px-8 py-4 font-bold text-white rounded-2xl text-lg" aria-label={l('download_aria')}>
+          {t('cta.download')}
+        </a>
+      </section>
+
+      <!-- Related symbols (filled by symbol-popup.js) -->
+      <nav class="border-t border-white/10 pt-8">
+        <h3 class="text-lg font-bold mb-4 text-gray-400">{l('related_h3')}</h3>
+        <div class="flex flex-wrap gap-3" id="related-symbols"></div>
+      </nav>
+
+    </div>
+  </main>
+
+  <!-- Footer (simple, per symbol page) -->
+  <footer class="text-center py-8 text-xs text-gray-500 border-t border-white/5">
+    <p>Ethyria | <a href={`${langPath}/`} class="text-cyan-500 hover:underline">ethyria.at</a></p>
+  </footer>
+
+  <!-- Symbol scripts -->
+  <script is:inline src="/assets/faq.js" defer></script>
+  <script is:inline src="/assets/symbol-popup.js" defer></script>
+</BaseLayout>

@@ -1,0 +1,127 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+const _body = `
+    <div class="bg-blob top-[-10%] left-[-10%]"></div>
+    <nav class="container mx-auto px-6 py-6 flex justify-center items-center relative z-10">
+      <a href="index.html" class="nav-brand">
+        <img src="/assets/Logo_web.png" alt="Ethyria" width="240" height="57" class="nav-brand-logo" style="max-width:240px" decoding="async" />
+      </a>
+    </nav>
+    <main class="container mx-auto px-6 py-12 relative z-10 max-w-3xl">
+      <!-- 7-Grid: Pillar-Prosa-Kolumne vollbreit (col-7) -->
+      <div class="grid-7">
+      <h1 class="text-4xl font-bold mb-10 ethyria-gradient-text">Политика конфиденциальности</h1>
+      <p class="text-gray-400 text-sm mb-10">Последнее обновление: июнь 2026</p>
+
+      <section class="mb-10">
+        <h2 class="text-xl font-bold mb-3 text-white">1. Контролёр данных</h2>
+        <div class="text-gray-300 leading-relaxed space-y-1">
+          <p><strong class="text-white">Oliver Stolz</strong></p>
+          <p>Ethyria. Dream Analysis</p>
+          <p>Freistädter Str. 65, 4040 Linz, Австрия</p>
+          <p>Эл. почта: <!--email_off--><a href="mailto:support@ethyria.at" class="text-cyan-400 hover:underline">support@ethyria.at</a><!--/email_off--></p>
+        </div>
+      </section>
+
+      <section class="mb-10">
+        <h2 class="text-xl font-bold mb-3 text-white">2. Какие данные мы собираем и зачем</h2>
+
+        <h3 class="text-base font-bold mb-2 text-white/80">2.1 Адрес эл. почты (регистрация и контакт)</h3>
+        <p class="text-gray-300 leading-relaxed mb-4">При регистрации через форму или обращении по электронной почте мы собираем ваш адрес. Правовым основанием является ваше явное согласие (ст. 6 п. 1 лит. a GDPR). Мы используем его исключительно в согласованных целях. Никакой передачи третьим лицам. Никаких рассылок без повторного согласия.</p>
+
+        <h3 class="text-base font-bold mb-2 text-white/80">2.2 Анализ снов в реальном времени (сайт)</h3>
+        <p class="text-gray-300 leading-relaxed mb-4">Тексты снов, введённые на сайте, передаются в наш API (Cloudflare Workers) для обработки ИИ. Тексты не хранятся постоянно и не связываются с конкретными лицами. Лимит анализов управляется через локальное хранилище браузера (localStorage). Правовое основание: законный интерес (ст. 6 п. 1 лит. f GDPR).</p>
+
+        <h3 class="text-base font-bold mb-2 text-white/80">2.3 Управление согласием</h3>
+        <p class="text-gray-300 leading-relaxed mb-4">Перед использованием анализа снов в реальном времени отображается диалог согласия. Ваше согласие хранится с уникальным идентификатором (UUID), временной меткой, версией и языком в локальном хранилище браузера и в нашем хранилище Cloudflare KV (срок хранения: 3 года). Вы можете отозвать согласие в любое время через ссылку в нижнем колонтитуле. Правовое основание: ст. 6 п. 1 лит. a GDPR в связи со ст. 7 GDPR.</p>
+
+        <h3 class="text-base font-bold mb-2 text-white/80">2.4 Данные приложения (Android)</h3>
+        <p class="text-gray-300 leading-relaxed mb-4">Все записи снов и анализы в приложении Ethyria хранятся локально на вашем устройстве. Автоматической синхронизации с облаком нет. Анализ ИИ требует подключения к интернету для работы с API. Текст сна передаётся временно и не сохраняется постоянно.</p>
+
+        <h3 class="text-base font-bold mb-2 text-white/80">2.5 Встроенные покупки (Google Play)</h3>
+        <p class="text-gray-300 leading-relaxed mb-4">Покупки в приложении Android (единичный анализ, ежемесячная или годовая подписка) обрабатываются исключительно через Google Play. Мы не получаем платёжные данные. Google LLC обрабатывает эти данные согласно <a href="https://policies.google.com/privacy" class="text-cyan-400 hover:underline" target="_blank" rel="noopener">Политике конфиденциальности Google</a>. Платежи на сайте обрабатываются через Stripe Inc. Мы не получаем данные банковских карт. Подробнее: <a href="https://stripe.com/privacy" class="text-cyan-400 hover:underline" target="_blank" rel="noopener">stripe.com/privacy</a>.</p>
+
+        <h3 class="text-base font-bold mb-2 text-white/80">2.6 Сервис аналитики (Plausible Analytics)</h3>
+        <p class="text-gray-300 leading-relaxed mb-4">Этот сайт использует Plausible Analytics (Plausible Insights OÜ, Таллин, Эстония). Plausible не обрабатывает персональные данные, не использует файлы cookie и соответствует требованиям GDPR без необходимости получения согласия. Все данные анонимизированы и не могут быть связаны с конкретным лицом. Правовое основание: законный интерес (ст. 6 п. 1 лит. f GDPR).</p>
+
+        <h3 class="text-base font-bold mb-2 text-white/80">2.7 Отслеживание ошибок (Sentry)</h3>
+        <p class="text-gray-300 leading-relaxed mb-4">Мы используем Sentry (Functional Software Inc. dba Sentry) для обнаружения и исправления технических ошибок. Используется точка приёма данных ЕС (ingest.de.sentry.io). Персональные данные не передаются. IP-адреса и идентифицирующая информация пользователей отключены. Правовое основание: законный интерес (ст. 6 п. 1 лит. f GDPR).</p>
+
+        <h3 class="text-base font-bold mb-2 text-white/80">2.8 Журналы сервера и CDN</h3>
+        <p class="text-gray-300 leading-relaxed">При посещении сайта технические данные доступа (IP-адрес, браузер, временная метка) записываются в журналы GitHub Pages и Cloudflare. Эти данные удаляются не позднее чем через 7 дней. Cloudflare выступает как CDN и уровень безопасности. Правовое основание: законный интерес (ст. 6 п. 1 лит. f GDPR).</p>
+      </section>
+
+      <section class="mb-10">
+        <h2 class="text-xl font-bold mb-3 text-white">3. Файлы cookie и локальное хранилище</h2>
+        <p class="text-gray-300 leading-relaxed">Этот сайт использует только технически необходимое хранилище (localStorage, sessionStorage) для управления кредитами анализа, согласиями и кэшем сессии. Отслеживающие и маркетинговые файлы cookie не используются. Баннер согласия на использование cookie не требуется для технически необходимого хранилища. Service Worker обеспечивает работу в автономном режиме через локальное кэширование ресурсов сайта.</p>
+      </section>
+
+      <section class="mb-10">
+        <h2 class="text-xl font-bold mb-3 text-white">4. Обработка ИИ и Регламент ЕС об ИИ</h2>
+        <p class="text-gray-300 leading-relaxed mb-3">Толкование снов выполняется моделью ИИ, подключённой через наш API Cloudflare Workers. Применяются следующие требования прозрачности:</p>
+        <ul class="text-gray-300 leading-relaxed space-y-1 list-disc list-inside">
+          <li>Характер ИИ всех анализов всегда чётко сообщается пользователям.</li>
+          <li>Анализы Ethyria не заменяют профессиональную психологическую или терапевтическую консультацию.</li>
+          <li>Введённые тексты используются исключительно для генерации анализа и не применяются для обучения моделей ИИ.</li>
+          <li>Приложение Ethyria и анализ в реальном времени в браузере классифицированы как приложения ИИ общего назначения с наименьшим уровнем риска согласно Регламенту ЕС об ИИ (Регламент (ЕС) 2024/1689).</li>
+        </ul>
+      </section>
+
+      <section class="mb-10">
+        <h2 class="text-xl font-bold mb-3 text-white">5. Передача данных в третьи страны</h2>
+        <p class="text-gray-300 leading-relaxed mb-3">Следующие сервисы передают данные в страны за пределами ЕЭЗ:</p>
+        <ul class="text-gray-300 leading-relaxed space-y-1 list-disc list-inside">
+          <li><strong class="text-white/80">Cloudflare (США):</strong> Сертифицирован по EU-US Data Privacy Framework (DPF). Используется для нашего API и CDN.</li>
+          <li><strong class="text-white/80">Stripe (США):</strong> Сертифицирован по EU-US DPF. Обработка платежей на сайте.</li>
+          <li><strong class="text-white/80">Google Play (США):</strong> Обработка встроенных покупок. Стандартные договорные положения (SCC) согласно ст. 46 GDPR.</li>
+          <li><strong class="text-white/80">Sentry (США):</strong> Точка приёма данных ЕС активна. Персональные данные не передаются.</li>
+        </ul>
+        <p class="text-gray-300 leading-relaxed mt-3">Надлежащий уровень защиты данных обеспечивается посредством сертификации DPF, стандартных договорных положений или технических мер.</p>
+      </section>
+
+      <section class="mb-10">
+        <h2 class="text-xl font-bold mb-3 text-white">6. Ваши права</h2>
+        <p class="text-gray-300 leading-relaxed mb-3">В соответствии с GDPR у вас есть следующие права:</p>
+        <ul class="text-gray-300 leading-relaxed space-y-1 list-disc list-inside">
+          <li>Право на доступ (ст. 15 GDPR)</li>
+          <li>Право на исправление (ст. 16 GDPR)</li>
+          <li>Право на удаление (ст. 17 GDPR)</li>
+          <li>Право на ограничение обработки (ст. 18 GDPR)</li>
+          <li>Право на возражение (ст. 21 GDPR)</li>
+          <li>Право на переносимость данных (ст. 20 GDPR)</li>
+          <li>Право на отзыв согласия (ст. 7 п. 3 GDPR)</li>
+        </ul>
+        <p class="text-gray-300 leading-relaxed mt-3">Пожалуйста, направляйте запросы по адресу: <!--email_off--><a href="mailto:support@ethyria.at" class="text-cyan-400 hover:underline">support@ethyria.at</a><!--/email_off--></p>
+        <p class="text-gray-300 leading-relaxed mt-3">Вы также имеете право подать жалобу в австрийский орган по защите данных: <a href="https://www.dsb.gv.at" class="text-cyan-400 hover:underline" target="_blank" rel="noopener">www.dsb.gv.at</a></p>
+      </section>
+
+      <section class="mb-10">
+        <h2 class="text-xl font-bold mb-3 text-white">7. Изменения настоящей политики</h2>
+        <p class="text-gray-300 leading-relaxed">Мы оставляем за собой право при необходимости обновлять настоящую политику конфиденциальности. Актуальная версия всегда доступна на этой странице. При существенных изменениях зарегистрированные пользователи будут уведомлены по электронной почте.</p>
+      </section>
+
+      <div class="border-t border-white/10 pt-8 mt-8">
+        <a href="ru/" class="text-cyan-400 hover:underline text-sm">← На главную</a>
+        <span class="mx-4 text-white/20">|</span>
+        <a href="impressum.ru.html" class="text-cyan-400 hover:underline text-sm">Правовая информация</a>
+      </div>
+          </div><!-- /grid-7 -->
+    </main>
+    <footer class="border-t border-white/5 py-8 text-center mt-16">
+      <div class="container mx-auto px-6">
+        <p class="text-gray-600 text-xs">© Ethyria</p>
+      </div>
+    </footer>
+    
+  `;
+---
+
+<BaseLayout
+  lang="ru"
+  title="Политика конфиденциальности | Ethyria"
+  description=""
+  keywords=""
+  path="/datenschutz/"
+>
+  <Fragment set:html={_body} />
+</BaseLayout>

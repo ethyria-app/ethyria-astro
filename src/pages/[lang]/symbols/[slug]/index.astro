@@ -1,0 +1,48 @@
+---
+import { getCollection } from 'astro:content';
+import SymbolLayout from '@/layouts/SymbolLayout.astro';
+import type { Locale } from '@/i18n/ui';
+import { LOCALES } from '@/i18n/ui';
+
+export async function getStaticPaths() {
+  const allSymbols = await getCollection('symbols');
+  const langLocales: Locale[] = ['en', 'fr', 'es', 'ru'];
+
+  const paths = [];
+  for (const locale of langLocales) {
+    const localeSymbols = allSymbols.filter(e => e.id.startsWith(`${locale}-`));
+    for (const entry of localeSymbols) {
+      paths.push({
+        params: { lang: locale, slug: entry.id.replace(new RegExp(`^${locale}-`), '') },
+        props: { entry, locale },
+      });
+    }
+  }
+  return paths;
+}
+
+const { entry, locale } = Astro.props;
+const lang = locale as Locale;
+const { urlSlug, title, description, keywords, datePublished, dateModified, heroImage, heroAlt, freud, jung, spiritual, biosync, variants, faq } = entry.data;
+---
+
+<SymbolLayout
+  {lang}
+  {urlSlug}
+  {title}
+  {description}
+  {keywords}
+  {datePublished}
+  {dateModified}
+  {heroImage}
+  {heroAlt}
+  {freud}
+  {jung}
+  {spiritual}
+  {biosync}
+  {variants}
+  {faq}
+>
+  <Fragment slot="h1-display" set:html={title.replace(/^.*?: /, '').replace(/\. What.*$/, '').replace(/\. Signification.*$/, '').replace(/\. ¿Qué.*$/, '').replace(/\. Что.*$/, '')} />
+  <Fragment slot="intro">{description}</Fragment>
+</SymbolLayout>

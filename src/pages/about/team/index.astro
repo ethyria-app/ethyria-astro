@@ -1,0 +1,110 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+const _body = `
+    <nav class="sticky top-0 z-50 flex items-center px-6 py-3" style="backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);background:rgba(16,12,31,0.75);border-bottom:1px solid rgba(255,255,255,0.06);" aria-label="Navigation">
+      <a href="/" class="text-gray-400 hover:text-white transition-colors" aria-label="Back to Ethyria homepage">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 6L8 12L14 18"/></svg>
+      </a>
+      <span class="flex-1 text-center text-sm font-semibold tracking-wider uppercase text-gray-300" style="font-family:Poppins,Arial,sans-serif">Ethyria Research Team</span>
+    </nav>
+
+    <nav aria-label="Breadcrumb" class="max-w-3xl mx-auto px-6 pt-4 pb-0">
+      <ol class="flex items-center gap-2 text-xs text-gray-500" style="font-family:Inter,sans-serif;">
+        <li><a href="/" class="hover:text-cyan-400 transition-colors">Ethyria</a></li>
+        <li aria-hidden="true" class="text-gray-600">›</li>
+        <li><span class="text-gray-500">About</span></li>
+        <li aria-hidden="true" class="text-gray-600">›</li>
+        <li><a href="/about/team/" class="text-cyan-400" aria-current="page">Research Team</a></li>
+      </ol>
+    </nav>
+
+    <main class="max-w-3xl mx-auto px-6 py-12">
+      <!-- 7-Grid: Pillar-Prosa-Kolumne vollbreit (col-7) -->
+      <div class="grid-7">
+      <div class="text-center mb-12">
+        <div class="w-20 h-20 mx-auto mb-6 rounded-full flex items-center justify-center" style="background:linear-gradient(135deg,rgba(1,191,255,0.15),rgba(84,88,251,0.15));border:1px solid rgba(1,191,255,0.2);">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#01bfff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <h1 class="text-3xl sm:text-4xl font-bold mb-4 ethyria-gradient-text" style="font-family:Poppins,Arial,sans-serif;">
+          Ethyria Research Team
+        </h1>
+        <p class="text-gray-400 text-sm">Applied Dream Psychology &amp; AI Research · Vienna, Austria</p>
+      </div>
+
+      <section class="mb-10 p-6 rounded-2xl" style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.1);">
+        <h2 class="text-xl font-bold mb-4" style="font-family:Poppins,Arial,sans-serif;color:#22d3ee;">About the Ethyria Research Team</h2>
+        <div class="text-gray-300 leading-relaxed space-y-4">
+          <p>The Ethyria Research Team develops AI-powered dream interpretation tools that apply psychological frameworks from Freudian psychoanalysis, Jungian analytical psychology, transpersonal psychology and biosynchronous analysis to natural language dream narratives.</p>
+          <p>Our approach combines established psychological theory as documented by Sigmund Freud (1899), Carl Gustav Jung (1912), Ernest Hartmann (Boston University, 1995) and Allan Hobson (Harvard Medical School) with modern natural language processing to identify symbolic patterns, emotional arcs and recurring motifs in dream descriptions.</p>
+          <p>The Ethyria live analysis engine processes dream text in 5 languages (German, English, French, Spanish, Russian), returning structured interpretations across 4 psychological perspectives within seconds, directly in the browser without installation.</p>
+        </div>
+      </section>
+
+      <section class="mb-10 p-6 rounded-2xl" style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.1);">
+        <h2 class="text-xl font-bold mb-4" style="font-family:Poppins,Arial,sans-serif;color:#a78bfa;">Research Focus Areas</h2>
+        <div class="text-gray-300 leading-relaxed">
+          <ul class="space-y-3">
+            <li class="flex gap-3"><span class="text-cyan-400 mt-1">→</span><span><strong class="text-white">Dream Symbol Recognition:</strong> Automated identification of archetypal and personal symbols in free-text dream narratives across languages and cultural contexts.</span></li>
+            <li class="flex gap-3"><span class="text-cyan-400 mt-1">→</span><span><strong class="text-white">Multi-Perspective Analysis:</strong> Simultaneous application of Freudian, Jungian, Spiritual and Biosynchronous frameworks to the same dream text to reveal complementary interpretive layers.</span></li>
+            <li class="flex gap-3"><span class="text-cyan-400 mt-1">→</span><span><strong class="text-white">Lucid Dream Detection:</strong> Pattern-based identification of lucidity indicators in dream descriptions, with a 0–1 lucidity score and sleep-phase correlation.</span></li>
+            <li class="flex gap-3"><span class="text-cyan-400 mt-1">→</span><span><strong class="text-white">Longitudinal Pattern Tracking:</strong> Automated recognition of recurring symbols, emotional themes and dream sign clusters across extended dream journal entries.</span></li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="mb-10 p-6 rounded-2xl" style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.1);">
+        <h2 class="text-xl font-bold mb-4" style="font-family:Poppins,Arial,sans-serif;color:#60a5fa;">Scientific Foundations</h2>
+        <div class="text-gray-300 leading-relaxed space-y-3">
+          <p>The Ethyria interpretation engine is built on the following documented frameworks and empirical findings:</p>
+          <ul class="space-y-2 text-sm">
+            <li><span class="text-gray-500">·</span> <strong class="text-white">Sigmund Freud</strong> The Interpretation of Dreams (1899): manifest vs. latent content, condensation, displacement</li>
+            <li><span class="text-gray-500">·</span> <strong class="text-white">Carl Gustav Jung</strong> Archetypes and the Collective Unconscious (1936): Shadow, Anima/Animus, Self, compensation principle</li>
+            <li><span class="text-gray-500">·</span> <strong class="text-white">Ernest Hartmann</strong> (Boston University) Dreams and Nightmares (1995): emotional processing function of dreams, central image theory</li>
+            <li><span class="text-gray-500">·</span> <strong class="text-white">Allan Hobson</strong> (Harvard Medical School) Activation-Synthesis Model: neurobiological basis of dream generation</li>
+            <li><span class="text-gray-500">·</span> <strong class="text-white">Stephen LaBerge</strong> (Stanford University) Lucid dreaming research and MILD technique (1980)</li>
+            <li><span class="text-gray-500">·</span> <strong class="text-white">G. William Domhoff</strong> (UC Santa Cruz) The Scientific Study of Dreams (2003): recurring dream patterns, continuity hypothesis</li>
+            <li><span class="text-gray-500">·</span> <strong class="text-white">Matthew Walker</strong> (UC Berkeley) Why We Sleep (2017): REM sleep emotional processing, "overnight therapy"</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="mb-10 p-6 rounded-2xl" style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.1);">
+        <h2 class="text-xl font-bold mb-4" style="font-family:Poppins,Arial,sans-serif;color:#34d399;">Privacy &amp; Ethics</h2>
+        <div class="text-gray-300 leading-relaxed space-y-3">
+          <p>The Ethyria Research Team is committed to privacy-first design. All dream data entered in the Ethyria app is stored locally on the user's device. No dream content is transmitted to external servers. The live browser analysis uses anonymised API calls without persistent storage of personal data.</p>
+          <p>Ethyria dream interpretation is designed as a self-reflection tool. It does not constitute medical or psychological diagnosis and is not a substitute for professional mental health support.</p>
+          <p>Contact: <a href="mailto:support@ethyria.at" class="text-cyan-400 hover:underline">support@ethyria.at</a></p>
+        </div>
+      </section>
+
+      <section class="mb-10 p-6 rounded-2xl" style="background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.07);">
+        <h2 class="text-lg font-bold mb-4" style="font-family:Poppins,Arial,sans-serif;color:#9ca3af;">Articles by the Ethyria Research Team</h2>
+        <ul class="space-y-2 text-sm">
+          <li><a href="/traumdeutung-methoden/" class="text-cyan-400 hover:text-cyan-300 hover:underline transition-colors">Dream Interpretation: Freud vs Jung vs Spiritual Methods Compared (DE)</a></li>
+          <li><a href="/traumsymbole-guide/" class="text-cyan-400 hover:text-cyan-300 hover:underline transition-colors">Dream Symbols and Their Meaning: Complete Guide (DE)</a></li>
+          <li><a href="/luzides-traeumen/" class="text-cyan-400 hover:text-cyan-300 hover:underline transition-colors">Lucid Dreaming: Techniques, Science and Complete Guide (DE)</a></li>
+          <li><a href="/en/traumdeutung-methoden/" class="text-cyan-400 hover:text-cyan-300 hover:underline transition-colors">Dream Interpretation Methods: Freud, Jung and Spiritual (EN)</a></li>
+          <li><a href="/en/traumsymbole-guide/" class="text-cyan-400 hover:text-cyan-300 hover:underline transition-colors">Dream Symbols and Their Meaning (EN)</a></li>
+          <li><a href="/en/luzides-traeumen/" class="text-cyan-400 hover:text-cyan-300 hover:underline transition-colors">Lucid Dreaming: Complete Guide (EN)</a></li>
+        </ul>
+      </section>
+          </div><!-- /grid-7 -->
+    </main>
+
+    <footer class="text-center py-8 text-xs text-gray-500 border-t border-white/5">
+      <p>Ethyria | <a href="/" class="text-cyan-500 hover:underline">ethyria.at</a> | <a href="mailto:support@ethyria.at" class="text-cyan-500 hover:underline">support@ethyria.at</a></p>
+      <p class="mt-2"><a href="/impressum.html" class="hover:text-gray-300 transition-colors">Impressum</a> &nbsp;·&nbsp; <a href="/datenschutz.html" class="hover:text-gray-300 transition-colors">Datenschutz</a></p>
+    </footer>
+    
+  `;
+---
+
+<BaseLayout
+  lang="de"
+  title="Ethyria Research Team | About Ethyria"
+  description="The Ethyria Research Team develops AI-powered dream interpretation technology. Learn about our approach to combining psychological frameworks with machine learning."
+  keywords=""
+  path="/about/team/"
+>
+  <Fragment set:html={_body} />
+</BaseLayout>

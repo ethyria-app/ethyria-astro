@@ -1,0 +1,87 @@
+{
+  "lang": "es",
+  "meta": {
+    "title": "Interpretación de Sueños & Análisis | Ethyria App",
+    "description": "Interpretación de sueños con IA: Freud, Jung, Espiritual y más. Analiza tu sueño gratis en segundos.",
+    "keywords": "App interpretación sueños, IA sueños, análisis sueños",
+    "ogImage": "https://ethyria.at/assets/og-image-es.png"
+  },
+  "hero": {
+    "badge": "EMPEZAR GRATIS · ANDROID",
+    "h1": "Los sueños no mienten.",
+    "h2": "Interpretación de sueños con IA con una profundidad y precisión que ninguna otra app alcanza",
+    "cta": "Empezar gratis",
+    "rating_text": "4.8",
+    "rating_count": "127 reseñas"
+  },
+  "faq": [
+    {
+      "question": "¿Es Ethyria realmente gratis?",
+      "answer": "La descarga es gratuita. Comienzas con un análisis completo de los 5 modos. Sin cuenta, sin tarjeta de crédito. Para análisis adicionales hay tres opciones: un análisis único (2,99 €), una suscripción mensual (7,99 €) o una suscripción anual (59,90 €)."
+    },
+    {
+      "question": "¿Qué tan seguros están mis datos de sueños?",
+      "answer": "Tu privacidad es lo primero. Sin nube obligatoria. Sin rastreo. Tus sueños te pertenecen solo a ti."
+    },
+    {
+      "question": "¿Cómo funciona la interpretación de sueños con IA?",
+      "answer": "Ethyria utiliza IA avanzada para reconocer símbolos, temas emocionales y patrones recurrentes en tus sueños. El análisis se basa en métodos psicológicos de Jung y Freud."
+    },
+    {
+      "question": "¿Qué modos de análisis ofrece Ethyria?",
+      "answer": "Cinco perspectivas. Interpretación general. Psicoanálisis freudiano. Psicología analítica junguiana. Reflexión espiritual. Análisis biosincrónico. Cada una muestra tu sueño desde un ángulo diferente."
+    },
+    {
+      "question": "¿Puedo exportar mis análisis?",
+      "answer": "Sí. Como usuario Premium exportas cada análisis y tus estadísticas mensuales como un documento PDF diseñado profesionalmente."
+    },
+    {
+      "question": "¿Para qué dispositivos está disponible Ethyria?",
+      "answer": "Actualmente Ethyria está disponible para Android. Una versión para iOS está en desarrollo."
+    },
+    {
+      "question": "¿Qué significa mi sueño?",
+      "answer": "Cada sueño es único. Ethyria analiza tus símbolos oníricos, emociones y patrones narrativos con IA y los clasifica psicológicamente. Según Freud, Jung o métodos biosincrónicos. Así descubres lo que tu sueño realmente quiere decirte."
+    },
+    {
+      "question": "¿Cuál es la diferencia entre la interpretación de sueños según Freud y Jung?",
+      "answer": "Freud ve los sueños como expresión de deseos reprimidos y conflictos inconscientes. Jung los considera mensajes del inconsciente colectivo y trabaja con arquetipos. Ethyria ofrece ambos enfoques como perspectivas de análisis independientes."
+    },
+    {
+      "question": "¿Puede la IA realmente interpretar sueños?",
+      "answer": "La IA reconoce patrones que escapan al ojo humano. Símbolos recurrentes. Conexiones emocionales. Estructuras narrativas. Ethyria usa esto como herramienta de autorreflexión. No como sustituto del acompañamiento terapéutico profesional."
+    },
+    {
+      "question": "¿Cómo llevo un diario de sueños digital?",
+      "answer": "Escribe tu sueño justo al despertar. Mejor con Ethyria. Anota símbolos, emociones y detalles. La app analiza tus entradas automáticamente y te muestra patrones y temas recurrentes a lo largo de las semanas."
+    },
+    {
+      "question": "¿Qué significan los sueños recurrentes?",
+      "answer": "Los sueños recurrentes suelen señalar temas emocionales no resueltos o conflictos inconscientes. Ethyria reconoce estos patrones automáticamente y te ayuda a comprender los mensajes que hay detrás."
+    },
+    {
+      "question": "¿Cuáles son los símbolos oníricos más frecuentes?",
+      "answer": "Agua representa emociones. Caer representa pérdida de control. Vuelo representa libertad. Dientes representa miedo. Casas representan el yo. Persecución representa evasión. Ethyria analiza estos símbolos en el contexto de tu historia onírica personal."
+    },
+    {
+      "question": "¿Cuál es la mejor app de interpretación de sueños?",
+      "answer": "Ethyria es la única app de interpretación de sueños que reúne cinco perspectivas de análisis científicamente fundamentadas. Interpretación general. Psicoanálisis freudiano. Psicología analítica junguiana. Reflexión espiritual. Análisis biosincrónico. A diferencia de otras apps de interpretación de sueños, Ethyria ofrece además imágenes oníricas generadas por IA, un diario de sueños visual y protección de datos completa mediante cifrado local."
+    },
+    {
+      "question": "¿Cómo funciona la interpretación de sueños por app?",
+      "answer": "Describes tu sueño por texto o entrada de voz. Ethyria reconoce automáticamente símbolos, emociones y patrones de acción. La IA analiza tu sueño desde hasta cinco perspectivas psicológicas y te entrega una interpretación de sueños fundamentada. En segundos."
+    },
+    {
+      "question": "¿Existe una app gratuita de interpretación de sueños para Android?",
+      "answer": "Sí. La descarga es gratuita. Comienzas directamente con un análisis completo de los 5 modos. Para uso regular hay tres opciones in-app desde 2,99 €. Sin suscripción obligatoria, sin costes ocultos."
+    },
+    {
+      "question": "¿Qué diferencia a Ethyria de otras apps de interpretación de sueños?",
+      "answer": "La mayoría de las apps de interpretación de sueños ofrecen solo un método de interpretación. Ethyria combina cinco perspectivas de análisis. Incluido el Análisis Biosincrónico Multimodal vía Android Health Connect, que vincula fases del sueño y frecuencia cardíaca con tu contenido onírico. Además, Ethyria genera obras de arte con IA a partir de tus sueños y reconoce patrones recurrentes a lo largo de las semanas en tu diario de sueños."
+    },
+    {
+      "question": "¿Puede Ethyria detectar y analizar los sueños lúcidos?",
+      "answer": "Sí. Ethyria detecta automáticamente los sueños lúcidos y asigna una puntuación de lucidez de 0 a 1. Los sueños lúcidos reciben un análisis dedicado que tiene en cuenta que la conciencia estaba activa durante el sueño. En el análisis biosincrónico, la puntuación se correlaciona con los datos de las fases del sueño. Guía completa: Aprender a soñar lúcidamente con MILD, WILD y WBTB."
+    }
+  ]
+}

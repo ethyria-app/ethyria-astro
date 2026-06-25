@@ -1,0 +1,74 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+const _body = `
+    <div class="bg-blob top-[-10%] left-[-10%]"></div>
+    <nav class="container mx-auto px-6 py-6 flex justify-center items-center relative z-10">
+      <a href="index.html" class="nav-brand">
+        <img src="/assets/Logo_web.png" alt="Ethyria" width="240" height="57" class="nav-brand-logo" style="max-width:240px" decoding="async" />
+      </a>
+    </nav>
+    <main class="container mx-auto px-6 py-12 relative z-10 max-w-3xl">
+      <!-- 7-Grid: Pillar-Prosa-Kolumne vollbreit (col-7) -->
+      <div class="grid-7">
+      <h1 class="text-4xl font-bold mb-10 ethyria-gradient-text">Legal Notice</h1>
+
+      <section class="mb-10">
+        <h2 class="text-xl font-bold mb-3 text-white">Information pursuant to § 5 ECG (Austrian E-Commerce Act)</h2>
+        <div class="text-gray-300 leading-relaxed space-y-1">
+          <p><strong class="text-white">Oliver Stolz</strong></p>
+          <p>Ethyria Dream Analysis</p>
+          <p>Freistädter Str. 65</p>
+          <p>4040 Linz, Austria</p>
+        </div>
+      </section>
+
+      <section class="mb-10">
+        <h2 class="text-xl font-bold mb-3 text-white">Contact</h2>
+        <div class="text-gray-300 leading-relaxed space-y-1">
+          <p>Email: <!--email_off--><a href="mailto:support@ethyria.at" data-copy-email="support@ethyria.at" class="text-cyan-400 hover:underline">support@ethyria.at</a><!--/email_off--></p>
+          <p>Website: <a href="https://ethyria.at" class="text-cyan-400 hover:underline">https://ethyria.at</a></p>
+        </div>
+      </section>
+
+      <section class="mb-10">
+        <h2 class="text-xl font-bold mb-3 text-white">Business Purpose</h2>
+        <p class="text-gray-300 leading-relaxed">Development and operation of the Ethyria App a dream interpretation and dream journal application for Android.</p>
+      </section>
+
+      <section class="mb-10">
+        <h2 class="text-xl font-bold mb-3 text-white">Legal Notices</h2>
+        <p class="text-gray-300 leading-relaxed mb-3">The contents of this website have been prepared with the utmost care. We accept no liability for the accuracy, completeness or timeliness of the content.</p>
+        <p class="text-gray-300 leading-relaxed mb-3"><strong class="text-white">Disclaimer Dream Interpretation:</strong> The dream interpretations and analyses provided by Ethyria are intended solely for self-reflection and entertainment purposes. They do not replace professional psychological or therapeutic advice.</p>
+        <p class="text-gray-300 leading-relaxed"><strong class="text-white">Copyright:</strong> The content and works on these pages created by the site operator are subject to Austrian copyright law. Reproduction, editing, distribution and any kind of use beyond the limits of copyright law require the written consent of the respective author.</p>
+      </section>
+
+      <section class="mb-10">
+        <h2 class="text-xl font-bold mb-3 text-white">Online Dispute Resolution</h2>
+        <p class="text-gray-300 leading-relaxed">The European Commission provides a platform for online dispute resolution (ODR): <a href="https://ec.europa.eu/consumers/odr" class="text-cyan-400 hover:underline" target="_blank" rel="noopener">https://ec.europa.eu/consumers/odr</a></p>
+      </section>
+
+      <div class="border-t border-white/10 pt-8 mt-8">
+        <a href="en/" class="text-cyan-400 hover:underline text-sm">← Back to home</a>
+        <span class="mx-4 text-white/20">|</span>
+        <a href="datenschutz.en.html" class="text-cyan-400 hover:underline text-sm">Privacy Policy</a>
+      </div>
+          </div><!-- /grid-7 -->
+    </main>
+    <footer class="border-t border-white/5 py-8 text-center mt-16">
+      <div class="container mx-auto px-6">
+        <p class="text-gray-600 text-xs">© Ethyria</p>
+      </div>
+    </footer>
+    
+  `;
+---
+
+<BaseLayout
+  lang="en"
+  title="Legal Notice | Ethyria"
+  description=""
+  keywords=""
+  path="/impressum/"
+>
+  <Fragment set:html={_body} />
+</BaseLayout>

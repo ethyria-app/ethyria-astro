@@ -1,0 +1,38 @@
+---
+import { getCollection } from 'astro:content';
+import SymbolLayout from '@/layouts/SymbolLayout.astro';
+
+export async function getStaticPaths() {
+  const allSymbols = await getCollection('symbols');
+  const deSymbols = allSymbols.filter(e => e.id.startsWith('de-'));
+
+  return deSymbols.map(entry => ({
+    params: { slug: entry.id.replace(/^de-/, '') },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { urlSlug, title, description, keywords, datePublished, dateModified, heroImage, heroAlt, freud, jung, spiritual, biosync, variants, faq } = entry.data;
+---
+
+<SymbolLayout
+  lang="de"
+  {urlSlug}
+  {title}
+  {description}
+  {keywords}
+  {datePublished}
+  {dateModified}
+  {heroImage}
+  {heroAlt}
+  {freud}
+  {jung}
+  {spiritual}
+  {biosync}
+  {variants}
+  {faq}
+>
+  <Fragment slot="h1-display" set:html={title.replace(/^.*?: /, '').replace(/\. Was.*$/, '')} />
+  <Fragment slot="intro">{description}</Fragment>
+</SymbolLayout>

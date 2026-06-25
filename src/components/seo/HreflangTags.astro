@@ -1,0 +1,27 @@
+---
+import type { Locale } from '@/i18n/ui';
+import { getAlternateUrls } from '@/i18n/utils';
+
+export interface Props {
+  /** Canonical path without locale prefix. E.g. "/" or "/symbols/wasser/" */
+  path: string;
+  /** The default locale for x-default (usually "de") */
+  defaultLocale?: Locale;
+  /** Override canonical URL if it differs from the standard pattern */
+  canonicalOverride?: string;
+}
+
+const { path, defaultLocale = 'de', canonicalOverride } = Astro.props;
+
+const SITE = 'https://ethyria.at';
+const alts = getAlternateUrls(path);
+const canonical = canonicalOverride ?? alts[defaultLocale];
+---
+
+<link rel="canonical" href={canonical} />
+<link rel="alternate" hreflang="de" href={alts.de} />
+<link rel="alternate" hreflang="en" href={alts.en} />
+<link rel="alternate" hreflang="fr" href={alts.fr} />
+<link rel="alternate" hreflang="es" href={alts.es} />
+<link rel="alternate" hreflang="ru" href={alts.ru} />
+<link rel="alternate" hreflang="x-default" href={alts[defaultLocale]} />

@@ -1,0 +1,24 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+const _body = `
+    <div class="card">
+      <span class="icon" aria-hidden="true">🌙</span>
+      <h1>Du bist offline</h1>
+      <p>
+        Deine Träume warten auf dich sobald du wieder online bist. Prüfe deine
+        Internetverbindung und versuche es erneut.
+      </p>
+      <button class="btn" onclick="location.reload()">Erneut versuchen</button>
+    </div>
+  `;
+---
+
+<BaseLayout
+  lang="de"
+  title="Ethyria Offline"
+  description=""
+  keywords=""
+  path="/offline/"
+>
+  <Fragment set:html={_body} />
+</BaseLayout>

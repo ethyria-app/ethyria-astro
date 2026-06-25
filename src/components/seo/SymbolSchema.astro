@@ -1,0 +1,81 @@
+---
+import type { Locale } from '@/i18n/ui';
+
+export interface Props {
+  urlSlug: string;
+  title: string;
+  description: string;
+  keywords: string;
+  datePublished: string;
+  dateModified: string;
+  heroImage: string;
+  lang: Locale;
+  faq: Array<{ question: string; answer: string }>;
+}
+
+const { urlSlug, title, description, keywords, datePublished, dateModified, heroImage, lang, faq } = Astro.props;
+
+const SITE = 'https://ethyria.at';
+const langPath = lang === 'de' ? '' : `/${lang}`;
+const symbolUrl = `${SITE}${langPath}/symbols/${urlSlug}/`;
+const symbolsHub = `${SITE}${langPath}/symbols/`;
+
+const BREADCRUMB_HOME: Record<string, string> = { de: 'Ethyria', en: 'Ethyria', fr: 'Ethyria', es: 'Ethyria', ru: 'Ethyria' };
+const BREADCRUMB_SYMBOLS: Record<string, string> = { de: 'Traumsymbole', en: 'Dream Symbols', fr: 'Symboles de rêves', es: 'Símbolos de sueños', ru: 'Символы снов' };
+
+const articleSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: title,
+  description,
+  url: symbolUrl,
+  datePublished,
+  dateModified,
+  inLanguage: lang,
+  keywords,
+  author: {
+    '@type': 'Person',
+    '@id': `${SITE}/about/team/#research-team`,
+    name: 'Ethyria Research Team',
+    url: `${SITE}/about/team/`,
+    worksFor: { '@id': `${SITE}/#organization` },
+  },
+  publisher: {
+    '@type': 'Organization',
+    '@id': `${SITE}/#organization`,
+    name: 'Ethyria',
+    url: `${SITE}/`,
+    logo: `${SITE}/assets/Ethyria_symbol.png`,
+  },
+  mainEntityOfPage: symbolUrl,
+  image: `${SITE}/symbols/img/${heroImage}`,
+  speakable: {
+    '@type': 'SpeakableSpecification',
+    cssSelector: ['article h1', 'article > section:first-of-type p', 'section h3'],
+  },
+};
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: BREADCRUMB_HOME[lang], item: `${SITE}${langPath}/` },
+    { '@type': 'ListItem', position: 2, name: BREADCRUMB_SYMBOLS[lang], item: symbolsHub },
+    { '@type': 'ListItem', position: 3, name: title, item: symbolUrl },
+  ],
+};
+
+const faqSchema = faq.length > 0 ? {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faq.map(item => ({
+    '@type': 'Question',
+    name: item.question,
+    acceptedAnswer: { '@type': 'Answer', text: item.answer },
+  })),
+} : null;
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+<script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+{faqSchema && <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />}

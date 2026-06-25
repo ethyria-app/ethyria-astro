@@ -1,0 +1,184 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+const _body = `<nav class="sticky top-0 z-50 flex items-center px-6 py-3" style="backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);background:rgba(16,12,31,0.75);border-bottom:1px solid rgba(255,255,255,0.06);" aria-label="Navigation">
+      <a href="/" class="text-gray-400 hover:text-white transition-colors" aria-label="Zurück zur Ethyria Startseite">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 6L8 12L14 18"/></svg>
+      </a>
+      <span class="flex-1 text-center text-sm font-semibold tracking-wider uppercase text-gray-300" style="font-family:Poppins,Arial,sans-serif">Traumsymbole und ihre Bedeutung</span>
+      <div style="position:relative;" id="langSw">
+      <button style="background:none;border:1px solid rgba(255,255,255,0.15);color:#9ca3af;padding:4px 10px;border-radius:8px;font-size:0.75rem;cursor:pointer;font-family:Poppins,Arial,sans-serif;line-height:1.4;">DE ▾</button>
+      <div id="langDrop" hidden style="position:absolute;right:0;top:calc(100% + 4px);background:#1a1533;border:1px solid rgba(255,255,255,0.1);border-radius:10px;overflow:hidden;min-width:70px;z-index:200;box-shadow:0 8px 24px rgba(0,0,0,0.4);">
+        <a href="/traumsymbole-guide/" style="display:block;padding:7px 14px;font-size:0.75rem;color:#22d3ee;font-weight:600;text-decoration:none;font-family:Poppins,Arial,sans-serif;" aria-current="page">DE</a>
+        <a href="/en/traumsymbole-guide/" style="display:block;padding:7px 14px;font-size:0.75rem;color:#9ca3af;text-decoration:none;font-family:Poppins,Arial,sans-serif;">EN</a>
+        <a href="/fr/traumsymbole-guide/" style="display:block;padding:7px 14px;font-size:0.75rem;color:#9ca3af;text-decoration:none;font-family:Poppins,Arial,sans-serif;">FR</a>
+        <a href="/es/traumsymbole-guide/" style="display:block;padding:7px 14px;font-size:0.75rem;color:#9ca3af;text-decoration:none;font-family:Poppins,Arial,sans-serif;">ES</a>
+        <a href="/ru/traumsymbole-guide/" style="display:block;padding:7px 14px;font-size:0.75rem;color:#9ca3af;text-decoration:none;font-family:Poppins,Arial,sans-serif;">RU</a>
+      </div>
+      </div>
+    </nav>
+
+    <nav aria-label="Breadcrumb" class="max-w-3xl mx-auto px-6 pt-4 pb-0">
+      <ol class="flex items-center gap-2 text-xs text-gray-500" style="font-family:Inter,sans-serif;">
+        <li><a href="/" class="hover:text-cyan-400 transition-colors">Ethyria</a></li>
+        <li aria-hidden="true" class="text-gray-600">›</li>
+        <li><a href="/traumsymbole-guide/" class="text-cyan-400" aria-current="page">Traumsymbole Guide</a></li>
+      </ol>
+    </nav>
+
+    <main class="max-w-3xl mx-auto px-6 py-12">
+      <!-- 7-Grid: Pillar-Prosa-Kolumne vollbreit (col-7) -->
+      <div class="grid-7">
+      <div class="text-center mb-12">
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 ethyria-gradient-text" style="font-family:Poppins,Arial,sans-serif;">
+          Traumsymbole und ihre Bedeutung: Was dein Unterbewusstsein dir wirklich sagen will
+        </h1>
+        <p class="text-lg text-gray-300 leading-relaxed max-w-2xl mx-auto">
+          Jeder Traum enthält eine Sprache aus Bildern, die keine Übersetzung kennt und doch unmittelbar verstanden wird. Ein Zahn der ausfällt. Wasser das steigt. Ein Haus mit Zimmern die man nie betreten hat. Diese Traumsymbole sind keine Zufälle. Sie sind die älteste Kommunikationsform des menschlichen Geistes mit sich selbst. Dieser Guide erklärt was Traumsymbole sind, warum sie universell und zugleich hochindividuell sind und wie du sie für dein Leben nutzbar machen kannst.
+        </p>
+      </div>
+
+      <section class="mb-10 p-6 rounded-2xl" style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.1);">
+        <h2 class="text-xl font-bold mb-4" style="font-family:Poppins,Arial,sans-serif;color:#22d3ee;">
+          Was sind Traumsymbole?
+        </h2>
+        <div class="text-gray-300 leading-relaxed space-y-4">
+          <p>Traumsymbole sind Bilder, Figuren, Orte oder Handlungen aus Träumen die über ihren wörtlichen Inhalt hinaus eine symbolische Bedeutung tragen. Das Bewusstsein schläft. Das Unbewusste aber bleibt aktiv und verarbeitet emotionale Erlebnisse, ungelöste Konflikte und archetypische Muster in einer Bildsprache die seit Jahrhunderten dokumentiert und gedeutet wird.</p>
+          <p>Bereits in der Antike galten Träume als Botschaften aus einer anderen Sphäre. Heute unterscheiden wir zwischen individuellen Symbolen, die aus der persönlichen Biographie entstehen, und universellen Symbolen, die in nahezu jeder Kultur und Epoche mit ähnlicher Bedeutung auftauchen.</p>
+          <p>Weiterführend: <a href="/traumdeutung-methoden/" class="text-cyan-400 hover:underline">Traumdeutungsmethoden im Vergleich: Freud, Jung, Spiritual</a> · <a href="/luzides-traeumen/" class="text-cyan-400 hover:underline">Luzides Träumen: Techniken und Wissenschaft</a></p>
+        </div>
+      </section>
+
+      <section class="mb-10 p-6 rounded-2xl" style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.1);">
+        <h2 class="text-xl font-bold mb-4" style="font-family:Poppins,Arial,sans-serif;color:#60a5fa;">
+          Die Psychologie hinter Traumsymbolen: Freud, Jung und die moderne Wissenschaft
+        </h2>
+        <div class="text-gray-300 leading-relaxed space-y-4">
+          <p><strong>Freuds Perspektive:</strong> Traumsymbole sind verkleidete Ausdrücke verdrängter Wünsche. Ein Schlüssel bedeutet nach Freud selten nur einen Schlüssel. Wasser repräsentiert häufig die Sexualität, ein Haus die Psyche selbst. Freuds Ansatz ist reduktiv,er führt Symbole auf einen latenten Triebinhalt zurück.</p>
+          <p><strong>Jungs Perspektive:</strong> Für Jung waren Traumsymbole keine Kostümierungen sondern eigenständige psychische Realitäten. Das Unbewusste erschafft keine Zensur, es kommuniziert direkt. Die Schlange ist nicht nur ein phallisches Symbol bei Freud,bei Jung ist sie ein Archetyp: Transformation, Lebensenergie, das Chthonische. Das kollektive Unbewusste liefert die Symbole, die individuelle Psyche gibt ihnen Farbe und Gewicht.</p>
+          <p><strong>Moderne Kognitionswissenschaft:</strong> Traumsymbole entstehen im REM-Schlaf wenn emotionale Erinnerungen neu konsolidiert werden. Neurowissenschaftler Matthew Walker (UC Berkeley) beschreibt REM-Schlaf als "emotionale Erste Hilfe": Das Gehirn verarbeitet belastende Erfahrungen in einem Low-Stress-Hormon-Umfeld. Dass ausgerechnet Zähne, Fallen und Verfolgung kulturübergreifend auftreten, erklärt die Neurologie mit evolutionären Bedrohungsmustern im limbischen System.</p>
+        </div>
+      </section>
+
+      <section class="mb-10 p-6 rounded-2xl" style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.1);">
+        <h2 class="text-xl font-bold mb-4" style="font-family:Poppins,Arial,sans-serif;color:#a78bfa;">
+          Die 10 häufigsten Traumsymbole und ihre Bedeutung
+        </h2>
+        <div class="mt-2">
+          <div class="p-4 rounded-xl mb-3" style="background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.06);">
+            <p class="text-gray-300 leading-relaxed"><strong class="text-white">Wasser:</strong> Steht für Emotionen und das Unbewusste. Ruhiges Wasser: emotionale Stabilität. Stürmisches Wasser: innere Überwältigung. Beobachtet bei ca. 40% aller Angsttraum-Protokolle. <a href="/symbols/wasser.html" class="text-cyan-400 hover:underline text-sm ml-1">Traumsymbol Wasser deuten →</a></p>
+          </div>
+          <div class="p-4 rounded-xl mb-3" style="background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.06);">
+            <p class="text-gray-300 leading-relaxed"><strong class="text-white">Fallen:</strong> Das klassische Kontrollverlust-Symbol. Freud: sexuelle Versuchung. Jung: Bewusstsein das seinen Halt verliert. Einer der universellsten Träume überhaupt. <a href="/symbols/fallen.html" class="text-cyan-400 hover:underline text-sm ml-1">Traumsymbol Fallen deuten →</a></p>
+          </div>
+          <div class="p-4 rounded-xl mb-3" style="background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.06);">
+            <p class="text-gray-300 leading-relaxed"><strong class="text-white">Fliegen:</strong> Freiheit, Überwindung von Grenzen, Loslösung. In luziden Träumen oft bewusst herbeigeführt. <a href="/symbols/fliegen.html" class="text-cyan-400 hover:underline text-sm ml-1">Traumsymbol Fliegen deuten →</a></p>
+          </div>
+          <div class="p-4 rounded-xl mb-3" style="background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.06);">
+            <p class="text-gray-300 leading-relaxed"><strong class="text-white">Verfolgt werden:</strong> Vermeidung. Das Verfolgende ist immer etwas aus dem eigenen Inneren das Aufmerksamkeit fordert. <a href="/symbols/verfolgt-werden.html" class="text-cyan-400 hover:underline text-sm ml-1">Traumsymbol Verfolgt werden deuten →</a></p>
+          </div>
+          <div class="p-4 rounded-xl mb-3" style="background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.06);">
+            <p class="text-gray-300 leading-relaxed"><strong class="text-white">Zähne verlieren:</strong> Angst vor Kontrollverlust, Selbstbild-Krisen, soziale Scham. Einer der häufigsten Angstträume weltweit. <a href="/symbols/zaehne-verlieren.html" class="text-cyan-400 hover:underline text-sm ml-1">Traumsymbol Zähne verlieren deuten →</a></p>
+          </div>
+          <div class="p-4 rounded-xl mb-3" style="background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.06);">
+            <p class="text-gray-300 leading-relaxed"><strong class="text-white">Schlangen:</strong> Transformation, Verführung, latente Energie. Jung: der Schatten. Spiritual: Kundalini-Energie. <a href="/symbols/schlangen.html" class="text-cyan-400 hover:underline text-sm ml-1">Traumsymbol Schlangen deuten →</a></p>
+          </div>
+          <div class="p-4 rounded-xl mb-3" style="background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.06);">
+            <p class="text-gray-300 leading-relaxed"><strong class="text-white">Tod im Traum:</strong> Selten ein Vorzeichen. Fast immer ein Ende das einen Neuanfang ankündigt. <a href="/symbols/tod.html" class="text-cyan-400 hover:underline text-sm ml-1">Traumsymbol Tod deuten →</a></p>
+          </div>
+          <div class="p-4 rounded-xl mb-3" style="background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.06);">
+            <p class="text-gray-300 leading-relaxed"><strong class="text-white">Prüfungssituation:</strong> Unvorbereitet zu einer Prüfung erscheinen: klassischer Leistungsangst-Traum auch Jahrzehnte nach dem Schulabschluss. <a href="/symbols/pruefung.html" class="text-cyan-400 hover:underline text-sm ml-1">Traumsymbol Prüfung deuten →</a></p>
+          </div>
+          <div class="p-4 rounded-xl mb-3" style="background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.06);">
+            <p class="text-gray-300 leading-relaxed"><strong class="text-white">Nackt in der Öffentlichkeit:</strong> Verletzlichkeit, Authentizitätswunsch und die Angst gesehen zu werden. <a href="/symbols/nackt-sein.html" class="text-cyan-400 hover:underline text-sm ml-1">Traumsymbol Nackt sein deuten →</a></p>
+          </div>
+          <div class="p-4 rounded-xl mb-3" style="background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.06);">
+            <p class="text-gray-300 leading-relaxed"><strong class="text-white">Haus und Räume:</strong> Das Haus ist die Psyche. Bekannte Räume: bekannte Persönlichkeitsanteile. Unbekannte Räume: unerforschte Potenziale. <a href="/symbols/haus-raeume.html" class="text-cyan-400 hover:underline text-sm ml-1">Traumsymbol Haus deuten →</a></p>
+          </div>
+        </div>
+        <p class="text-xs text-gray-500 mt-3 text-center"><a href="/symbols/" class="hover:text-gray-400 transition-colors">Alle 15 Traumsymbole im vollständigen Lexikon →</a></p>
+      </section>
+
+      <section class="mb-10 p-6 rounded-2xl" style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.1);">
+        <h2 class="text-xl font-bold mb-4" style="font-family:Poppins,Arial,sans-serif;color:#34d399;">
+          Traumsymbole richtig deuten: 3 Ebenen
+        </h2>
+        <div class="text-gray-300 leading-relaxed space-y-4">
+          <p><strong>Ebene 1,Persönlich:</strong> Was verbindest du mit dem Symbol? Wasser kann für jemanden der fast ertrunken ist etwas völlig anderes bedeuten als für jemanden der am Meer aufgewachsen ist.</p>
+          <p><strong>Ebene 2,Emotional:</strong> Wie hat sich das Symbol im Traum angefühlt? Angst, Erleichterung, Neugier,die Emotion gibt dem Symbol seine eigentliche Bedeutung. Notiere Emotionen unmittelbar nach dem Aufwachen.</p>
+          <p><strong>Ebene 3,Musterbezogen:</strong> Taucht das Symbol wiederholt auf? Wiederkehrende Traumsymbole sind das stärkste Signal des Unbewussten. Das Ethyria Traumtagebuch erkennt diese Muster automatisch über Wochen hinweg.</p>
+        </div>
+      </section>
+
+      <section class="mb-10">
+        <h2 class="text-2xl font-bold mb-6 text-center" style="font-family:Poppins,Arial,sans-serif;color:#22d3ee;">Häufige Fragen zu Traumsymbolen</h2>
+        <div class="faq-accordion" id="faqAccordion">
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false" aria-controls="pfaq1" id="pfaq1-label">
+              <span>Was bedeutet es wenn im Traum Wasser vorkommt?</span>
+              <svg class="faq-chevron" width="16" height="16" viewBox="0 0 22 22" aria-hidden="true"><polyline points="6,9 11,14 16,9" stroke="#00CFFF" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+            </button>
+            <div class="faq-answer" id="pfaq1" role="region" aria-labelledby="pfaq1-label">Wasser im Traum steht in der Psychologie überwiegend für Emotionen und das Unbewusste. Ruhiges klares Wasser deutet auf emotionale Stabilität hin. Trübes oder stürmisches Wasser zeigt oft an, dass emotionale Themen im Inneren noch ungeklärt sind. Die genaue Bedeutung hängt immer vom persönlichen Kontext und der Gefühlslage im Traum ab.</div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false" aria-controls="pfaq2" id="pfaq2-label">
+              <span>Haben Traumsymbole für alle Menschen dieselbe Bedeutung?</span>
+              <svg class="faq-chevron" width="16" height="16" viewBox="0 0 22 22" aria-hidden="true"><polyline points="6,9 11,14 16,9" stroke="#00CFFF" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+            </button>
+            <div class="faq-answer" id="pfaq2" role="region" aria-labelledby="pfaq2-label">Nein und ja. Es gibt universelle Symbole wie Fallen, Fliegen oder Zähne verlieren die in nahezu jeder Kultur vorkommen und ähnliche Grundbedeutungen tragen. Gleichzeitig ist jedes Symbol auch individuell gefärbt durch persönliche Erfahrungen, Erinnerungen und den emotionalen Kontext des Traums.</div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false" aria-controls="pfaq3" id="pfaq3-label">
+              <span>Warum träume ich immer wieder von denselben Symbolen?</span>
+              <svg class="faq-chevron" width="16" height="16" viewBox="0 0 22 22" aria-hidden="true"><polyline points="6,9 11,14 16,9" stroke="#00CFFF" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+            </button>
+            <div class="faq-answer" id="pfaq3" role="region" aria-labelledby="pfaq3-label">Wiederkehrende Traumsymbole sind ein Signal des Unbewussten, dass ein bestimmtes emotionales Thema noch nicht verarbeitet oder integriert wurde. Die Wiederholung ist kein Defekt sondern eine Intensivierung der Botschaft. Erst wenn das zugrunde liegende Thema bewusst erkannt wird, hören die Wiederholungen meist auf.</div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false" aria-controls="pfaq4" id="pfaq4-label">
+              <span>Welche Traumsymbole kommen am häufigsten vor?</span>
+              <svg class="faq-chevron" width="16" height="16" viewBox="0 0 22 22" aria-hidden="true"><polyline points="6,9 11,14 16,9" stroke="#00CFFF" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+            </button>
+            <div class="faq-answer" id="pfaq4" role="region" aria-labelledby="pfaq4-label">Zu den weltweit häufigsten Traumsymbolen gehören: Fallen, Verfolgt werden, Fliegen, Zähne verlieren, nackt in der Öffentlichkeit erscheinen, Prüfungssituationen, Wasser und Häuser. Diese Symbole tauchen kulturübergreifend auf und sind mit evolutionären Stressmustern verbunden.</div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false" aria-controls="pfaq5" id="pfaq5-label">
+              <span>Wie unterscheidet sich die Traumsymbol-Deutung nach Freud und Jung?</span>
+              <svg class="faq-chevron" width="16" height="16" viewBox="0 0 22 22" aria-hidden="true"><polyline points="6,9 11,14 16,9" stroke="#00CFFF" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+            </button>
+            <div class="faq-answer" id="pfaq5" role="region" aria-labelledby="pfaq5-label">Freud deutet Traumsymbole als verkleidete Ausdrücke verdrängter Wünsche und Triebe. Jung sieht sie als eigenständige Kommunikation des kollektiven Unbewussten über Archetypen. Freud reduziert, Jung erweitert. Ethyria bietet beide Perspektiven als separate Analyse-Modi an. Für eine detaillierte Gegenüberstellung: <a href="/traumdeutung-methoden/" class="text-cyan-400 hover:underline">Traumdeutungsmethoden im Vergleich</a>.</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="text-center py-16">
+        <h2 class="text-2xl sm:text-3xl font-bold mb-4" style="font-family:Poppins,Arial,sans-serif;">Analysiere deine Traumsymbole jetzt mit Ethyria</h2>
+        <p class="text-gray-300 mb-6 max-w-lg mx-auto">5 psychologische Perspektiven. KI-gestützt. Alle Symbole automatisch erkannt. Privat und lokal gespeichert.</p>
+        <a href="/assets/Ethyria_v1.0_def.apk" download class="inline-block px-8 py-4 font-bold text-white rounded-2xl text-lg" style="font-family:Poppins,Arial,sans-serif;background:linear-gradient(135deg,#01bfff 0%,#0066ff 100%);box-shadow:0 6px 24px rgba(1,191,255,0.3);">
+          Ethyria kostenlos herunterladen
+        </a>
+        <p class="text-xs text-gray-500 mt-3">Oder im Browser: <a href="/#live-analyse" class="text-cyan-400 hover:underline">KI-Traumanalyse ohne App starten</a></p>
+      </section>
+          </div><!-- /grid-7 -->
+    </main>
+
+    <footer class="text-center py-8 text-xs text-gray-500 border-t border-white/5">
+      <p>Ethyria | <a href="/traumsymbole-guide/" class="text-cyan-500 hover:underline">Traumsymbole</a> · <a href="/traumdeutung-methoden/" class="text-cyan-500 hover:underline">Traumdeutung Methoden</a> · <a href="/luzides-traeumen/" class="text-cyan-500 hover:underline">Luzides Träumen</a></p>
+      <p class="mt-1"><a href="https://ethyria.at" class="text-cyan-500 hover:underline">ethyria.at</a> | <a href="mailto:support@ethyria.at" class="text-cyan-500 hover:underline">support@ethyria.at</a></p>
+      <p class="mt-2"><a href="/impressum.html" class="hover:text-gray-300 transition-colors">Impressum</a> &nbsp;·&nbsp; <a href="/datenschutz.html" class="hover:text-gray-300 transition-colors">Datenschutz</a></p>
+    </footer>
+    
+    <script src="/assets/faq-accordion.js" defer></script>
+    <script src="/assets/lang-switcher.js" defer></script>
+<script is:inline src="/assets/lang-switcher.js" defer></script>
+<script is:inline src="/assets/faq-accordion.js" defer></script>`;
+---
+
+<BaseLayout
+  lang="de"
+  title="Traumsymbole Bedeutung: Der vollständige Guide | Ethyria"
+  description="Traumsymbole: vollständige Bedeutung von Wasser, Fallen, Schlangen und den 10 häufigsten Symbolen. Psychologischer Guide nach Freud und Jung. Träume kostenlos analysieren."
+  keywords=""
+  path="/traumsymbole-guide/"
+>
+  <Fragment set:html={_body} />
+</BaseLayout>

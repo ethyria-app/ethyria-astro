@@ -1,0 +1,214 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+const _body = `<nav class="sticky top-0 z-50 flex items-center px-6 py-3" style="backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);background:rgba(16,12,31,0.75);border-bottom:1px solid rgba(255,255,255,0.06);" aria-label="Navigation">
+      <a href="/" class="text-gray-400 hover:text-white transition-colors" aria-label="Zurück zur Ethyria Startseite">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 6L8 12L14 18"/></svg>
+      </a>
+      <span class="flex-1 text-center text-sm font-semibold tracking-wider uppercase text-gray-300" style="font-family:Poppins,Arial,sans-serif">Traumdeutung: Freud, Jung und Spiritual</span>
+      <div style="position:relative;" id="langSw">
+      <button style="background:none;border:1px solid rgba(255,255,255,0.15);color:#9ca3af;padding:4px 10px;border-radius:8px;font-size:0.75rem;cursor:pointer;font-family:Poppins,Arial,sans-serif;line-height:1.4;">DE ▾</button>
+      <div id="langDrop" hidden style="position:absolute;right:0;top:calc(100% + 4px);background:#1a1533;border:1px solid rgba(255,255,255,0.1);border-radius:10px;overflow:hidden;min-width:70px;z-index:200;box-shadow:0 8px 24px rgba(0,0,0,0.4);">
+    <a href="/traumdeutung-methoden/" style="display:block;padding:7px 14px;font-size:0.75rem;color:#22d3ee;font-weight:600;text-decoration:none;font-family:Poppins,Arial,sans-serif;" aria-current="page">DE</a>
+    <a href="/en/traumdeutung-methoden/" style="display:block;padding:7px 14px;font-size:0.75rem;color:#9ca3af;text-decoration:none;font-family:Poppins,Arial,sans-serif;">EN</a>
+    <a href="/fr/traumdeutung-methoden/" style="display:block;padding:7px 14px;font-size:0.75rem;color:#9ca3af;text-decoration:none;font-family:Poppins,Arial,sans-serif;">FR</a>
+    <a href="/es/traumdeutung-methoden/" style="display:block;padding:7px 14px;font-size:0.75rem;color:#9ca3af;text-decoration:none;font-family:Poppins,Arial,sans-serif;">ES</a>
+    <a href="/ru/traumdeutung-methoden/" style="display:block;padding:7px 14px;font-size:0.75rem;color:#9ca3af;text-decoration:none;font-family:Poppins,Arial,sans-serif;">RU</a>
+      </div>
+    </div>
+    </nav>
+
+    <!-- Visuelles Breadcrumb -->
+    <nav aria-label="Breadcrumb" class="max-w-3xl mx-auto px-6 pt-4 pb-0">
+      <ol class="flex items-center gap-2 text-xs text-gray-500" style="font-family:Inter,sans-serif;">
+        <li><a href="/" class="hover:text-cyan-400 transition-colors">Ethyria</a></li>
+        <li aria-hidden="true" class="text-gray-600">›</li>
+        <li><a href="/traumdeutung-methoden/" class="text-cyan-400" aria-current="page">Traumdeutung Methoden</a></li>
+      </ol>
+    </nav>
+
+    <main class="max-w-3xl mx-auto px-6 py-12">
+      <!-- 7-Grid: Pillar-Prosa-Kolumne vollbreit (col-7) -->
+      <div class="grid-7">
+      <div class="text-center mb-12">
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 ethyria-gradient-text" style="font-family:Poppins,Arial,sans-serif;">
+          Traumdeutung nach Freud, Jung und Spiritual: Warum dieselbe Traumszene drei völlig verschiedene Bedeutungen haben kann
+        </h1>
+        <p class="text-lg text-gray-300 leading-relaxed max-w-2xl mx-auto">
+          Du träumst von einem Haus das du nie betreten hast, mit Zimmern die du nie erkundet hast. Für Sigmund Freud wäre das ein Bild deiner Psyche mit verdrängten Triebimpulsen hinter verschlossenen Türen. Für Carl Gustav Jung wäre es eine Einladung zur Individuation, ein Symbol für unerforschte Anteile des Selbst. Für einen spirituellen Traumdeuter wäre es ein Tor zu Seelenanteilen die bereit sind ins Licht zu treten. Drei Schulen. Drei radikal unterschiedliche Antworten. Und alle drei können für ein und denselben Träumer gleichzeitig wahr sein.
+        </p>
+      </div>
+
+      <section class="mb-10 p-6 rounded-2xl" style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.1);">
+        <h2 class="text-xl font-bold mb-4" style="font-family:Poppins,Arial,sans-serif;color:#f0abfc;">
+          Zwei Schulen, ein Traum
+        </h2>
+        <div class="text-gray-300 leading-relaxed space-y-4">
+          <p>Traumdeutung ist keine einheitliche Disziplin. Es ist eine Familie von Ansätzen die ein Thema teilen und in allem anderen divergieren: der Natur des Unbewussten, dem Zweck des Träumens und was ein Symbol wirklich bedeutet. Die Unterschiede zwischen diesen Ansätzen zu verstehen ist keine akademische Übung. Es ist die praktische Frage, welche Linse dir den klarsten Blick auf dein eigenes Innenleben verschafft.</p>
+          <p>Laut einer Metaanalyse von Domhoff (2017) berichten ca. 65% aller Erwachsenen von wiederkehrenden Träumen,ein starkes Indiz dafür, dass das Unbewusste hartnäckig auf ungelöste Themen hinweist, unabhängig davon welche Theorie man zur Erklärung heranzieht. Die Wahl der Deutungsmethode bestimmt nicht was der Traum zeigt, sondern welche Bedeutungsebene man erschließt.</p>
+          <p>Weiterführend: <a href="/traumsymbole-guide/" class="text-cyan-400 hover:underline">Traumsymbole und ihre psychologische Bedeutung</a> · <a href="/luzides-traeumen/" class="text-cyan-400 hover:underline">Luzides Träumen: Techniken und Wissenschaft</a></p>
+        </div>
+      </section>
+
+      <section class="mb-10 p-6 rounded-2xl" style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.1);">
+        <h2 class="text-xl font-bold mb-4" style="font-family:Poppins,Arial,sans-serif;color:#22d3ee;">
+          Traumdeutung nach Sigmund Freud: Verdrängung als Schlüssel
+        </h2>
+        <div class="text-gray-300 leading-relaxed space-y-4">
+          <p><strong>Freuds Kernthese:</strong> Der Traum ist die Via Regia,der Königsweg zum Unbewussten. Was im Traum erscheint ist nie das was es zu sein scheint. Sigmund Freud legte 1899 mit "Die Traumdeutung" den Grundstein für die moderne Traumpsychologie. Der manifeste Trauminhalt,das was du morgens erinnerst,ist eine Verkleidung. Der latente Trauminhalt, die eigentliche Botschaft, liegt darunter verborgen.</p>
+          <p>Freud unterschied vier Verschlüsselungsmechanismen: <strong>Verdichtung</strong> (mehrere Inhalte in einem Symbol), <strong>Verschiebung</strong> (ein harmloser Inhalt trägt die emotionale Last eines anderen), <strong>Rücksicht auf Darstellbarkeit</strong> (abstrakte Konflikte werden in Bilder übersetzt) und <strong>sekundäre Bearbeitung</strong> (der Verstand glättet das Chaos des Traums in eine kohärente Geschichte).</p>
+          <p>Freuds System ist präzise bei Angst- und Wiederholungsträumen. Es neigt jedoch zur Überreduktion: Nicht jede Schlange ist phallisch. Die Stärke der Freudschen Methode liegt in der Tiefe der Exploration, nicht in der Schematik der Symbolik. Für eine vollständige Übersicht häufiger Traumsymbole und ihrer psychologischen Deutung siehe das <a href="/traumsymbole-guide/" class="text-cyan-400 hover:underline">Ethyria Traumsymbol-Lexikon</a>.</p>
+        </div>
+      </section>
+
+      <section class="mb-10 p-6 rounded-2xl" style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.1);">
+        <h2 class="text-xl font-bold mb-4" style="font-family:Poppins,Arial,sans-serif;color:#60a5fa;">
+          Traumdeutung nach Carl Gustav Jung: Archetypen und das kollektive Unbewusste
+        </h2>
+        <div class="text-gray-300 leading-relaxed space-y-4">
+          <p><strong>Jungs Kernthese:</strong> Das Unbewusste ist nicht nur ein Abfallbehälter verdrängter Wünsche,es ist eine eigenständige kreative Kraft mit eigener Intelligenz. Carl Gustav Jung begann als Freuds vielversprechendster Schüler und endete als sein schärfster Kritiker.</p>
+          <p>Jung unterschied das persönliche Unbewusste vom kollektiven Unbewussten,einer Schicht die allen Menschen gemeinsam ist und die Archetypen enthält: <strong>Der Schatten</strong> (dunkles Spiegelbild des Bewussten), <strong>die Anima/Animus</strong> (gegengeschlechtliche Seelenanteile), <strong>das Selbst</strong> (Zentrum der Gesamtpsyche) und <strong>die Persona</strong> (soziale Maske). Für Jung ist der Traum ein Gleichgewichtsorgan: Das Unbewusste kompensiert was das Bewusstsein vernachlässigt.</p>
+          <p>Jungs Ansatz ist weniger determiniert als Freuds System. Er erlaubt mehr individuelle Deutungsspielräume und öffnet die Traumdeutung für existenzielle Fragen, Kreativität und kulturelle Mythologie. Moderne Traumforscher wie Ernest Hartmann (Boston University) bestätigen: Träume verarbeiten emotionale Erfahrungen,ein Befund der Jungs Kompensationsthese stützt.</p>
+        </div>
+      </section>
+
+      <section class="mb-10 p-6 rounded-2xl" style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.1);">
+        <h2 class="text-xl font-bold mb-4" style="font-family:Poppins,Arial,sans-serif;color:#a78bfa;">
+          Spirituelle Traumdeutung: Träume als transpersonale Botschaften
+        </h2>
+        <div class="text-gray-300 leading-relaxed space-y-4">
+          <p><strong>Kernthese:</strong> Träume sind keine reinen Verarbeitungsprozesse,sie gewähren Zugang zu Wissen das über die persönliche Biografie hinausgeht. Die spirituelle Traumdeutung betrachtet Träume als Kommunikationskanal zwischen dem Bewusstsein und höheren Ebenen der Realität (Seele, höheres Selbst, kollektives Feld).</p>
+          <p>Gemeinsam ist allen spirituellen Ansätzen: Symbole werden nicht als Repräsentanten psychischer Konflikte gesehen, sondern als Botschaften mit direktem spirituellen Inhalt. Die Frage lautet nicht "Was verdränge ich?" sondern "Was will diese Erfahrung mir zeigen?"</p>
+          <p>Die Ethyria Spiritual-Analyse verbindet transpersonale Psychologie mit Chakren-Symbolik und archetypischer Bildsprache. Sie eignet sich besonders für Träumer die ihre Traumwelt als Teil ihrer spirituellen Praxis nutzen wollen.</p>
+        </div>
+      </section>
+
+      <section class="mb-10 p-6 rounded-2xl" style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.1);">
+        <h2 class="text-xl font-bold mb-3" style="font-family:Poppins,Arial,sans-serif;color:#34d399;">
+          Methoden-Vergleich: Freud vs. Jung vs. Spiritual vs. Biosynchron
+        </h2>
+        <div class="overflow-x-auto">
+          <table class="w-full text-sm" aria-label="Vergleich der Traumdeutungs-Methoden: Freud, Jung, Spiritual, Biosynchron">
+            <thead><tr style="border-bottom:1px solid rgba(255,255,255,0.12);"><th class="text-left py-2 pr-4 text-xs font-semibold text-gray-400 whitespace-nowrap" style="font-family:Poppins,Arial,sans-serif;">Aspekt</th><th class="text-left py-2 pr-4 text-xs font-semibold text-gray-400 whitespace-nowrap" style="font-family:Poppins,Arial,sans-serif;">Freud</th><th class="text-left py-2 pr-4 text-xs font-semibold text-gray-400 whitespace-nowrap" style="font-family:Poppins,Arial,sans-serif;">Jung</th><th class="text-left py-2 pr-4 text-xs font-semibold text-gray-400 whitespace-nowrap" style="font-family:Poppins,Arial,sans-serif;">Spiritual</th><th class="text-left py-2 pr-4 text-xs font-semibold text-gray-400 whitespace-nowrap" style="font-family:Poppins,Arial,sans-serif;">Biosynchron</th></tr></thead>
+            <tbody>
+          <tr style="border-bottom:1px solid rgba(255,255,255,0.05);"><td class="py-2 pr-4 text-xs" style="font-weight:600;color:#d1d5db;">Ursprung der Symbole</td><td class="py-2 pr-4 text-xs" style="color:#9ca3af;">Verdrängung</td><td class="py-2 pr-4 text-xs" style="color:#9ca3af;">Archetypen</td><td class="py-2 pr-4 text-xs" style="color:#9ca3af;">Höheres Selbst</td><td class="py-2 pr-4 text-xs" style="color:#9ca3af;">Körperdaten</td></tr>
+          <tr style="border-bottom:1px solid rgba(255,255,255,0.05);"><td class="py-2 pr-4 text-xs" style="font-weight:600;color:#d1d5db;">Ziel der Deutung</td><td class="py-2 pr-4 text-xs" style="color:#9ca3af;">Konflikt aufdecken</td><td class="py-2 pr-4 text-xs" style="color:#9ca3af;">Integration</td><td class="py-2 pr-4 text-xs" style="color:#9ca3af;">Botschaft empfangen</td><td class="py-2 pr-4 text-xs" style="color:#9ca3af;">Stressmuster erkennen</td></tr>
+          <tr style="border-bottom:1px solid rgba(255,255,255,0.05);"><td class="py-2 pr-4 text-xs" style="font-weight:600;color:#d1d5db;">Schlüsselkonzept</td><td class="py-2 pr-4 text-xs" style="color:#9ca3af;">Latenter Inhalt</td><td class="py-2 pr-4 text-xs" style="color:#9ca3af;">Individuation</td><td class="py-2 pr-4 text-xs" style="color:#9ca3af;">Seelensprache</td><td class="py-2 pr-4 text-xs" style="color:#9ca3af;">HRV-Korrelation</td></tr>
+          <tr style="border-bottom:1px solid rgba(255,255,255,0.05);"><td class="py-2 pr-4 text-xs" style="font-weight:600;color:#d1d5db;">Wissenschaftsbasis</td><td class="py-2 pr-4 text-xs" style="color:#9ca3af;">Psychoanalyse</td><td class="py-2 pr-4 text-xs" style="color:#9ca3af;">Analytische Psychologie</td><td class="py-2 pr-4 text-xs" style="color:#9ca3af;">Transpersonal</td><td class="py-2 pr-4 text-xs" style="color:#9ca3af;">Schlafforschung</td></tr>
+          <tr style="border-bottom:1px solid rgba(255,255,255,0.05);"><td class="py-2 pr-4 text-xs" style="font-weight:600;color:#d1d5db;">Stärke</td><td class="py-2 pr-4 text-xs" style="color:#9ca3af;">Konfliktanalyse</td><td class="py-2 pr-4 text-xs" style="color:#9ca3af;">Symboltiefe</td><td class="py-2 pr-4 text-xs" style="color:#9ca3af;">Sinngebung</td><td class="py-2 pr-4 text-xs" style="color:#9ca3af;">Biometrische Präzision</td></tr>
+          <tr style="border-bottom:1px solid rgba(255,255,255,0.05);"><td class="py-2 pr-4 text-xs" style="font-weight:600;color:#d1d5db;">Schwäche</td><td class="py-2 pr-4 text-xs" style="color:#9ca3af;">Überreduktion</td><td class="py-2 pr-4 text-xs" style="color:#9ca3af;">Abstrakt</td><td class="py-2 pr-4 text-xs" style="color:#9ca3af;">Subjektiv</td><td class="py-2 pr-4 text-xs" style="color:#9ca3af;">Braucht Biometrie</td></tr>
+          <tr style="border-bottom:1px solid rgba(255,255,255,0.05);"><td class="py-2 pr-4 text-xs" style="font-weight:600;color:#d1d5db;">Verfügbar bei Ethyria</td><td class="py-2 pr-4 text-xs" style="color:#9ca3af;">App + Web</td><td class="py-2 pr-4 text-xs" style="color:#9ca3af;">App + Web</td><td class="py-2 pr-4 text-xs" style="color:#9ca3af;">App + Web</td><td class="py-2 pr-4 text-xs" style="color:#9ca3af;">App</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="mb-10">
+        <h2 class="text-2xl font-bold mb-6 text-center" style="font-family:Poppins,Arial,sans-serif;color:#22d3ee;">Häufige Fragen</h2>
+        <div class="faq-accordion" id="faqAccordion">
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false" aria-controls="bfaq1" id="bfaq1-label">
+              <span>Was ist der wichtigste Unterschied zwischen Freud und Jung in der Traumdeutung?</span>
+              <svg class="faq-chevron" width="16" height="16" viewBox="0 0 22 22" aria-hidden="true"><polyline points="6,9 11,14 16,9" stroke="#00CFFF" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+            </button>
+            <div class="faq-answer" id="bfaq1" role="region" aria-labelledby="bfaq1-label">Freud sieht Traumsymbole als Verkleidungen verdrängter Triebwünsche. Jung sieht sie als eigenständige Botschaften eines kollektiven Unbewussten das allen Menschen gemeinsam ist. Freud analysiert, Jung integriert. Beide Ansätze ergänzen sich und sind bei Ethyria als separate Analyse-Modi verfügbar.</div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false" aria-controls="bfaq2" id="bfaq2-label">
+              <span>Welche Traumdeutungs-Methode ist die richtige für mich?</span>
+              <svg class="faq-chevron" width="16" height="16" viewBox="0 0 22 22" aria-hidden="true"><polyline points="6,9 11,14 16,9" stroke="#00CFFF" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+            </button>
+            <div class="faq-answer" id="bfaq2" role="region" aria-labelledby="bfaq2-label">Das hängt von deinem Ziel ab. Wenn du Konflikte und Ängste verstehen willst, ist der Freudsche Ansatz hilfreich. Wenn du dich als Ganzes verstehen und wachsen willst, ist Jung stärker. Wenn du spirituelle Bedeutung suchst, bietet der Spiritual-Modus den passenden Rahmen. Ethyria zeigt dir alle Perspektiven gleichzeitig damit du entscheiden kannst welche resoniert.</div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false" aria-controls="bfaq3" id="bfaq3-label">
+              <span>Kann ich einen Traum gleichzeitig nach Freud und nach Jung deuten?</span>
+              <svg class="faq-chevron" width="16" height="16" viewBox="0 0 22 22" aria-hidden="true"><polyline points="6,9 11,14 16,9" stroke="#00CFFF" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+            </button>
+            <div class="faq-answer" id="bfaq3" role="region" aria-labelledby="bfaq3-label">Ja, und das ist sogar empfehlenswert. Die Perspektiven widersprechen sich selten fundamental. Sie beleuchten unterschiedliche Schichten desselben Traums. Ein Symbol kann gleichzeitig eine verdrängte Emotion sein (Freud) und einen Archetyp verkörpern (Jung). Ethyria analysiert denselben Traum aus allen fünf Perspektiven in einer Sitzung.</div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false" aria-controls="bfaq4" id="bfaq4-label">
+              <span>Was ist die biosynchrone Analyse und was unterscheidet sie von Freud und Jung?</span>
+              <svg class="faq-chevron" width="16" height="16" viewBox="0 0 22 22" aria-hidden="true"><polyline points="6,9 11,14 16,9" stroke="#00CFFF" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+            </button>
+            <div class="faq-answer" id="bfaq4" role="region" aria-labelledby="bfaq4-label">Die biosynchrone Analyse ist ein Ethyria-exklusives Verfahren das Trauminhalt mit biometrischen Daten korreliert: Herzratenvariabilität, Schlafphasen und Stressindex. Damit lässt sich erkennen ob ein Traum während einer Stressphase auftrat, was seine emotionale Intensität erklärt. Freud und Jung arbeiten mit dem Inhalt des Traums. Biosynchron arbeitet zusätzlich mit dem körperlichen Kontext.</div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false" aria-controls="bfaq5" id="bfaq5-label">
+              <span>Hat Jungs Traumdeutung wissenschaftliche Anerkennung?</span>
+              <svg class="faq-chevron" width="16" height="16" viewBox="0 0 22 22" aria-hidden="true"><polyline points="6,9 11,14 16,9" stroke="#00CFFF" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+            </button>
+            <div class="faq-answer" id="bfaq5" role="region" aria-labelledby="bfaq5-label">Jungs Theorien sind in der akademischen Psychologie umstritten aber weiterhin einflussreich. Konzepte wie Archetypen und kollektives Unbewusstes sind nicht empirisch messbar aber heuristisch wertvoll. Die moderne Traumforschung (Hartmann, Hobson) bestätigt Jungs Beobachtung dass Träume emotionale und kreative Verarbeitung leisten und nicht nur Triebausdruck sind.</div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false" aria-controls="bfaq6" id="bfaq6-label">
+              <span>Was sind die häufigsten Archetypen in Träumen nach Jung?</span>
+              <svg class="faq-chevron" width="16" height="16" viewBox="0 0 22 22" aria-hidden="true"><polyline points="6,9 11,14 16,9" stroke="#00CFFF" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+            </button>
+            <div class="faq-answer" id="bfaq6" role="region" aria-labelledby="bfaq6-label">Die häufigsten Jungschen Archetypen in Träumen sind: Der Schatten (dunkle Figur, Verfolger), die Anima (weibliche Gestalt im Männertraum), der Animus (männliche Gestalt im Frauentraum), der Weise (alter weiser Mann oder Frau), die Große Mutter (fürsorgliche oder verschlingende Mutterfigur) und das Selbst (goldenes Kind, mandalartige Ganzheitssymbole).</div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false" aria-controls="bfaq7" id="bfaq7-label">
+              <span>Gibt es eine Methode die alle anderen übertrifft?</span>
+              <svg class="faq-chevron" width="16" height="16" viewBox="0 0 22 22" aria-hidden="true"><polyline points="6,9 11,14 16,9" stroke="#00CFFF" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+            </button>
+            <div class="faq-answer" id="bfaq7" role="region" aria-labelledby="bfaq7-label">Nein. Jede Methode hat blinde Flecken. Freud übersieht das kollektive. Jung kann ins Abstrakte driften. Spirituelle Deutung setzt Glauben voraus. Biosynchron braucht Biometrie. Die tiefste Erkenntnis entsteht wenn mehrere Perspektiven gleichzeitig auf denselben Traum angewendet werden, was Ethyria automatisch tut.</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Interne Verlinkung zu Symbols -->
+      <section class="mb-10 p-6 rounded-2xl" style="background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.07);">
+        <h2 class="text-lg font-bold mb-4" style="font-family:Poppins,Arial,sans-serif;color:#9ca3af;">Häufige Traumsymbole und ihre Bedeutung</h2>
+        <p class="text-sm text-gray-400 mb-4">Die Traumdeutungs-Methode bestimmt wie ein Symbol gelesen wird. Hier sind die häufigsten Symbole mit ihrer psychologischen Deutung nach Freud und Jung:</p>
+        <ul class="grid grid-cols-2 sm:grid-cols-3 gap-2 text-sm">
+          <li><a href="/symbols/wasser.html" class="text-cyan-400 hover:text-cyan-300 hover:underline transition-colors">Wasser im Traum</a></li>
+          <li><a href="/symbols/fallen.html" class="text-cyan-400 hover:text-cyan-300 hover:underline transition-colors">Fallen im Traum</a></li>
+          <li><a href="/symbols/fliegen.html" class="text-cyan-400 hover:text-cyan-300 hover:underline transition-colors">Fliegen im Traum</a></li>
+          <li><a href="/symbols/schlangen.html" class="text-cyan-400 hover:text-cyan-300 hover:underline transition-colors">Schlangen im Traum</a></li>
+          <li><a href="/symbols/zaehne-verlieren.html" class="text-cyan-400 hover:text-cyan-300 hover:underline transition-colors">Zähne verlieren</a></li>
+          <li><a href="/symbols/verfolgt-werden.html" class="text-cyan-400 hover:text-cyan-300 hover:underline transition-colors">Verfolgt werden</a></li>
+        </ul>
+        <p class="text-xs text-gray-500 mt-3"><a href="/symbols/" class="hover:text-gray-400 transition-colors">Alle 15 Traumsymbole im Lexikon →</a></p>
+      </section>
+
+      <section class="text-center py-16">
+        <h2 class="text-2xl sm:text-3xl font-bold mb-4" style="font-family:Poppins,Arial,sans-serif;">Analysiere deinen Traum jetzt mit allen 5 Perspektiven</h2>
+        <p class="text-gray-300 mb-6 max-w-lg mx-auto">Freud, Jung, Spiritual, Biosynchron und Allgemein,gleichzeitig. KI-gestützt. Privat und lokal gespeichert.</p>
+        <a href="/assets/Ethyria_v1.0_def.apk" download class="inline-block px-8 py-4 font-bold text-white rounded-2xl text-lg" style="font-family:Poppins,Arial,sans-serif;background:linear-gradient(135deg,#01bfff 0%,#0066ff 100%);box-shadow:0 6px 24px rgba(1,191,255,0.3);">
+          Ethyria kostenlos herunterladen
+        </a>
+        <p class="text-xs text-gray-500 mt-3">Oder direkt im Browser: <a href="/#live-analyse" class="text-cyan-400 hover:underline">KI-Traumdeutung ohne App starten</a></p>
+      </section>
+          </div><!-- /grid-7 -->
+    </main>
+
+    <footer class="text-center py-8 text-xs text-gray-500 border-t border-white/5">
+      <p>Ethyria | <a href="/traumdeutung-methoden/" class="text-cyan-500 hover:underline">Traumdeutung Methoden</a> · <a href="/traumsymbole-guide/" class="text-cyan-500 hover:underline">Traumsymbole</a> · <a href="/luzides-traeumen/" class="text-cyan-500 hover:underline">Luzides Träumen</a></p>
+      <p class="mt-1">
+        <a href="https://ethyria.at" class="text-cyan-500 hover:underline">ethyria.at</a>
+        |
+        <a href="mailto:support@ethyria.at" class="text-cyan-500 hover:underline">support@ethyria.at</a>
+      </p>
+      <p class="mt-2">
+        <a href="/impressum.html" class="hover:text-gray-300 transition-colors">Impressum</a>
+        &nbsp;·&nbsp;
+        <a href="/datenschutz.html" class="hover:text-gray-300 transition-colors">Datenschutz</a>
+      </p>
+    </footer>
+    
+    <script src="/assets/faq-accordion.js?v=20260602" defer></script>
+    <script src="/assets/lang-switcher.js" defer></script>
+<script is:inline src="/assets/lang-switcher.js" defer></script>
+<script is:inline src="/assets/faq-accordion.js" defer></script>`;
+---
+
+<BaseLayout
+  lang="de"
+  title="Traumdeutung Freud Jung: Methoden im Vergleich | Ethyria"
+  description="Traumdeutung nach Freud, Jung und Spiritual: vollständiger Vergleich. Methoden, Archetypen und wie du den richtigen Ansatz wählst. Deinen Traum kostenlos mit allen fünf Perspektiven analysieren."
+  keywords=""
+  path="/traumdeutung-methoden/"
+>
+  <Fragment set:html={_body} />
+</BaseLayout>

@@ -1,0 +1,118 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+const _body = `<nav class="sticky top-0 z-50 flex items-center px-6 py-3" style="backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);background:rgba(16,12,31,0.75);border-bottom:1px solid rgba(255,255,255,0.06);" aria-label="Navigation">
+      <a href="/en/" class="text-gray-400 hover:text-white transition-colors" aria-label="Back to Ethyria"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 6L8 12L14 18"/></svg></a>
+      <span class="flex-1 text-center text-sm font-semibold tracking-wider uppercase text-gray-300" style="font-family:Poppins,Arial,sans-serif">Lucid Dreaming</span>
+      <div style="position:relative;" id="langSw">
+        <button style="background:none;border:1px solid rgba(255,255,255,0.15);color:#9ca3af;padding:4px 10px;border-radius:8px;font-size:0.75rem;cursor:pointer;font-family:Poppins,Arial,sans-serif;line-height:1.4;">EN ▾</button>
+        <div id="langDrop" hidden style="position:absolute;right:0;top:calc(100% + 4px);background:#1a1533;border:1px solid rgba(255,255,255,0.1);border-radius:10px;overflow:hidden;min-width:70px;z-index:200;box-shadow:0 8px 24px rgba(0,0,0,0.4);">
+          <a href="/luzides-traeumen/" style="display:block;padding:7px 14px;font-size:0.75rem;color:#9ca3af;text-decoration:none;font-family:Poppins,Arial,sans-serif;">DE</a>
+          <a href="/en/luzides-traeumen/" style="display:block;padding:7px 14px;font-size:0.75rem;color:#22d3ee;font-weight:600;text-decoration:none;font-family:Poppins,Arial,sans-serif;" aria-current="page">EN</a>
+          <a href="/fr/luzides-traeumen/" style="display:block;padding:7px 14px;font-size:0.75rem;color:#9ca3af;text-decoration:none;font-family:Poppins,Arial,sans-serif;">FR</a>
+          <a href="/es/luzides-traeumen/" style="display:block;padding:7px 14px;font-size:0.75rem;color:#9ca3af;text-decoration:none;font-family:Poppins,Arial,sans-serif;">ES</a>
+          <a href="/ru/luzides-traeumen/" style="display:block;padding:7px 14px;font-size:0.75rem;color:#9ca3af;text-decoration:none;font-family:Poppins,Arial,sans-serif;">RU</a>
+        </div>
+      </div>
+    </nav>
+    <nav aria-label="Breadcrumb" class="max-w-3xl mx-auto px-6 pt-4 pb-0">
+      <ol class="flex items-center gap-2 text-xs text-gray-500"><li><a href="/en/" class="hover:text-cyan-400 transition-colors">Ethyria</a></li><li aria-hidden="true" class="text-gray-600">›</li><li><a href="/en/luzides-traeumen/" class="text-cyan-400" aria-current="page">Lucid Dreaming</a></li></ol>
+    </nav>
+    <main class="max-w-3xl mx-auto px-6 py-12">
+      <!-- 7-Grid: Pillar-Prosa-Kolumne vollbreit (col-7) -->
+      <div class="grid-7">
+      <div class="text-center mb-12">
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 ethyria-gradient-text" style="font-family:Poppins,Arial,sans-serif;">Lucid Dreaming: The Complete Guide for Beginners and Advanced Practitioners</h1>
+        <p class="text-lg text-gray-300 leading-relaxed max-w-2xl mx-auto">Imagine recognising in the middle of a dream that you are dreaming. Suddenly you know: I am the creator here. I can fly, speak, ask, explore. What sounds like fantasy is a measurable neurological state experienced by people worldwide,and one that can be systematically learned.</p>
+      </div>
+      <section class="mb-10 p-6 rounded-2xl" style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.1);">
+        <h2 class="text-xl font-bold mb-4" style="font-family:Poppins,Arial,sans-serif;color:#22d3ee;">What is a Lucid Dream?</h2>
+        <div class="text-gray-300 leading-relaxed space-y-4">
+          <p><strong>Definition:</strong> A lucid dream is a dream in which the dreamer is aware they are dreaming,while continuing to sleep. The dreamer can observe, influence and sometimes actively shape the dream.</p>
+          <p>Scientific evidence dates to the late 1970s. Keith Hearne (UK) and Stephen LaBerge (Stanford University) developed protocols where dreamers in sleep labs signalled the onset of a lucid dream through pre-agreed eye movements,the moment lucid dreaming moved from anecdote to measurable reality.</p>
+          <p>Related: <a href="/en/traumdeutung-methoden/" class="text-cyan-400 hover:underline">Dream Interpretation Methods</a> · <a href="/en/traumsymbole-guide/" class="text-cyan-400 hover:underline">Dream Symbols and Their Meaning</a></p>
+        </div>
+      </section>
+      <section class="mb-10 p-6 rounded-2xl" style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.1);">
+        <h2 class="text-xl font-bold mb-4" style="font-family:Poppins,Arial,sans-serif;color:#60a5fa;">The Neuroscience of Lucid Dreaming</h2>
+        <div class="text-gray-300 leading-relaxed space-y-4">
+          <p>Lucid dreams occur during REM sleep with activation of the dorsolateral prefrontal cortex,the region suppressed in normal sleep that handles self-awareness and critical thinking. EEG measurements show elevated gamma wave activity (25–100 Hz) in frontal cortex areas,the pattern of focused waking consciousness.</p>
+          <p>Research groups at the Max Planck Institute Frankfurt (Urbach et al., 2019) achieved bi-directional real-time communication with sleeping subjects in lucid dreams, confirming their measurability. Lucid dreaming is neurobiologically a third state of consciousness,neither sleep nor waking.</p>
+        </div>
+      </section>
+      <section class="mb-10 p-6 rounded-2xl" style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.1);">
+        <h2 class="text-xl font-bold mb-4" style="font-family:Poppins,Arial,sans-serif;color:#a78bfa;">The 5 Most Effective Techniques</h2>
+        <div class="space-y-4">
+          <div class="p-4 rounded-xl" style="background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.07);">
+            <p class="text-gray-300"><strong class="text-white">MILD</strong> <span class="text-xs text-gray-500 ml-2">Best for beginners</span><br>Developed by Stephen LaBerge (Stanford). Just before sleep, repeat: "Next time I dream I will know I am dreaming." Simultaneously visualise becoming lucid. Studies show 20–40% success rates within the first week.</p>
+          </div>
+          <div class="p-4 rounded-xl" style="background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.07);">
+            <p class="text-gray-300"><strong class="text-white">WBTB</strong> <span class="text-xs text-gray-500 ml-2">Effectiveness booster</span><br>Wake after 5–6 hours, stay awake 20–60 minutes (read about lucid dreaming), then go back to sleep. Combined with MILD, WBTB doubles lucidity rates.</p>
+          </div>
+          <div class="p-4 rounded-xl" style="background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.07);">
+            <p class="text-gray-300"><strong class="text-white">WILD</strong> <span class="text-xs text-gray-500 ml-2">Advanced</span><br>Consciousness remains active as the body falls asleep. Wake after 5–6 hours, stay awake 30–60 minutes, then consciously experience the sleep-onset process. Most powerful technique but most demanding.</p>
+          </div>
+          <div class="p-4 rounded-xl" style="background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.07);">
+            <p class="text-gray-300"><strong class="text-white">FILD</strong> <span class="text-xs text-gray-500 ml-2">Quick to learn</span><br>In hypnagogic half-sleep: move two fingers rhythmically like playing piano,very lightly. Then perform a reality check (count fingers, read a clock). If the result is strange, you are in a dream.</p>
+          </div>
+          <div class="p-4 rounded-xl" style="background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.07);">
+            <p class="text-gray-300"><strong class="text-white">SSILD</strong> <span class="text-xs text-gray-500 ml-2">Relaxation-based</span><br>Alternate focus on visual, auditory and tactile sensations in half-sleep. 4–5 cycles of a few seconds each, then let go and sleep. Ideal for people who struggle with deliberate visualisation.</p>
+          </div>
+        </div>
+      </section>
+      <section class="mb-10">
+        <h2 class="text-2xl font-bold mb-6 text-center" style="font-family:Poppins,Arial,sans-serif;color:#22d3ee;">Frequently Asked Questions</h2>
+        <div class="faq-accordion" id="faqAccordion">
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false" aria-controls="lfaq1" id="lfaq1-label"><span>Can anyone learn lucid dreaming?</span><svg class="faq-chevron" width="16" height="16" viewBox="0 0 22 22" aria-hidden="true"><polyline points="6,9 11,14 16,9" stroke="#00CFFF" stroke-width="2" fill="none" stroke-linecap="round"/></svg></button>
+            <div class="faq-answer" id="lfaq1" role="region" aria-labelledby="lfaq1-label">Yes. Studies show most people experience their first lucid dream within two to four weeks of regular practice. Key factors: dream journal, consistent technique practice and adequate REM sleep.</div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false" aria-controls="lfaq2" id="lfaq2-label"><span>Which technique is best for beginners?</span><svg class="faq-chevron" width="16" height="16" viewBox="0 0 22 22" aria-hidden="true"><polyline points="6,9 11,14 16,9" stroke="#00CFFF" stroke-width="2" fill="none" stroke-linecap="round"/></svg></button>
+            <div class="faq-answer" id="lfaq2" role="region" aria-labelledby="lfaq2-label">MILD is the most beginner-friendly,no sleep interruption required, only mental preparation before sleep. Combined with a dream journal, MILD shows the best success rates for newcomers. WBTB is an effective amplifier once MILD is working.</div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false" aria-controls="lfaq3" id="lfaq3-label"><span>Are lucid dreams dangerous?</span><svg class="faq-chevron" width="16" height="16" viewBox="0 0 22 22" aria-hidden="true"><polyline points="6,9 11,14 16,9" stroke="#00CFFF" stroke-width="2" fill="none" stroke-linecap="round"/></svg></button>
+            <div class="faq-answer" id="lfaq3" role="region" aria-labelledby="lfaq3-label">No. Lucid dreams are neurologically safe. There is no evidence of harm from lucid dreaming. People with sleep disorders should apply sleep-interruption techniques such as WBTB with caution.</div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false" aria-controls="lfaq4" id="lfaq4-label"><span>How does Ethyria recognise whether a dream was lucid?</span><svg class="faq-chevron" width="16" height="16" viewBox="0 0 22 22" aria-hidden="true"><polyline points="6,9 11,14 16,9" stroke="#00CFFF" stroke-width="2" fill="none" stroke-linecap="round"/></svg></button>
+            <div class="faq-answer" id="lfaq4" role="region" aria-labelledby="lfaq4-label">Ethyria analyses dream text for phrases and patterns indicating lucidity: explicit statements like "I knew I was dreaming", descriptions of control over the dream, unusual self-reflection. The system assigns a lucidity score from 0 to 1 and uses it in the psychological analysis.</div>
+          </div>
+        </div>
+      </section>
+      <section class="mb-10 p-6 rounded-2xl" style="background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.07);">
+        <h2 class="text-lg font-bold mb-4" style="font-family:Poppins,Arial,sans-serif;color:#9ca3af;">Further Reading</h2>
+        <ul class="space-y-2 text-sm">
+          <li><a href="/en/traumdeutung-methoden/" class="text-cyan-400 hover:text-cyan-300 hover:underline transition-colors">Dream Interpretation: Freud vs Jung vs Spiritual,Methods Compared →</a></li>
+          <li><a href="/en/traumsymbole-guide/" class="text-cyan-400 hover:text-cyan-300 hover:underline transition-colors">Dream Symbols and Their Meaning →</a></li>
+          <li><a href="/symbols/en/fliegen.html" class="text-cyan-400 hover:text-cyan-300 hover:underline transition-colors">Flying in Dreams: Meaning and Connection to Lucid Dreams →</a></li>
+        </ul>
+      </section>
+      <section class="text-center py-16">
+        <h2 class="text-2xl sm:text-3xl font-bold mb-4" style="font-family:Poppins,Arial,sans-serif;">Start Your Dream Journal with Lucid Detection</h2>
+        <p class="text-gray-300 mb-6 max-w-lg mx-auto">Automatic lucidity recognition. 5 analysis perspectives. Stored privately on your device. Free.</p>
+        <a href="/assets/Ethyria_v1.0_def.apk" download class="inline-block px-8 py-4 font-bold text-white rounded-2xl text-lg" style="font-family:Poppins,Arial,sans-serif;background:linear-gradient(135deg,#01bfff 0%,#0066ff 100%);box-shadow:0 6px 24px rgba(1,191,255,0.3);">Download Ethyria Free</a>
+        <p class="text-xs text-gray-500 mt-3">Or in your browser: <a href="/en/#live-analyse" class="text-cyan-400 hover:underline">Start AI dream analysis without an app</a></p>
+      </section>
+          </div><!-- /grid-7 -->
+    </main>
+    <footer class="text-center py-8 text-xs text-gray-500 border-t border-white/5">
+      <p>Ethyria | <a href="/en/luzides-traeumen/" class="text-cyan-500 hover:underline">Lucid Dreaming</a> · <a href="/en/traumsymbole-guide/" class="text-cyan-500 hover:underline">Dream Symbols</a> · <a href="/en/traumdeutung-methoden/" class="text-cyan-500 hover:underline">Dream Interpretation</a></p>
+      <p class="mt-1"><a href="https://ethyria.at/en/" class="text-cyan-500 hover:underline">ethyria.at</a> | <a href="mailto:support@ethyria.at" class="text-cyan-500 hover:underline">support@ethyria.at</a></p>
+      <p class="mt-2"><a href="/impressum.html" class="hover:text-gray-300">Impressum</a> &nbsp;·&nbsp; <a href="/datenschutz.html" class="hover:text-gray-300">Privacy</a></p>
+    </footer>
+    
+    <script src="/assets/faq-accordion.js" defer></script><script src="/assets/lang-switcher.js" defer></script>
+<script is:inline src="/assets/lang-switcher.js" defer></script>
+<script is:inline src="/assets/faq-accordion.js" defer></script>`;
+---
+
+<BaseLayout
+  lang="en"
+  title="Lucid Dreaming: Techniques, Science and Complete Guide | Ethyria"
+  description="Lucid dreaming explained: MILD, WILD, WBTB and 5 proven techniques. Science, how-to guide and how Ethyria recognises lucid dreams. Start free."
+  keywords=""
+  path="/luzides-traeumen/"
+>
+  <Fragment set:html={_body} />
+</BaseLayout>

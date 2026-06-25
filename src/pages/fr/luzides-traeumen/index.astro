@@ -1,0 +1,70 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+const _body = `<nav class="sticky top-0 z-50 flex items-center px-6 py-3" style="backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);background:rgba(16,12,31,0.75);border-bottom:1px solid rgba(255,255,255,0.06);" aria-label="Navigation">
+      <a href="/fr/" class="text-gray-400 hover:text-white transition-colors" aria-label="Retour à Ethyria"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 6L8 12L14 18"/></svg></a>
+      <span class="flex-1 text-center text-sm font-semibold tracking-wider uppercase text-gray-300" style="font-family:Poppins,Arial,sans-serif">Rêve Lucide</span>
+      <div style="position:relative;" id="langSw">
+        <button style="background:none;border:1px solid rgba(255,255,255,0.15);color:#9ca3af;padding:4px 10px;border-radius:8px;font-size:0.75rem;cursor:pointer;font-family:Poppins,Arial,sans-serif;line-height:1.4;">FR ▾</button>
+        <div id="langDrop" hidden style="position:absolute;right:0;top:calc(100% + 4px);background:#1a1533;border:1px solid rgba(255,255,255,0.1);border-radius:10px;overflow:hidden;min-width:70px;z-index:200;box-shadow:0 8px 24px rgba(0,0,0,0.4);">
+          <a href="/luzides-traeumen/" style="display:block;padding:7px 14px;font-size:0.75rem;color:#9ca3af;text-decoration:none;font-family:Poppins,Arial,sans-serif;">DE</a>
+          <a href="/en/luzides-traeumen/" style="display:block;padding:7px 14px;font-size:0.75rem;color:#9ca3af;text-decoration:none;font-family:Poppins,Arial,sans-serif;">EN</a>
+          <a href="/fr/luzides-traeumen/" style="display:block;padding:7px 14px;font-size:0.75rem;color:#22d3ee;font-weight:600;text-decoration:none;font-family:Poppins,Arial,sans-serif;" aria-current="page">FR</a>
+          <a href="/es/luzides-traeumen/" style="display:block;padding:7px 14px;font-size:0.75rem;color:#9ca3af;text-decoration:none;font-family:Poppins,Arial,sans-serif;">ES</a>
+          <a href="/ru/luzides-traeumen/" style="display:block;padding:7px 14px;font-size:0.75rem;color:#9ca3af;text-decoration:none;font-family:Poppins,Arial,sans-serif;">RU</a>
+        </div>
+      </div>
+    </nav>
+    <nav aria-label="Fil d'Ariane" class="max-w-3xl mx-auto px-6 pt-4 pb-0">
+      <ol class="flex items-center gap-2 text-xs text-gray-500"><li><a href="/fr/" class="hover:text-cyan-400 transition-colors">Ethyria</a></li><li aria-hidden="true" class="text-gray-600">›</li><li><a href="/fr/luzides-traeumen/" class="text-cyan-400" aria-current="page">Rêve Lucide</a></li></ol>
+    </nav>
+    <main class="max-w-3xl mx-auto px-6 py-12">
+      <!-- 7-Grid: Pillar-Prosa-Kolumne vollbreit (col-7) -->
+      <div class="grid-7">
+      <div class="text-center mb-12">
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 ethyria-gradient-text" style="font-family:Poppins,Arial,sans-serif;">Le Rêve Lucide: le Guide Complet pour Débutants et Pratiquants Avancés</h1>
+        <p class="text-lg text-gray-300 leading-relaxed max-w-2xl mx-auto">Imaginez reconnaître en plein rêve que vous rêvez. Soudain vous savez: je suis ici le créateur. Ce qui ressemble à une fantaisie est un état neurologique mesurable qui peut s'apprendre.</p>
+      </div>
+      <section class="mb-10 p-6 rounded-2xl" style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.1);">
+        <h2 class="text-xl font-bold mb-4" style="font-family:Poppins,Arial,sans-serif;color:#22d3ee;">Qu'est-ce qu'un rêve lucide?</h2>
+        <div class="text-gray-300 leading-relaxed space-y-4">
+          <p><strong>Définition:</strong> Un rêve lucide est un rêve dans lequel le rêveur est conscient qu'il rêve,tout en continuant à dormir. Il peut observer, influencer et parfois façonner activement le rêve.</p>
+          <p>Les premières preuves scientifiques datent de la fin des années 1970. Keith Hearne (Royaume-Uni) et Stephen LaBerge (Université Stanford) ont développé des protocoles permettant aux rêveurs de signaler le début d'un rêve lucide depuis un laboratoire du sommeil par des mouvements oculaires convenus.</p>
+          <p>Articles connexes: <a href="/fr/traumdeutung-methoden/" class="text-cyan-400 hover:underline">Méthodes d'interprétation des rêves</a> · <a href="/fr/traumsymbole-guide/" class="text-cyan-400 hover:underline">Symboles des rêves</a></p>
+        </div>
+      </section>
+      <section class="mb-10 p-6 rounded-2xl" style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.1);">
+        <h2 class="text-xl font-bold mb-4" style="font-family:Poppins,Arial,sans-serif;color:#a78bfa;">Les 5 techniques les plus efficaces</h2>
+        <div class="space-y-3">
+          <div class="p-4 rounded-xl" style="background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.07);"><p class="text-gray-300"><strong class="text-white">MILD</strong>,Développé par LaBerge (Stanford). Avant de dormir: "La prochaine fois que je rêve, je sais que je rêve." Visualisez simultanément. Taux de succès 20–40% dès la première semaine.</p></div>
+          <div class="p-4 rounded-xl" style="background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.07);"><p class="text-gray-300"><strong class="text-white">WBTB</strong>,Réveil après 5–6h, 20–60 min éveillé (lire sur les rêves lucides), puis se rendormir. Combiné avec MILD, double le taux de lucidité.</p></div>
+          <div class="p-4 rounded-xl" style="background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.07);"><p class="text-gray-300"><strong class="text-white">WILD</strong>,La conscience reste active pendant que le corps s'endort. Technique la plus puissante mais la plus exigeante.</p></div>
+          <div class="p-4 rounded-xl" style="background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.07);"><p class="text-gray-300"><strong class="text-white">FILD</strong>,En demi-sommeil: bouger deux doigts rythmiquement puis effectuer un test de réalité.</p></div>
+          <div class="p-4 rounded-xl" style="background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.07);"><p class="text-gray-300"><strong class="text-white">SSILD</strong>,Alterner la concentration sur les impressions visuelles, auditives et tactiles. Idéal pour les personnes ayant du mal avec la visualisation.</p></div>
+        </div>
+      </section>
+      <section class="text-center py-12">
+        <h2 class="text-2xl font-bold mb-4" style="font-family:Poppins,Arial,sans-serif;">Commencez votre journal de rêves avec détection de lucidité</h2>
+        <a href="/assets/Ethyria_v1.0_def.apk" download class="inline-block px-8 py-4 font-bold text-white rounded-2xl text-lg" style="font-family:Poppins,Arial,sans-serif;background:linear-gradient(135deg,#01bfff 0%,#0066ff 100%);box-shadow:0 6px 24px rgba(1,191,255,0.3);">Télécharger Ethyria gratuitement</a>
+      </section>
+          </div><!-- /grid-7 -->
+    </main>
+    <footer class="text-center py-8 text-xs text-gray-500 border-t border-white/5">
+      <p>Ethyria | <a href="/fr/luzides-traeumen/" class="text-cyan-500 hover:underline">Rêve Lucide</a> · <a href="/fr/traumsymbole-guide/" class="text-cyan-500 hover:underline">Symboles</a> · <a href="/fr/traumdeutung-methoden/" class="text-cyan-500 hover:underline">Méthodes</a></p>
+      <p class="mt-1"><a href="https://ethyria.at/fr/" class="text-cyan-500 hover:underline">ethyria.at</a> | <a href="mailto:support@ethyria.at" class="text-cyan-500 hover:underline">support@ethyria.at</a></p>
+      <p class="mt-2"><a href="/impressum.html" class="hover:text-gray-300">Impressum</a> &nbsp;·&nbsp; <a href="/datenschutz.html" class="hover:text-gray-300">Confidentialité</a></p>
+    </footer>
+    
+    <script src="/assets/faq-accordion.js" defer></script><script src="/assets/lang-switcher.js" defer></script>
+<script is:inline src="/assets/lang-switcher.js" defer></script>
+<script is:inline src="/assets/faq-accordion.js" defer></script>`;
+---
+
+<BaseLayout
+  lang="fr"
+  title="Rêve Lucide: Techniques, Science et Guide Complet | Ethyria"
+  description="Rêve lucide expliqué: MILD, WILD, WBTB et 5 techniques prouvées. Science, guide pratique et comment Ethyria reconnaît les rêves lucides. Commencer gratuitement."
+  keywords=""
+  path="/luzides-traeumen/"
+>
+  <Fragment set:html={_body} />
+</BaseLayout>

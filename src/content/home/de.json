@@ -1,0 +1,63 @@
+{
+  "lang": "de",
+  "meta": {
+    "title": "Traumdeutung & Traumanalyse | Ethyria App",
+    "description": "Traumdeutung mit KI: Freud, Jung, Spiritual und mehr. Analysiere deinen Traum kostenlos in Sekunden. Jetzt die App laden.",
+    "keywords": "Traumdeutung App, KI Traumdeutung, Traumdeutung kostenlos, Traumtagebuch App, Traumanalyse App kostenlos, Traumdeutung Freud Jung, Träume deuten App",
+    "ogImage": "https://ethyria.at/assets/og-image-de.png"
+  },
+  "hero": {
+    "badge": "KOSTENLOS STARTEN · ANDROID",
+    "h1": "Träume lügen nicht.",
+    "h2": "KI-gestützte Traumdeutung in Tiefe und Präzision, die keine andere App erreicht",
+    "cta": "Kostenlos starten",
+    "rating_text": "4.8",
+    "rating_count": "127 Bewertungen"
+  },
+  "faq": [
+    {
+      "question": "Ist Ethyria wirklich kostenlos?",
+      "answer": "Der Download ist kostenlos. Du startest mit einem vollständigen Analyse-Durchlauf mit allen 5 Modi. Ohne Konto, ohne Kreditkarte. Für weitere Traumanalysen gibt es drei Optionen: eine Einzel-Analyse (2,99 €), ein Monatsabo (7,99 €) oder ein Jahresabo (59,90 €)."
+    },
+    {
+      "question": "Wie sicher sind meine Traumdaten?",
+      "answer": "Deine Privatsphäre steht an erster Stelle. Kein Cloud Zwang. Kein Tracking. Deine Träume gehören nur dir."
+    },
+    {
+      "question": "Wie funktioniert die Traumdeutung mit KI?",
+      "answer": "Ethyria nutzt fortschrittliche KI, um Symbole, emotionale Themen und wiederkehrende Muster in deinen Träumen zu erkennen. Die Analyse basiert auf psychologischen Methoden nach Jung und Freud."
+    },
+    {
+      "question": "Welche Analyse Modi bietet Ethyria?",
+      "answer": "Fünf Perspektiven. Allgemeine Deutung. Freudsche Psychoanalyse. Jungsche Analytische Psychologie. Spirituelle Reflexion. Biosynchrone Analyse. Jede zeigt deinen Traum aus einem anderen Blickwinkel."
+    },
+    {
+      "question": "Kann ich meine Analysen exportieren?",
+      "answer": "Ja. Als Premium Nutzer exportierst du jede Analyse und deine monatlichen Statistiken als professionell gestaltetes PDF Dokument."
+    },
+    {
+      "question": "Für welche Geräte ist Ethyria verfügbar?",
+      "answer": "Aktuell ist Ethyria für Android verfügbar. Eine iOS Version ist in Entwicklung."
+    },
+    {
+      "question": "Was bedeutet mein Traum?",
+      "answer": "Jeder Traum ist einzigartig. Ethyria analysiert deine Traumsymbole, Emotionen und Erzählmuster mit KI und ordnet sie psychologisch ein. Nach Freud, Jung oder biosynchronen Methoden. So erfährst du, was dein Traum dir wirklich sagen will."
+    },
+    {
+      "question": "Was ist der Unterschied zwischen Traumdeutung nach Freud und Jung?",
+      "answer": "Freud sieht Träume als Ausdruck verdrängter Wünsche und unbewusster Konflikte. Jung betrachtet sie als Botschaften des kollektiven Unbewussten und arbeitet mit Archetypen. Ethyria bietet beide Ansätze als eigenständige Analyse Perspektiven."
+    },
+    {
+      "question": "Kann KI Träume wirklich deuten?",
+      "answer": "KI erkennt Muster, die dem menschlichen Auge entgehen. Wiederkehrende Symbole. Emotionale Zusammenhänge. Narrative Strukturen. Ethyria nutzt das als Werkzeug zur Selbstreflexion. Nicht als Ersatz für professionelle therapeutische Begleitung."
+    },
+    {
+      "question": "Wie führe ich ein digitales Traumtagebuch?",
+      "answer": "Schreib deinen Traum direkt nach dem Aufwachen auf. Am besten mit Ethyria. Notiere Symbole, Emotionen und Details. Die App analysiert deine Einträge automatisch und zeigt dir über Wochen hinweg Muster und wiederkehrende Themen."
+    },
+    {
+      "question": "Was bedeuten wiederkehrende Träume?",
+      "answer": "Wiederkehrende Träume weisen oft auf ungelöste emotionale Themen oder unbewusste Konflikte hin. Ethyria erkennt solche Muster automatisch und hilft dir, die Botschaften dahinter zu verstehen."
+    }
+  ]
+}

@@ -1,0 +1,157 @@
+---
+import MetaTags from '@/components/seo/MetaTags.astro';
+import HreflangTags from '@/components/seo/HreflangTags.astro';
+import type { Locale } from '@/i18n/ui';
+import { LOCALE_LANG_ATTR } from '@/i18n/ui';
+
+export interface Props {
+  lang: Locale;
+  title: string;
+  description: string;
+  keywords?: string;
+  /** Canonical path without locale, e.g. "/" or "/symbols/wasser/" */
+  path: string;
+  ogType?: 'website' | 'article';
+  ogImage?: string;
+  /** Preload the LCP hero image */
+  lcpImage?: string;
+  lcpImageType?: string;
+  robots?: string;
+}
+
+const {
+  lang,
+  title,
+  description,
+  keywords,
+  path,
+  ogType = 'website',
+  ogImage,
+  lcpImage,
+  lcpImageType = 'image/webp',
+  robots,
+} = Astro.props;
+
+const OG_IMAGE_MAP: Record<Locale, string> = {
+  de: 'https://ethyria.at/assets/og-image-de.png',
+  en: 'https://ethyria.at/assets/og-image-en.png',
+  fr: 'https://ethyria.at/assets/og-image-fr.png',
+  es: 'https://ethyria.at/assets/og-image-es.png',
+  ru: 'https://ethyria.at/assets/og-image-ru.png',
+};
+const OG_LOCALE_MAP: Record<Locale, string> = {
+  de: 'de_DE', en: 'en_US', fr: 'fr_FR', es: 'es_ES', ru: 'ru_RU',
+};
+
+const resolvedOgImage = ogImage ?? OG_IMAGE_MAP[lang];
+const htmlLang = LOCALE_LANG_ATTR[lang];
+const isDeRoot = lang === 'de' && path === '/';
+
+// CSP hashes:
+// Inline script 1: language redirect (only on DE root)
+// Inline script 2: SW registration (all pages)
+// Inline script 3: api-key-config (all pages)
+const CSP_HASHES = [
+  "'sha256-74NoYDO9X4DSn6F8ZD5p5avCIhaOv9FE61nqixn74ZY='", // SW registration
+  ...(isDeRoot ? ["'sha256-i9zWa4JMWCNSsKXvEAjYUeAxU2W26zDLzxg1iDVpo1c='"] : []), // lang redirect
+].join(' ');
+
+const CSP = `default-src 'self'; script-src 'self' ${CSP_HASHES} https://script.google.com https://plausible.io https://browser.sentry-cdn.com https://js.sentry-cdn.com; style-src 'self' 'unsafe-inline' https://unpkg.com; img-src 'self' data: https://ethyria.at https://api.qrserver.com; font-src 'self' https://unpkg.com; connect-src 'self' https://ethyria-api.omcstolz.workers.dev https://ethyria.at https://script.google.com https://plausible.io https://o4511010131542016.ingest.de.sentry.io https://www.google.com https://speech.platform.bing.com wss:; frame-ancestors 'none'; base-uri 'self'; form-action 'self' https://script.google.com;`;
+---
+
+<!doctype html>
+<html lang={htmlLang}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    {isDeRoot && (
+      <script is:inline>(function(){if(sessionStorage.getItem('el'))return;var l=(navigator.language||'').slice(0,2).toLowerCase();var m={en:'/en/',fr:'/fr/',es:'/es/',ru:'/ru/'};if(m[l]){sessionStorage.setItem('el','1');location.replace(m[l]);}})();</script>
+    )}
+
+    <!-- PWA -->
+    <link rel="icon" href="/assets/Ethyria_new_app_icon.png" type="image/png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon-180.png" />
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Ethyria" />
+
+    <!-- Preconnects -->
+    <link rel="preconnect" href="https://script.google.com" crossorigin />
+    <link rel="preconnect" href="https://plausible.io" crossorigin />
+    <link rel="preconnect" href="https://ethyria-api.omcstolz.workers.dev" crossorigin />
+
+    <!-- Font preloads -->
+    <link rel="preload" href="/fonts/poppins_bold.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/inter_regular.woff2" as="font" type="font/woff2" crossorigin />
+
+    {lcpImage && (
+      <link rel="preload" href={lcpImage} as="image" type={lcpImageType} />
+    )}
+
+    <MetaTags
+      {title}
+      {description}
+      {keywords}
+      canonical={`https://ethyria.at${path === '/' ? (lang === 'de' ? '/' : `/${lang}/`) : (lang === 'de' ? path : `/${lang}${path}`)}`}
+      {ogType}
+      ogImage={resolvedOgImage}
+      ogLocale={OG_LOCALE_MAP[lang]}
+      {robots}
+    />
+
+    <HreflangTags {path} />
+
+    <!-- JSON-LD schemas (injected per page type) -->
+    <slot name="schema" />
+
+    <!-- CSP -->
+    <meta http-equiv="Content-Security-Policy" content={CSP} />
+
+    <!-- Styles -->
+    <link rel="preload" href="/assets/tailwind.min.css" as="style" />
+    <link rel="preload" href="/style.css" as="style" />
+    <link rel="stylesheet" href="/assets/tailwind.min.css" />
+    <link rel="stylesheet" href="/style.css" />
+
+    <!-- Phosphor Icons -->
+    <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/duotone/style.css" />
+
+    <!-- Analytics (defer to not block LCP) -->
+    <script is:inline defer data-domain="ethyria.at" src="https://plausible.io/js/script.outbound-links.js"></script>
+
+    <!-- Sentry -->
+    <script is:inline async src="https://browser.sentry-cdn.com/8.50.0/bundle.min.js" crossorigin="anonymous"></script>
+    <script is:inline defer src="/assets/sentry-init.js"></script>
+
+    <!-- Web Vitals -->
+    <script is:inline defer src="/assets/web-vitals.js"></script>
+
+    <slot name="head-extra" />
+  </head>
+
+  <body class="bg-[#100c1f] text-white min-h-screen">
+
+    <slot />
+
+    <!-- Legal Popup (filled dynamically by conversion.js) -->
+    <div id="legalPopup" hidden role="dialog" aria-modal="true" aria-label="Rechtliche Informationen" class="legal-popup">
+      <div class="legal-popup__backdrop" data-close-popup="legal"></div>
+      <div class="legal-popup__panel">
+        <div id="legalPopupContent" class="legal-popup__content"></div>
+      </div>
+    </div>
+
+    <!-- Scripts -->
+    <script is:inline src="/assets/nav-mobile.js" defer></script>
+    <script is:inline src="/assets/faq.js" defer></script>
+    <script is:inline src="/assets/conversion.js" defer></script>
+    <script is:inline src="/assets/consent.js" defer></script>
+    <script is:inline src="/assets/analytics.js" defer></script>
+    <script is:inline src="/assets/ui-animations.js" defer></script>
+
+    <!-- SW Registration -->
+    <script is:inline>if('serviceWorker'in navigator){navigator.serviceWorker.register('/sw.js').catch(function(){});}</script>
+  </body>
+</html>

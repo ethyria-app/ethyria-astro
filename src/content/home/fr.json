@@ -1,0 +1,87 @@
+{
+  "lang": "fr",
+  "meta": {
+    "title": "Interprétation des rêves & Analyse | Ethyria App",
+    "description": "Interprétation des rêves avec IA: Freud, Jung, Spirituel et plus. Analysez votre rêve gratuitement en quelques secondes.",
+    "keywords": "Interprétation rêves app, IA rêves, Analyse rêves app",
+    "ogImage": "https://ethyria.at/assets/og-image-fr.png"
+  },
+  "hero": {
+    "badge": "COMMENCER GRATUITEMENT · ANDROID",
+    "h1": "Les rêves ne mentent pas.",
+    "h2": "Interprétation des rêves par IA avec une profondeur et une précision qu'aucune autre app n'atteint",
+    "cta": "Commencer gratuitement",
+    "rating_text": "4.8",
+    "rating_count": "127 avis"
+  },
+  "faq": [
+    {
+      "question": "Ethyria est-il vraiment gratuit ?",
+      "answer": "Le téléchargement est gratuit. Tu démarres avec une analyse complète des 5 modes. Sans compte, sans carte bancaire. Pour des analyses supplémentaires, trois options sont disponibles : une analyse unique (2,99 €), un abonnement mensuel (7,99 €) ou un abonnement annuel (59,90 €)."
+    },
+    {
+      "question": "Mes données oniriques sont-elles sécurisées ?",
+      "answer": "Ta vie privée est notre priorité. Pas de cloud obligatoire. Pas de tracking. Tes rêves ne t'appartiennent qu'à toi."
+    },
+    {
+      "question": "Comment fonctionne l'interprétation des rêves avec IA ?",
+      "answer": "Ethyria utilise une IA avancée pour reconnaître symboles, thèmes émotionnels et schémas récurrents dans tes rêves. L'analyse repose sur des méthodes psychologiques de Jung et Freud."
+    },
+    {
+      "question": "Quels modes d'analyse Ethyria propose-t-il ?",
+      "answer": "Cinq perspectives. Interprétation générale. Psychanalyse freudienne. Psychologie analytique jungienne. Réflexion spirituelle. Analyse biosynchrone. Chacune montre ton rêve sous un angle différent."
+    },
+    {
+      "question": "Puis-je exporter mes analyses ?",
+      "answer": "Oui. En tant qu'utilisateur Premium, tu peux exporter chaque analyse et tes statistiques mensuelles sous forme de document PDF au design professionnel."
+    },
+    {
+      "question": "Sur quels appareils Ethyria est-il disponible ?",
+      "answer": "Actuellement, Ethyria est disponible pour Android. Une version iOS est en développement."
+    },
+    {
+      "question": "Que signifie mon rêve ?",
+      "answer": "Chaque rêve est unique. Ethyria analyse tes symboles oniriques, émotions et schémas narratifs avec l'IA et les replace dans un contexte psychologique. Selon Freud, Jung ou les méthodes biosynchrones. Ainsi tu découvres ce que ton rêve veut vraiment te dire."
+    },
+    {
+      "question": "Quelle est la différence entre l'interprétation des rêves selon Freud et Jung ?",
+      "answer": "Freud voit les rêves comme l'expression de désirs refoulés et de conflits inconscients. Jung les considère comme des messages de l'inconscient collectif et travaille avec les archétypes. Ethyria propose les deux approches comme perspectives d'analyse indépendantes."
+    },
+    {
+      "question": "L'IA peut-elle vraiment interpréter les rêves ?",
+      "answer": "L'IA reconnaît des schémas qui échappent à l'œil humain. Symboles récurrents. Liens émotionnels. Structures narratives. Ethyria utilise cela comme outil d'auto-réflexion. Pas comme substitut à un accompagnement thérapeutique professionnel."
+    },
+    {
+      "question": "Comment tenir un journal de rêves numérique ?",
+      "answer": "Note ton rêve juste après le réveil. Idéalement avec Ethyria. Note symboles, émotions et détails. L'appli analyse automatiquement tes entrées et te montre au fil des semaines les schémas et thèmes récurrents."
+    },
+    {
+      "question": "Que signifient les rêves récurrents ?",
+      "answer": "Les rêves récurrents indiquent souvent des problèmes émotionnels non résolus ou des conflits inconscients. Ethyria détecte automatiquement ces schémas et t'aide à comprendre les messages qu'ils cachent."
+    },
+    {
+      "question": "Quels symboles oniriques apparaissent le plus souvent ?",
+      "answer": "L'eau représente les émotions. Tomber représente la perte de contrôle. Le vol représente la liberté. Les dents représentent l'anxiété. Les maisons représentent le soi. La poursuite représente l'évitement. Ethyria analyse ces symboles dans le contexte de ton histoire onirique personnelle."
+    },
+    {
+      "question": "Quelle est la meilleure application d'interprétation des rêves ?",
+      "answer": "Ethyria est la seule application d'interprétation des rêves qui réunit cinq perspectives d'analyse scientifiquement fondées. Interprétation générale. Psychanalyse freudienne. Psychologie analytique jungienne. Réflexion spirituelle. Analyse biosynchrone. Contrairement aux autres applications d'interprétation des rêves, Ethyria propose aussi des images oniriques générées par IA, un journal de rêves visuel et une protection complète des données par chiffrement local."
+    },
+    {
+      "question": "Comment fonctionne l'interprétation des rêves via application ?",
+      "answer": "Tu décris ton rêve par texte ou par saisie vocale. Ethyria reconnaît automatiquement symboles, émotions et schémas d'action. L'IA analyse ton rêve sous jusqu'à cinq perspectives psychologiques et te livre une interprétation de rêve fondée. En quelques secondes."
+    },
+    {
+      "question": "Existe-t-il une application gratuite d'interprétation des rêves pour Android ?",
+      "answer": "Oui. Le téléchargement est gratuit. Tu démarres directement avec une analyse complète des 5 modes. Pour une utilisation régulière, trois options in-app sont disponibles à partir de 2,99 €. Sans abonnement obligatoire, sans frais cachés."
+    },
+    {
+      "question": "Qu'est-ce qui distingue Ethyria des autres applications d'interprétation des rêves ?",
+      "answer": "La plupart des applications d'interprétation des rêves n'offrent qu'une seule méthode d'interprétation. Ethyria combine cinq perspectives d'analyse. Dont l'Analyse Biosynchrone Multimodale via Android Health Connect, qui relie phases de sommeil et fréquence cardiaque au contenu de tes rêves. De plus, Ethyria génère des œuvres d'art par IA à partir de tes rêves et détecte les schémas récurrents dans ton journal de rêves au fil des semaines."
+    },
+    {
+      "question": "Ethyria peut-elle détecter et analyser les rêves lucides ?",
+      "answer": "Oui. Ethyria détecte automatiquement les rêves lucides et attribue un score de lucidité de 0 à 1. Les rêves lucides reçoivent une analyse dédiée qui tient compte du fait que la conscience était active pendant le rêve. Dans l'analyse biosynchrone, le score est corrélé avec les données des phases de sommeil. Guide complet: Apprendre le rêve lucide avec MILD, WILD et WBTB."
+    }
+  ]
+}

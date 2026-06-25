@@ -1,0 +1,70 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+const _body = `<nav class="sticky top-0 z-50 flex items-center px-6 py-3" style="backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);background:rgba(16,12,31,0.75);border-bottom:1px solid rgba(255,255,255,0.06);" aria-label="Навигация">
+      <a href="/ru/" class="text-gray-400 hover:text-white transition-colors" aria-label="Назад на главную"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 6L8 12L14 18"/></svg></a>
+      <span class="flex-1 text-center text-sm font-semibold tracking-wider uppercase text-gray-300" style="font-family:Poppins,Arial,sans-serif">Осознанные Сны</span>
+      <div style="position:relative;" id="langSw">
+        <button style="background:none;border:1px solid rgba(255,255,255,0.15);color:#9ca3af;padding:4px 10px;border-radius:8px;font-size:0.75rem;cursor:pointer;font-family:Poppins,Arial,sans-serif;line-height:1.4;">RU ▾</button>
+        <div id="langDrop" hidden style="position:absolute;right:0;top:calc(100% + 4px);background:#1a1533;border:1px solid rgba(255,255,255,0.1);border-radius:10px;overflow:hidden;min-width:70px;z-index:200;box-shadow:0 8px 24px rgba(0,0,0,0.4);">
+          <a href="/luzides-traeumen/" style="display:block;padding:7px 14px;font-size:0.75rem;color:#9ca3af;text-decoration:none;font-family:Poppins,Arial,sans-serif;">DE</a>
+          <a href="/en/luzides-traeumen/" style="display:block;padding:7px 14px;font-size:0.75rem;color:#9ca3af;text-decoration:none;font-family:Poppins,Arial,sans-serif;">EN</a>
+          <a href="/fr/luzides-traeumen/" style="display:block;padding:7px 14px;font-size:0.75rem;color:#9ca3af;text-decoration:none;font-family:Poppins,Arial,sans-serif;">FR</a>
+          <a href="/es/luzides-traeumen/" style="display:block;padding:7px 14px;font-size:0.75rem;color:#9ca3af;text-decoration:none;font-family:Poppins,Arial,sans-serif;">ES</a>
+          <a href="/ru/luzides-traeumen/" style="display:block;padding:7px 14px;font-size:0.75rem;color:#22d3ee;font-weight:600;text-decoration:none;font-family:Poppins,Arial,sans-serif;" aria-current="page">RU</a>
+        </div>
+      </div>
+    </nav>
+    <nav aria-label="Хлебные крошки" class="max-w-3xl mx-auto px-6 pt-4 pb-0">
+      <ol class="flex items-center gap-2 text-xs text-gray-500"><li><a href="/ru/" class="hover:text-cyan-400 transition-colors">Ethyria</a></li><li aria-hidden="true" class="text-gray-600">›</li><li><a href="/ru/luzides-traeumen/" class="text-cyan-400" aria-current="page">Осознанные сны</a></li></ol>
+    </nav>
+    <main class="max-w-3xl mx-auto px-6 py-12">
+      <!-- 7-Grid: Pillar-Prosa-Kolumne vollbreit (col-7) -->
+      <div class="grid-7">
+      <div class="text-center mb-12">
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 ethyria-gradient-text" style="font-family:Poppins,Arial,sans-serif;">Осознанные сны: Полное руководство для начинающих и продвинутых практиков</h1>
+        <p class="text-lg text-gray-300 leading-relaxed max-w-2xl mx-auto">Представь, что в середине сна ты осознаёшь, что спишь. Вдруг ты понимаешь: я здесь творец. То, что звучит как фантазия,это измеримое неврологическое состояние, которому можно научиться систематически.</p>
+      </div>
+      <section class="mb-10 p-6 rounded-2xl" style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.1);">
+        <h2 class="text-xl font-bold mb-4" style="font-family:Poppins,Arial,sans-serif;color:#22d3ee;">Что такое осознанный сон?</h2>
+        <div class="text-gray-300 leading-relaxed space-y-4">
+          <p><strong>Определение:</strong> Осознанный сон,это сон, в котором сновидец осознаёт, что спит, продолжая при этом спать. Сновидец может наблюдать, влиять и иногда активно формировать сон.</p>
+          <p>Первые научные доказательства относятся к концу 1970-х. Кит Херн (Великобритания) и Стивен Лаберж (Стэнфордский университет) разработали протоколы, позволяющие сновидцам сигнализировать о начале осознанного сна из лаборатории сна согласованными движениями глаз.</p>
+          <p>Связанные материалы: <a href="/ru/traumdeutung-methoden/" class="text-cyan-400 hover:underline">Методы толкования снов</a> · <a href="/ru/traumsymbole-guide/" class="text-cyan-400 hover:underline">Символы снов</a></p>
+        </div>
+      </section>
+      <section class="mb-10 p-6 rounded-2xl" style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.1);">
+        <h2 class="text-xl font-bold mb-4" style="font-family:Poppins,Arial,sans-serif;color:#a78bfa;">5 наиболее эффективных техник</h2>
+        <div class="space-y-3">
+          <div class="p-4 rounded-xl" style="background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.07);"><p class="text-gray-300"><strong class="text-white">MILD</strong>,Разработана Лабержем (Стэнфорд). Перед сном: «В следующий раз, когда мне приснится сон, я пойму, что сплю». Одновременно визуализируй. Успешность 20–40% уже в первую неделю.</p></div>
+          <div class="p-4 rounded-xl" style="background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.07);"><p class="text-gray-300"><strong class="text-white">WBTB</strong>,Пробуждение через 5–6 часов, 20–60 мин бодрствования, затем снова заснуть. В сочетании с MILD удваивает частоту осознанности.</p></div>
+          <div class="p-4 rounded-xl" style="background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.07);"><p class="text-gray-300"><strong class="text-white">WILD</strong>,Сознание остаётся активным, пока тело засыпает. Самая мощная техника, но и самая сложная.</p></div>
+          <div class="p-4 rounded-xl" style="background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.07);"><p class="text-gray-300"><strong class="text-white">FILD</strong>,В полусне: ритмично двигать двумя пальцами, затем провести проверку реальности.</p></div>
+          <div class="p-4 rounded-xl" style="background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.07);"><p class="text-gray-300"><strong class="text-white">SSILD</strong>,Чередовать фокус на зрительных, слуховых и тактильных ощущениях. Идеально для тех, кто испытывает трудности с целенаправленной визуализацией.</p></div>
+        </div>
+      </section>
+      <section class="text-center py-12">
+        <h2 class="text-2xl font-bold mb-4" style="font-family:Poppins,Arial,sans-serif;">Начни вести дневник снов с распознаванием осознанности</h2>
+        <a href="/assets/Ethyria_v1.0_def.apk" download class="inline-block px-8 py-4 font-bold text-white rounded-2xl text-lg" style="font-family:Poppins,Arial,sans-serif;background:linear-gradient(135deg,#01bfff 0%,#0066ff 100%);box-shadow:0 6px 24px rgba(1,191,255,0.3);">Скачать Ethyria бесплатно</a>
+      </section>
+          </div><!-- /grid-7 -->
+    </main>
+    <footer class="text-center py-8 text-xs text-gray-500 border-t border-white/5">
+      <p>Ethyria | <a href="/ru/luzides-traeumen/" class="text-cyan-500 hover:underline">Осознанные сны</a> · <a href="/ru/traumsymbole-guide/" class="text-cyan-500 hover:underline">Символы</a> · <a href="/ru/traumdeutung-methoden/" class="text-cyan-500 hover:underline">Методы</a></p>
+      <p class="mt-1"><a href="https://ethyria.at/ru/" class="text-cyan-500 hover:underline">ethyria.at</a> | <a href="mailto:support@ethyria.at" class="text-cyan-500 hover:underline">support@ethyria.at</a></p>
+      <p class="mt-2"><a href="/impressum.html" class="hover:text-gray-300">Impressum</a> &nbsp;·&nbsp; <a href="/datenschutz.html" class="hover:text-gray-300">Конфиденциальность</a></p>
+    </footer>
+    
+    <script src="/assets/faq-accordion.js" defer></script><script src="/assets/lang-switcher.js" defer></script>
+<script is:inline src="/assets/lang-switcher.js" defer></script>
+<script is:inline src="/assets/faq-accordion.js" defer></script>`;
+---
+
+<BaseLayout
+  lang="ru"
+  title="Осознанные Сны: Техники, Наука и Полное Руководство | Ethyria"
+  description="Осознанные сны: MILD, WILD, WBTB и 5 проверенных техник. Наука, пошаговое руководство и как Ethyria распознаёт осознанные сны. Начать бесплатно."
+  keywords=""
+  path="/luzides-traeumen/"
+>
+  <Fragment set:html={_body} />
+</BaseLayout>

@@ -1,0 +1,159 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+const _body = `
+    <div class="bg-blob top-[-10%] left-[-10%]"></div>
+
+    <nav
+      class="container mx-auto px-6 py-6 flex justify-center items-center relative z-10"
+    >
+      <a href="index.html" class="nav-brand">
+        <img
+          src="assets/Logo_web.png"
+          alt="Ethyria zurück zur Startseite"
+          width="240"
+          height="57"
+          class="nav-brand-logo"
+          style="max-width: 240px" decoding="async"
+        />
+      </a>
+    </nav>
+
+    <main class="container mx-auto px-6 py-12 relative z-10 max-w-3xl">
+      <!-- 7-Grid: Pillar-Prosa-Kolumne vollbreit (col-7) -->
+      <div class="grid-7">
+      <h1 class="text-4xl font-bold mb-10 ethyria-gradient-text">Datenschutzerklärung</h1>
+      <p class="text-gray-400 text-sm mb-10">Letzte Aktualisierung: Juni 2026</p>
+
+      <!-- 1 -->
+      <section class="mb-10">
+        <h2 class="text-xl font-bold mb-3 text-white">1. Verantwortlicher</h2>
+        <div class="text-gray-300 leading-relaxed space-y-1">
+          <p><strong class="text-white">Oliver Stolz</strong></p>
+          <p>Ethyria. Dream Analysis</p>
+          <p>Freistädter Str. 65, 4040 Linz, Österreich</p>
+          <p>E-Mail: <!--email_off--><a href="mailto:support@ethyria.at" class="text-cyan-400 hover:underline">support@ethyria.at</a><!--/email_off--></p>
+        </div>
+      </section>
+
+      <!-- 2 -->
+      <section class="mb-10">
+        <h2 class="text-xl font-bold mb-3 text-white">2. Welche Daten wir erheben und warum</h2>
+
+        <h3 class="text-base font-bold mb-2 text-white/80">2.1 E-Mail-Adresse (Anmeldung und Kontakt)</h3>
+        <p class="text-gray-300 leading-relaxed mb-4">Wenn du dich über das Anmeldeformular registrierst oder uns per E-Mail kontaktierst, erheben wir deine E-Mail-Adresse. Rechtsgrundlage ist deine ausdrückliche Einwilligung (Art. 6 Abs. 1 lit. a DSGVO). Wir nutzen sie ausschließlich für den vereinbarten Zweck. Keine Weitergabe an Dritte. Kein Newsletter ohne erneute Einwilligung.</p>
+
+        <h3 class="text-base font-bold mb-2 text-white/80">2.2 Live-Traumanalyse (Website)</h3>
+        <p class="text-gray-300 leading-relaxed mb-4">Die auf der Website eingegebenen Traumtexte werden zur KI-Verarbeitung an unsere API (Cloudflare Workers) übermittelt. Die Texte werden nicht dauerhaft gespeichert und keiner Person zugeordnet. Das Analyse-Limit wird über lokalen Browser-Speicher (localStorage) verwaltet. Rechtsgrundlage: berechtigtes Interesse (Art. 6 Abs. 1 lit. f DSGVO).</p>
+
+        <h3 class="text-base font-bold mb-2 text-white/80">2.3 Einwilligungsverwaltung (Consent-System)</h3>
+        <p class="text-gray-300 leading-relaxed mb-4">Bevor du die Live-Traumanalyse nutzt, erscheint ein Einwilligungsdialog. Deine Einwilligung wird mit einer eindeutigen Kennung (UUID), einem Zeitstempel, der Version und der Sprache in deinem Browser-Speicher sowie in unserem Cloudflare KV-Speicher hinterlegt (Aufbewahrungsdauer: 3 Jahre). Du kannst deine Einwilligung jederzeit über den Link im Footer widerrufen. Rechtsgrundlage: Art. 6 Abs. 1 lit. a DSGVO in Verbindung mit Art. 7 DSGVO.</p>
+
+        <h3 class="text-base font-bold mb-2 text-white/80">2.4 App-Daten (Android)</h3>
+        <p class="text-gray-300 leading-relaxed mb-4">Alle Traumeinträge und Analysen in der Ethyria App verbleiben lokal auf deinem Gerät. Es findet keine automatische Cloud-Synchronisation statt. Die KI-Analyse erfordert eine Internetverbindung zur API. Der Traumtext wird dabei temporär übermittelt und nicht dauerhaft gespeichert.</p>
+
+        <h3 class="text-base font-bold mb-2 text-white/80">2.5 In-App-Käufe (Google Play)</h3>
+        <p class="text-gray-300 leading-relaxed mb-4">Käufe innerhalb der Android-App (Einzel-Analyse, Monats- oder Jahresabo) werden ausschließlich über Google Play abgewickelt. Wir erhalten keine Zahlungsdaten. Google LLC verarbeitet diese Daten gemäß den <a href="https://policies.google.com/privacy" class="text-cyan-400 hover:underline" target="_blank" rel="noopener">Google-Datenschutzbestimmungen</a>. Zahlungen auf der Website werden über Stripe Inc. verarbeitet. Wir erhalten keine Kreditkartendaten. Weitere Informationen: <a href="https://stripe.com/de/privacy" class="text-cyan-400 hover:underline" target="_blank" rel="noopener">stripe.com/de/privacy</a>.</p>
+
+        <h3 class="text-base font-bold mb-2 text-white/80">2.6 Analyse-Dienst (Plausible Analytics)</h3>
+        <p class="text-gray-300 leading-relaxed mb-4">Diese Website verwendet Plausible Analytics (Plausible Insights OÜ, Tallinn, Estland). Plausible verarbeitet keine personenbezogenen Daten, verwendet keine Cookies und ist ohne Einwilligung DSGVO-konform einsetzbar. Alle Daten sind anonymisiert und können keiner einzelnen Person zugeordnet werden. Rechtsgrundlage: berechtigtes Interesse (Art. 6 Abs. 1 lit. f DSGVO).</p>
+
+        <h3 class="text-base font-bold mb-2 text-white/80">2.7 Fehler-Tracking (Sentry)</h3>
+        <p class="text-gray-300 leading-relaxed mb-4">Zur Erkennung und Behebung technischer Fehler nutzen wir Sentry (Functional Software Inc. dba Sentry). Wir verwenden den EU-Ingest-Endpunkt (ingest.de.sentry.io). Es werden keine personenbezogenen Daten übermittelt. IP-Adressen und nutzerbezogene Informationen sind deaktiviert. Rechtsgrundlage: berechtigtes Interesse (Art. 6 Abs. 1 lit. f DSGVO).</p>
+
+        <h3 class="text-base font-bold mb-2 text-white/80">2.8 Server-Logs und CDN</h3>
+        <p class="text-gray-300 leading-relaxed">Beim Besuch dieser Website werden technische Zugriffsdaten (IP-Adresse, Browser, Zeitstempel) in Server-Logs von GitHub Pages und Cloudflare erfasst. Diese Daten werden nach spätestens 7 Tagen gelöscht. Cloudflare fungiert als CDN und Sicherheitsschicht vor dem Webserver. Rechtsgrundlage: berechtigtes Interesse (Art. 6 Abs. 1 lit. f DSGVO).</p>
+      </section>
+
+      <!-- 3 -->
+      <section class="mb-10">
+        <h2 class="text-xl font-bold mb-3 text-white">3. Cookies und lokale Speicherung</h2>
+        <p class="text-gray-300 leading-relaxed">Diese Website verwendet ausschließlich technisch notwendige Speicher (localStorage, sessionStorage) zur Verwaltung von Analyse-Credits, Einwilligungen und Session-Cache. Es werden keine Tracking- oder Marketing-Cookies eingesetzt. Eine Cookie-Einwilligung nach dem österreichischen TKG ist für technisch notwendige Speicherung nicht erforderlich. Der Service Worker ermöglicht eine Offline-Nutzung durch lokales Caching von Website-Ressourcen.</p>
+      </section>
+
+      <!-- 4 -->
+      <section class="mb-10">
+        <h2 class="text-xl font-bold mb-3 text-white">4. KI-Verarbeitung und EU AI Act</h2>
+        <p class="text-gray-300 leading-relaxed mb-3">Die Traumdeutung erfolgt durch ein KI-Modell, das über unsere Cloudflare Workers API angebunden ist. Folgende Transparenzpflichten gelten:</p>
+        <ul class="text-gray-300 leading-relaxed space-y-1 list-disc list-inside">
+          <li>Die KI-Natur aller Analysen ist für Nutzerinnen und Nutzer jederzeit erkennbar.</li>
+          <li>Ethyria-Analysen ersetzen keine professionelle psychologische oder therapeutische Beratung.</li>
+          <li>Eingabetexte werden ausschließlich zur Erstellung der Analyse genutzt und nicht für das Training von KI-Modellen verwendet.</li>
+          <li>Die Ethyria App und die Browser-Live-Analyse fallen gemäß EU AI Act (Verordnung (EU) 2024/1689) als allgemeine KI-Anwendung in die niedrigste Risikostufe.</li>
+        </ul>
+      </section>
+
+      <!-- 5 -->
+      <section class="mb-10">
+        <h2 class="text-xl font-bold mb-3 text-white">5. Datenübermittlung in Drittländer</h2>
+        <p class="text-gray-300 leading-relaxed mb-3">Folgende Dienste übermitteln Daten in Länder außerhalb des EWR:</p>
+        <ul class="text-gray-300 leading-relaxed space-y-1 list-disc list-inside">
+          <li><strong class="text-white/80">Cloudflare (USA):</strong> Zertifiziert nach EU-US Data Privacy Framework (DPF). Verarbeitung im Rahmen unserer API und CDN.</li>
+          <li><strong class="text-white/80">Stripe (USA):</strong> Zertifiziert nach EU-US DPF. Zahlungsverarbeitung auf der Website.</li>
+          <li><strong class="text-white/80">Google Play (USA):</strong> Zahlungsverarbeitung für App-Käufe. Standardvertragsklauseln (SCC) gemäß Art. 46 DSGVO.</li>
+          <li><strong class="text-white/80">Sentry (USA):</strong> EU-Ingest-Endpunkt aktiv. Keine personenbezogenen Daten übermittelt.</li>
+        </ul>
+        <p class="text-gray-300 leading-relaxed mt-3">Ein angemessenes Datenschutzniveau ist durch DPF-Zertifizierung, Standardvertragsklauseln oder technische Maßnahmen gewährleistet.</p>
+      </section>
+
+      <!-- 6 -->
+      <section class="mb-10">
+        <h2 class="text-xl font-bold mb-3 text-white">6. Deine Rechte</h2>
+        <p class="text-gray-300 leading-relaxed mb-3">Gemäß DSGVO hast du folgende Rechte:</p>
+        <ul class="text-gray-300 leading-relaxed space-y-1 list-disc list-inside">
+          <li>Auskunft (Art. 15 DSGVO)</li>
+          <li>Berichtigung (Art. 16 DSGVO)</li>
+          <li>Löschung (Art. 17 DSGVO)</li>
+          <li>Einschränkung der Verarbeitung (Art. 18 DSGVO)</li>
+          <li>Widerspruch (Art. 21 DSGVO)</li>
+          <li>Datenübertragbarkeit (Art. 20 DSGVO)</li>
+          <li>Widerruf erteilter Einwilligungen (Art. 7 Abs. 3 DSGVO)</li>
+        </ul>
+        <p class="text-gray-300 leading-relaxed mt-3">Anfragen richte bitte an: <!--email_off--><a href="mailto:support@ethyria.at" class="text-cyan-400 hover:underline">support@ethyria.at</a><!--/email_off--></p>
+        <p class="text-gray-300 leading-relaxed mt-3">Du hast zudem das Recht, Beschwerde bei der österreichischen Datenschutzbehörde einzulegen: <a href="https://www.dsb.gv.at" class="text-cyan-400 hover:underline" target="_blank" rel="noopener">www.dsb.gv.at</a></p>
+      </section>
+
+      <!-- 7 -->
+      <section class="mb-10">
+        <h2 class="text-xl font-bold mb-3 text-white">7. Änderungen dieser Erklärung</h2>
+        <p class="text-gray-300 leading-relaxed">Wir behalten uns vor, diese Datenschutzerklärung bei Bedarf zu aktualisieren. Die jeweils aktuelle Version ist auf dieser Seite abrufbar. Bei wesentlichen Änderungen informieren wir registrierte Nutzerinnen und Nutzer per E-Mail.</p>
+      </section>
+
+      <div class="border-t border-white/10 pt-8 mt-8">
+        <a href="index.html" class="text-cyan-400 hover:underline text-sm"
+          >← Zurück zur Startseite</a
+        >
+        <span class="mx-4 text-white/20">|</span>
+        <a href="impressum.html" class="text-cyan-400 hover:underline text-sm"
+          >Impressum</a
+        >
+        <span class="mx-4 text-white/20">|</span>
+        <a href="agb.html" class="text-cyan-400 hover:underline text-sm"
+          >AGB</a
+        >
+      </div>
+          </div><!-- /grid-7 -->
+    </main>
+
+    <footer class="border-t border-white/5 py-8 text-center mt-16">
+      <div class="container mx-auto px-6">
+        <p class="text-gray-600 text-xs">
+          © Ethyria ·
+          <a href="impressum.html" class="hover:text-cyan-400">Impressum</a> ·
+          <a href="datenschutz.html" class="hover:text-cyan-400">Datenschutz</a> ·
+          <a href="agb.html" class="hover:text-cyan-400">AGB</a>
+        </p>
+      </div>
+    </footer>
+    
+  `;
+---
+
+<BaseLayout
+  lang="de"
+  title="Datenschutzerklärung | Ethyria"
+  description=""
+  keywords=""
+  path="/datenschutz/"
+>
+  <Fragment set:html={_body} />
+</BaseLayout>

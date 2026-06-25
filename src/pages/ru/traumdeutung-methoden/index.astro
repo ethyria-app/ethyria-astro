@@ -1,0 +1,149 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+const _body = `<nav class="sticky top-0 z-50 flex items-center px-6 py-3" style="backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);background:rgba(16,12,31,0.75);border-bottom:1px solid rgba(255,255,255,0.06);" aria-label="Навигация">
+      <a href="/ru/" class="text-gray-400 hover:text-white transition-colors" aria-label="Назад на главную Ethyria">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 6L8 12L14 18"/></svg>
+      </a>
+      <span class="flex-1 text-center text-sm font-semibold tracking-wider uppercase text-gray-300" style="font-family:Poppins,Arial,sans-serif">Толкование Снов: Фрейд, Юнг и Духовный Подход</span>
+      <div style="position:relative;" id="langSw">
+      <button style="background:none;border:1px solid rgba(255,255,255,0.15);color:#9ca3af;padding:4px 10px;border-radius:8px;font-size:0.75rem;cursor:pointer;font-family:Poppins,Arial,sans-serif;line-height:1.4;">RU ▾</button>
+      <div id="langDrop" hidden style="position:absolute;right:0;top:calc(100% + 4px);background:#1a1533;border:1px solid rgba(255,255,255,0.1);border-radius:10px;overflow:hidden;min-width:70px;z-index:200;box-shadow:0 8px 24px rgba(0,0,0,0.4);">
+        <a href="/traumdeutung-methoden/" style="display:block;padding:7px 14px;font-size:0.75rem;color:#9ca3af;text-decoration:none;font-family:Poppins,Arial,sans-serif;">DE</a>
+        <a href="/en/traumdeutung-methoden/" style="display:block;padding:7px 14px;font-size:0.75rem;color:#9ca3af;text-decoration:none;font-family:Poppins,Arial,sans-serif;">EN</a>
+        <a href="/fr/traumdeutung-methoden/" style="display:block;padding:7px 14px;font-size:0.75rem;color:#9ca3af;text-decoration:none;font-family:Poppins,Arial,sans-serif;">FR</a>
+        <a href="/es/traumdeutung-methoden/" style="display:block;padding:7px 14px;font-size:0.75rem;color:#9ca3af;text-decoration:none;font-family:Poppins,Arial,sans-serif;">ES</a>
+        <a href="/ru/traumdeutung-methoden/" style="display:block;padding:7px 14px;font-size:0.75rem;color:#22d3ee;font-weight:600;text-decoration:none;font-family:Poppins,Arial,sans-serif;" aria-current="page">RU</a>
+      </div>
+      </div>
+    </nav>
+
+    <nav aria-label="Хлебные крошки" class="max-w-3xl mx-auto px-6 pt-4 pb-0">
+      <ol class="flex items-center gap-2 text-xs text-gray-500" style="font-family:Inter,sans-serif;">
+        <li><a href="/ru/" class="hover:text-cyan-400 transition-colors">Ethyria</a></li>
+        <li aria-hidden="true" class="text-gray-600">›</li>
+        <li><a href="/ru/traumdeutung-methoden/" class="text-cyan-400" aria-current="page">Методы толкования снов</a></li>
+      </ol>
+    </nav>
+
+    <main class="max-w-3xl mx-auto px-6 py-12">
+      <!-- 7-Grid: Pillar-Prosa-Kolumne vollbreit (col-7) -->
+      <div class="grid-7">
+      <div class="text-center mb-12">
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 ethyria-gradient-text" style="font-family:Poppins,Arial,sans-serif;">
+          Толкование снов: Фрейд против Юнга и духовный подход,Почему один и тот же сон может иметь три совершенно разных значения
+        </h1>
+        <p class="text-lg text-gray-300 leading-relaxed max-w-2xl mx-auto">
+          Тебе снится дом, в который ты никогда не входил, с комнатами, которые ты никогда не исследовал. Для Зигмунда Фрейда это был бы образ твоей психики с вытесненными влечениями за закрытыми дверями. Для Карла Густава Юнга,приглашение к индивидуации, символ неисследованных аспектов Самости. Для духовного толкователя снов,врата к фрагментам души, готовым выйти на свет. Три школы. Три радикально разных ответа. И все три могут быть одновременно истинными для одного и того же сновидца.
+        </p>
+      </div>
+
+      <section class="mb-10 p-6 rounded-2xl" style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.1);">
+        <h2 class="text-xl font-bold mb-4" style="font-family:Poppins,Arial,sans-serif;color:#f0abfc;">Две школы, один сон</h2>
+        <div class="text-gray-300 leading-relaxed space-y-4">
+          <p>Толкование снов,не единая дисциплина. Это семья подходов, разделяющих одну тему, но расходящихся во всём остальном: природа бессознательного, цель сновидений и что на самом деле означает символ. Понять эти различия,не академическое упражнение, а практический вопрос о том, какая линза даст тебе наиболее ясный взгляд на твою внутреннюю жизнь.</p>
+          <p>Связанные материалы: <a href="/ru/traumsymbole-guide/" class="text-cyan-400 hover:underline">Символы снов и их значение</a> · <a href="/ru/luzides-traeumen/" class="text-cyan-400 hover:underline">Осознанные сны: техники и наука</a></p>
+        </div>
+      </section>
+
+      <section class="mb-10 p-6 rounded-2xl" style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.1);">
+        <h2 class="text-xl font-bold mb-4" style="font-family:Poppins,Arial,sans-serif;color:#22d3ee;">Толкование снов по Зигмунду Фрейду</h2>
+        <div class="text-gray-300 leading-relaxed space-y-4">
+          <p><strong>Центральный тезис Фрейда:</strong> Сон,это via regia, королевский путь к бессознательному. Зигмунд Фрейд заложил основы современной психологии сна в 1899 году книгой «Толкование сновидений». Манифестное содержание сна (то, что ты помнишь утром),это маскировка. Латентное содержание,истинное послание,скрыто под ней.</p>
+          <p>Фрейд выделил четыре механизма кодирования: <strong>конденсацию</strong>, <strong>смещение</strong>, <strong>учёт изобразимости</strong> и <strong>вторичную обработку</strong>. Его система точна для тревожных и повторяющихся снов, но склонна к редукционизму: не каждая змея является фаллическим символом.</p>
+        </div>
+      </section>
+
+      <section class="mb-10 p-6 rounded-2xl" style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.1);">
+        <h2 class="text-xl font-bold mb-4" style="font-family:Poppins,Arial,sans-serif;color:#60a5fa;">Толкование снов по Карлу Густаву Юнгу</h2>
+        <div class="text-gray-300 leading-relaxed space-y-4">
+          <p><strong>Центральный тезис Юнга:</strong> Бессознательное,не просто хранилище вытесненных желаний, а автономная творческая сила со своим интеллектом. Юнг различал личное бессознательное и коллективное бессознательное, содержащее архетипы: <strong>Тень</strong>, <strong>Аниму/Анимус</strong>, <strong>Самость</strong> и <strong>Персону</strong>.</p>
+          <p>Для Юнга сон,орган равновесия: бессознательное компенсирует то, что сознание игнорирует. Современные исследователи снов (Хартманн, Хобсон) подтверждают, что сны служат эмоциональной обработке,что поддерживает тезис Юнга о компенсации.</p>
+        </div>
+      </section>
+
+      <section class="mb-10 p-6 rounded-2xl" style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.1);">
+        <h2 class="text-xl font-bold mb-4" style="font-family:Poppins,Arial,sans-serif;color:#a78bfa;">Духовное толкование снов</h2>
+        <div class="text-gray-300 leading-relaxed space-y-4">
+          <p><strong>Центральный тезис:</strong> Сны,не просто процессы обработки информации, они открывают доступ к знанию, выходящему за рамки личной биографии. Духовный анализ Ethyria сочетает трансперсональную психологию с символикой чакр и архетипическими образами.</p>
+        </div>
+      </section>
+
+      <section class="mb-10 p-6 rounded-2xl" style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.1);">
+        <h2 class="text-xl font-bold mb-3" style="font-family:Poppins,Arial,sans-serif;color:#34d399;">Сравнение методов: Фрейд vs. Юнг vs. Духовный vs. Биосинхронный</h2>
+        <div class="overflow-x-auto">
+          <table class="w-full text-sm" aria-label="Сравнение методов толкования снов">
+            <thead><tr style="border-bottom:1px solid rgba(255,255,255,0.12);"><th class="text-left py-2 pr-4 text-xs font-semibold text-gray-400 whitespace-nowrap">Аспект</th><th class="text-left py-2 pr-4 text-xs font-semibold text-gray-400 whitespace-nowrap">Фрейд</th><th class="text-left py-2 pr-4 text-xs font-semibold text-gray-400 whitespace-nowrap">Юнг</th><th class="text-left py-2 pr-4 text-xs font-semibold text-gray-400 whitespace-nowrap">Духовный</th><th class="text-left py-2 pr-4 text-xs font-semibold text-gray-400 whitespace-nowrap">Биосинхронный</th></tr></thead>
+            <tbody>
+          <tr style="border-bottom:1px solid rgba(255,255,255,0.05);"><td class="py-2 pr-4 text-xs font-semibold text-gray-300">Происхождение символов</td><td class="py-2 pr-4 text-xs text-gray-400">Вытеснение</td><td class="py-2 pr-4 text-xs text-gray-400">Архетипы</td><td class="py-2 pr-4 text-xs text-gray-400">Высшее Я</td><td class="py-2 pr-4 text-xs text-gray-400">Биоданные</td></tr>
+          <tr style="border-bottom:1px solid rgba(255,255,255,0.05);"><td class="py-2 pr-4 text-xs font-semibold text-gray-300">Цель</td><td class="py-2 pr-4 text-xs text-gray-400">Вскрыть конфликт</td><td class="py-2 pr-4 text-xs text-gray-400">Интеграция</td><td class="py-2 pr-4 text-xs text-gray-400">Принять послание</td><td class="py-2 pr-4 text-xs text-gray-400">Выявить паттерны</td></tr>
+          <tr style="border-bottom:1px solid rgba(255,255,255,0.05);"><td class="py-2 pr-4 text-xs font-semibold text-gray-300">Доступно в Ethyria</td><td class="py-2 pr-4 text-xs text-gray-400">Приложение + Веб</td><td class="py-2 pr-4 text-xs text-gray-400">Приложение + Веб</td><td class="py-2 pr-4 text-xs text-gray-400">Приложение + Веб</td><td class="py-2 pr-4 text-xs text-gray-400">Приложение</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="mb-10">
+        <h2 class="text-2xl font-bold mb-6 text-center" style="font-family:Poppins,Arial,sans-serif;color:#22d3ee;">Часто задаваемые вопросы</h2>
+        <div class="faq-accordion" id="faqAccordion">
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false" aria-controls="bfaq1" id="bfaq1-label">
+              <span>В чём главное различие между Фрейдом и Юнгом в толковании снов?</span>
+              <svg class="faq-chevron" width="16" height="16" viewBox="0 0 22 22" aria-hidden="true"><polyline points="6,9 11,14 16,9" stroke="#00CFFF" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+            </button>
+            <div class="faq-answer" id="bfaq1" role="region" aria-labelledby="bfaq1-label">Фрейд видит символы снов как маскировку вытесненных желаний и влечений. Юнг видит их как автономные послания коллективного бессознательного, общего для всех людей. Фрейд анализирует, Юнг интегрирует. Оба подхода дополняют друг друга и доступны в Ethyria как отдельные режимы анализа.</div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false" aria-controls="bfaq2" id="bfaq2-label">
+              <span>Есть ли метод, который превосходит все остальные?</span>
+              <svg class="faq-chevron" width="16" height="16" viewBox="0 0 22 22" aria-hidden="true"><polyline points="6,9 11,14 16,9" stroke="#00CFFF" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+            </button>
+            <div class="faq-answer" id="bfaq2" role="region" aria-labelledby="bfaq2-label">Нет. У каждого метода есть слепые пятна. Фрейд упускает коллективное. Юнг может уходить в абстракцию. Духовная интерпретация предполагает веру. Биосинхронный требует биометрии. Глубочайшее понимание возникает, когда несколько перспектив применяются одновременно к одному сну,именно это Ethyria делает автоматически.</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="mb-10 p-6 rounded-2xl" style="background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.07);">
+        <h2 class="text-lg font-bold mb-4" style="font-family:Poppins,Arial,sans-serif;color:#9ca3af;">Частые символы снов и их значение</h2>
+        <ul class="grid grid-cols-2 sm:grid-cols-3 gap-2 text-sm">
+          <li><a href="/symbols/ru/wasser.html" class="text-cyan-400 hover:text-cyan-300 hover:underline transition-colors">Вода во сне</a></li>
+          <li><a href="/symbols/ru/fallen.html" class="text-cyan-400 hover:text-cyan-300 hover:underline transition-colors">Падение во сне</a></li>
+          <li><a href="/symbols/ru/fliegen.html" class="text-cyan-400 hover:text-cyan-300 hover:underline transition-colors">Полёт во сне</a></li>
+          <li><a href="/symbols/ru/schlangen.html" class="text-cyan-400 hover:text-cyan-300 hover:underline transition-colors">Змеи во сне</a></li>
+          <li><a href="/symbols/ru/zaehne-verlieren.html" class="text-cyan-400 hover:text-cyan-300 hover:underline transition-colors">Выпадение зубов</a></li>
+          <li><a href="/symbols/ru/verfolgt-werden.html" class="text-cyan-400 hover:text-cyan-300 hover:underline transition-colors">Преследование во сне</a></li>
+        </ul>
+        <p class="text-xs text-gray-500 mt-3"><a href="/symbols/ru/" class="hover:text-gray-400 transition-colors">Все 15 символов в лексиконе →</a></p>
+      </section>
+
+      <section class="text-center py-16">
+        <h2 class="text-2xl sm:text-3xl font-bold mb-4" style="font-family:Poppins,Arial,sans-serif;">Проанализируй свой сон с 5 перспективами</h2>
+        <p class="text-gray-300 mb-6 max-w-lg mx-auto">Фрейд, Юнг, Духовный, Биосинхронный и Общий,одновременно. На базе ИИ. Хранится локально на твоём устройстве.</p>
+        <a href="/assets/Ethyria_v1.0_def.apk" download class="inline-block px-8 py-4 font-bold text-white rounded-2xl text-lg" style="font-family:Poppins,Arial,sans-serif;background:linear-gradient(135deg,#01bfff 0%,#0066ff 100%);box-shadow:0 6px 24px rgba(1,191,255,0.3);">
+          Скачать Ethyria бесплатно
+        </a>
+        <p class="text-xs text-gray-500 mt-3">Или прямо в браузере: <a href="/ru/#live-analyse" class="text-cyan-400 hover:underline">Начать анализ снов без приложения</a></p>
+      </section>
+          </div><!-- /grid-7 -->
+    </main>
+
+    <footer class="text-center py-8 text-xs text-gray-500 border-t border-white/5">
+      <p>Ethyria | <a href="/ru/traumdeutung-methoden/" class="text-cyan-500 hover:underline">Методы толкования</a> · <a href="/ru/traumsymbole-guide/" class="text-cyan-500 hover:underline">Символы снов</a> · <a href="/ru/luzides-traeumen/" class="text-cyan-500 hover:underline">Осознанные сны</a></p>
+      <p class="mt-1"><a href="https://ethyria.at/ru/" class="text-cyan-500 hover:underline">ethyria.at</a> | <a href="mailto:support@ethyria.at" class="text-cyan-500 hover:underline">support@ethyria.at</a></p>
+      <p class="mt-2"><a href="/impressum.html" class="hover:text-gray-300 transition-colors">Impressum</a> &nbsp;·&nbsp; <a href="/datenschutz.html" class="hover:text-gray-300 transition-colors">Конфиденциальность</a></p>
+    </footer>
+    
+    <script src="/assets/faq-accordion.js?v=20260602" defer></script>
+    <script src="/assets/lang-switcher.js" defer></script>
+<script is:inline src="/assets/lang-switcher.js" defer></script>
+<script is:inline src="/assets/faq-accordion.js" defer></script>`;
+---
+
+<BaseLayout
+  lang="ru"
+  title="Толкование Снов Фрейд Юнг: Полное Сравнение | Ethyria"
+  description="Фрейд против Юнга в толковании снов: полное сравнение. Методы, архетипы и как выбрать правильный подход. Анализируй свой сон бесплатно с пятью перспективами."
+  keywords=""
+  path="/traumdeutung-methoden/"
+>
+  <Fragment set:html={_body} />
+</BaseLayout>

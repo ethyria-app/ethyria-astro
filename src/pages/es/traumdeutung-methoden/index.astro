@@ -1,0 +1,150 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+const _body = `<nav class="sticky top-0 z-50 flex items-center px-6 py-3" style="backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);background:rgba(16,12,31,0.75);border-bottom:1px solid rgba(255,255,255,0.06);" aria-label="Navegación">
+      <a href="/es/" class="text-gray-400 hover:text-white transition-colors" aria-label="Volver a Ethyria">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 6L8 12L14 18"/></svg>
+      </a>
+      <span class="flex-1 text-center text-sm font-semibold tracking-wider uppercase text-gray-300" style="font-family:Poppins,Arial,sans-serif">Interpretación de Sueños: Freud, Jung y Espiritual</span>
+      <div style="position:relative;" id="langSw">
+      <button style="background:none;border:1px solid rgba(255,255,255,0.15);color:#9ca3af;padding:4px 10px;border-radius:8px;font-size:0.75rem;cursor:pointer;font-family:Poppins,Arial,sans-serif;line-height:1.4;">ES ▾</button>
+      <div id="langDrop" hidden style="position:absolute;right:0;top:calc(100% + 4px);background:#1a1533;border:1px solid rgba(255,255,255,0.1);border-radius:10px;overflow:hidden;min-width:70px;z-index:200;box-shadow:0 8px 24px rgba(0,0,0,0.4);">
+        <a href="/traumdeutung-methoden/" style="display:block;padding:7px 14px;font-size:0.75rem;color:#9ca3af;text-decoration:none;font-family:Poppins,Arial,sans-serif;">DE</a>
+        <a href="/en/traumdeutung-methoden/" style="display:block;padding:7px 14px;font-size:0.75rem;color:#9ca3af;text-decoration:none;font-family:Poppins,Arial,sans-serif;">EN</a>
+        <a href="/fr/traumdeutung-methoden/" style="display:block;padding:7px 14px;font-size:0.75rem;color:#9ca3af;text-decoration:none;font-family:Poppins,Arial,sans-serif;">FR</a>
+        <a href="/es/traumdeutung-methoden/" style="display:block;padding:7px 14px;font-size:0.75rem;color:#22d3ee;font-weight:600;text-decoration:none;font-family:Poppins,Arial,sans-serif;" aria-current="page">ES</a>
+        <a href="/ru/traumdeutung-methoden/" style="display:block;padding:7px 14px;font-size:0.75rem;color:#9ca3af;text-decoration:none;font-family:Poppins,Arial,sans-serif;">RU</a>
+      </div>
+      </div>
+    </nav>
+
+    <nav aria-label="Ruta de navegación" class="max-w-3xl mx-auto px-6 pt-4 pb-0">
+      <ol class="flex items-center gap-2 text-xs text-gray-500" style="font-family:Inter,sans-serif;">
+        <li><a href="/es/" class="hover:text-cyan-400 transition-colors">Ethyria</a></li>
+        <li aria-hidden="true" class="text-gray-600">›</li>
+        <li><a href="/es/traumdeutung-methoden/" class="text-cyan-400" aria-current="page">Métodos de Interpretación</a></li>
+      </ol>
+    </nav>
+
+    <main class="max-w-3xl mx-auto px-6 py-12">
+      <!-- 7-Grid: Pillar-Prosa-Kolumne vollbreit (col-7) -->
+      <div class="grid-7">
+      <div class="text-center mb-12">
+        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 ethyria-gradient-text" style="font-family:Poppins,Arial,sans-serif;">
+          Interpretación de sueños: Freud, Jung y Espiritual,Por qué el mismo sueño puede tener tres significados completamente distintos
+        </h1>
+        <p class="text-lg text-gray-300 leading-relaxed max-w-2xl mx-auto">
+          Sueñas con una casa que nunca has habitado, con habitaciones que nunca has explorado. Para Sigmund Freud sería una imagen de tu psique con impulsos reprimidos detrás de puertas cerradas. Para Carl Gustav Jung sería una invitación a la individuación, un símbolo de aspectos inexplorados del yo. Para un intérprete espiritual de sueños sería una puerta hacia fragmentos de alma listos para entrar en la luz. Tres escuelas. Tres respuestas radicalmente diferentes. Y las tres pueden ser simultáneamente verdaderas para un mismo soñador.
+        </p>
+      </div>
+
+      <section class="mb-10 p-6 rounded-2xl" style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.1);">
+        <h2 class="text-xl font-bold mb-4" style="font-family:Poppins,Arial,sans-serif;color:#f0abfc;">Dos escuelas, un sueño</h2>
+        <div class="text-gray-300 leading-relaxed space-y-4">
+          <p>La interpretación de sueños no es una disciplina única. Es una familia de enfoques que comparten un tema y divergen en todo lo demás: la naturaleza del inconsciente, el propósito de soñar y qué significa realmente un símbolo. Comprender estas diferencias no es un ejercicio académico,es la pregunta práctica de qué lente te dará la visión más clara de tu propia vida interior.</p>
+          <p>Artículos relacionados: <a href="/es/traumsymbole-guide/" class="text-cyan-400 hover:underline">Símbolos de sueños y su significado</a> · <a href="/es/luzides-traeumen/" class="text-cyan-400 hover:underline">Sueños lúcidos: técnicas y ciencia</a></p>
+        </div>
+      </section>
+
+      <section class="mb-10 p-6 rounded-2xl" style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.1);">
+        <h2 class="text-xl font-bold mb-4" style="font-family:Poppins,Arial,sans-serif;color:#22d3ee;">Interpretación de sueños según Sigmund Freud</h2>
+        <div class="text-gray-300 leading-relaxed space-y-4">
+          <p><strong>Tesis central de Freud:</strong> El sueño es la via regia,el camino real hacia el inconsciente. Sigmund Freud estableció en 1899 con La interpretación de los sueños los fundamentos de la psicología moderna del sueño. El contenido manifiesto (lo que recuerdas por la mañana) es un disfraz. El contenido latente,el verdadero mensaje,está oculto debajo.</p>
+          <p>Freud identificó cuatro mecanismos de codificación: <strong>condensación</strong>, <strong>desplazamiento</strong>, <strong>figurabilidad</strong> y <strong>elaboración secundaria</strong>. Su sistema es preciso para sueños de ansiedad y repetitivos, pero tiende a la reducción: no toda serpiente es fálica.</p>
+        </div>
+      </section>
+
+      <section class="mb-10 p-6 rounded-2xl" style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.1);">
+        <h2 class="text-xl font-bold mb-4" style="font-family:Poppins,Arial,sans-serif;color:#60a5fa;">Interpretación de sueños según Carl Gustav Jung</h2>
+        <div class="text-gray-300 leading-relaxed space-y-4">
+          <p><strong>Tesis central de Jung:</strong> El inconsciente no es solo un depósito de deseos reprimidos,es una fuerza creativa autónoma con su propia inteligencia. Jung distinguía el inconsciente personal del inconsciente colectivo, que contiene los arquetipos: la <strong>Sombra</strong>, el <strong>Anima/Animus</strong>, el <strong>Sí-mismo</strong> y la <strong>Persona</strong>.</p>
+          <p>Para Jung el sueño es un órgano de equilibrio: el inconsciente compensa lo que la conciencia descuida. La investigación moderna (Hartmann, Hobson) confirma que los sueños sirven para el procesamiento emocional,lo que respalda la tesis de compensación de Jung.</p>
+        </div>
+      </section>
+
+      <section class="mb-10 p-6 rounded-2xl" style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.1);">
+        <h2 class="text-xl font-bold mb-4" style="font-family:Poppins,Arial,sans-serif;color:#a78bfa;">Interpretación espiritual de sueños</h2>
+        <div class="text-gray-300 leading-relaxed space-y-4">
+          <p><strong>Tesis central:</strong> Los sueños no son puramente procesos de elaboración,proporcionan acceso a conocimiento que va más allá de la biografía personal. El análisis Espiritual de Ethyria conecta la psicología transpersonal con la simbología de los chakras y la imaginería arquetípica.</p>
+        </div>
+      </section>
+
+      <section class="mb-10 p-6 rounded-2xl" style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.1);">
+        <h2 class="text-xl font-bold mb-3" style="font-family:Poppins,Arial,sans-serif;color:#34d399;">Comparación de métodos: Freud vs. Jung vs. Espiritual vs. Biosincrónico</h2>
+        <div class="overflow-x-auto">
+          <table class="w-full text-sm" aria-label="Comparación de métodos de interpretación de sueños">
+            <thead><tr style="border-bottom:1px solid rgba(255,255,255,0.12);"><th class="text-left py-2 pr-4 text-xs font-semibold text-gray-400 whitespace-nowrap">Aspecto</th><th class="text-left py-2 pr-4 text-xs font-semibold text-gray-400 whitespace-nowrap">Freud</th><th class="text-left py-2 pr-4 text-xs font-semibold text-gray-400 whitespace-nowrap">Jung</th><th class="text-left py-2 pr-4 text-xs font-semibold text-gray-400 whitespace-nowrap">Espiritual</th><th class="text-left py-2 pr-4 text-xs font-semibold text-gray-400 whitespace-nowrap">Biosincrónico</th></tr></thead>
+            <tbody>
+          <tr style="border-bottom:1px solid rgba(255,255,255,0.05);"><td class="py-2 pr-4 text-xs font-semibold text-gray-300">Origen de los símbolos</td><td class="py-2 pr-4 text-xs text-gray-400">Represión</td><td class="py-2 pr-4 text-xs text-gray-400">Arquetipos</td><td class="py-2 pr-4 text-xs text-gray-400">Yo superior</td><td class="py-2 pr-4 text-xs text-gray-400">Datos corporales</td></tr>
+          <tr style="border-bottom:1px solid rgba(255,255,255,0.05);"><td class="py-2 pr-4 text-xs font-semibold text-gray-300">Objetivo</td><td class="py-2 pr-4 text-xs text-gray-400">Descubrir el conflicto</td><td class="py-2 pr-4 text-xs text-gray-400">Integración</td><td class="py-2 pr-4 text-xs text-gray-400">Recibir el mensaje</td><td class="py-2 pr-4 text-xs text-gray-400">Reconocer patrones</td></tr>
+          <tr style="border-bottom:1px solid rgba(255,255,255,0.05);"><td class="py-2 pr-4 text-xs font-semibold text-gray-300">Fortaleza</td><td class="py-2 pr-4 text-xs text-gray-400">Análisis de conflictos</td><td class="py-2 pr-4 text-xs text-gray-400">Profundidad simbólica</td><td class="py-2 pr-4 text-xs text-gray-400">Atribución de sentido</td><td class="py-2 pr-4 text-xs text-gray-400">Precisión biométrica</td></tr>
+          <tr style="border-bottom:1px solid rgba(255,255,255,0.05);"><td class="py-2 pr-4 text-xs font-semibold text-gray-300">Disponible en Ethyria</td><td class="py-2 pr-4 text-xs text-gray-400">App + Web</td><td class="py-2 pr-4 text-xs text-gray-400">App + Web</td><td class="py-2 pr-4 text-xs text-gray-400">App + Web</td><td class="py-2 pr-4 text-xs text-gray-400">App</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="mb-10">
+        <h2 class="text-2xl font-bold mb-6 text-center" style="font-family:Poppins,Arial,sans-serif;color:#22d3ee;">Preguntas frecuentes</h2>
+        <div class="faq-accordion" id="faqAccordion">
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false" aria-controls="bfaq1" id="bfaq1-label">
+              <span>¿Cuál es la diferencia más importante entre Freud y Jung en la interpretación de sueños?</span>
+              <svg class="faq-chevron" width="16" height="16" viewBox="0 0 22 22" aria-hidden="true"><polyline points="6,9 11,14 16,9" stroke="#00CFFF" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+            </button>
+            <div class="faq-answer" id="bfaq1" role="region" aria-labelledby="bfaq1-label">Freud ve los símbolos oníricos como disfraces de deseos e impulsos reprimidos. Jung los ve como mensajes autónomos de un inconsciente colectivo compartido por todos los seres humanos. Freud analiza, Jung integra. Ambos enfoques se complementan y están disponibles en Ethyria como modos de análisis separados.</div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false" aria-controls="bfaq2" id="bfaq2-label">
+              <span>¿Existe un método que supere a todos los demás?</span>
+              <svg class="faq-chevron" width="16" height="16" viewBox="0 0 22 22" aria-hidden="true"><polyline points="6,9 11,14 16,9" stroke="#00CFFF" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+            </button>
+            <div class="faq-answer" id="bfaq2" role="region" aria-labelledby="bfaq2-label">No. Cada método tiene puntos ciegos. Freud ignora lo colectivo. Jung puede derivar hacia lo abstracto. La interpretación espiritual presupone la creencia. La biosincrónica necesita biometría. La comprensión más profunda surge cuando múltiples perspectivas se aplican simultáneamente al mismo sueño, que es exactamente lo que hace Ethyria automáticamente.</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="mb-10 p-6 rounded-2xl" style="background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.07);">
+        <h2 class="text-lg font-bold mb-4" style="font-family:Poppins,Arial,sans-serif;color:#9ca3af;">Símbolos de sueños frecuentes</h2>
+        <ul class="grid grid-cols-2 sm:grid-cols-3 gap-2 text-sm">
+          <li><a href="/symbols/es/wasser.html" class="text-cyan-400 hover:text-cyan-300 hover:underline transition-colors">Agua en sueños</a></li>
+          <li><a href="/symbols/es/fallen.html" class="text-cyan-400 hover:text-cyan-300 hover:underline transition-colors">Caer en sueños</a></li>
+          <li><a href="/symbols/es/fliegen.html" class="text-cyan-400 hover:text-cyan-300 hover:underline transition-colors">Volar en sueños</a></li>
+          <li><a href="/symbols/es/schlangen.html" class="text-cyan-400 hover:text-cyan-300 hover:underline transition-colors">Serpientes en sueños</a></li>
+          <li><a href="/symbols/es/zaehne-verlieren.html" class="text-cyan-400 hover:text-cyan-300 hover:underline transition-colors">Perder dientes</a></li>
+          <li><a href="/symbols/es/verfolgt-werden.html" class="text-cyan-400 hover:text-cyan-300 hover:underline transition-colors">Ser perseguido</a></li>
+        </ul>
+        <p class="text-xs text-gray-500 mt-3"><a href="/symbols/es/" class="hover:text-gray-400 transition-colors">Los 15 símbolos en el lexicón →</a></p>
+      </section>
+
+      <section class="text-center py-16">
+        <h2 class="text-2xl sm:text-3xl font-bold mb-4" style="font-family:Poppins,Arial,sans-serif;">Analiza tu sueño con las 5 perspectivas</h2>
+        <p class="text-gray-300 mb-6 max-w-lg mx-auto">Freud, Jung, Espiritual, Biosincrónico y General,simultáneamente. Impulsado por IA. Almacenado localmente en tu dispositivo.</p>
+        <a href="/assets/Ethyria_v1.0_def.apk" download class="inline-block px-8 py-4 font-bold text-white rounded-2xl text-lg" style="font-family:Poppins,Arial,sans-serif;background:linear-gradient(135deg,#01bfff 0%,#0066ff 100%);box-shadow:0 6px 24px rgba(1,191,255,0.3);">
+          Descargar Ethyria gratis
+        </a>
+        <p class="text-xs text-gray-500 mt-3">O directamente en tu navegador: <a href="/es/#live-analyse" class="text-cyan-400 hover:underline">Iniciar análisis de sueños sin app</a></p>
+      </section>
+          </div><!-- /grid-7 -->
+    </main>
+
+    <footer class="text-center py-8 text-xs text-gray-500 border-t border-white/5">
+      <p>Ethyria | <a href="/es/traumdeutung-methoden/" class="text-cyan-500 hover:underline">Métodos de Interpretación</a> · <a href="/es/traumsymbole-guide/" class="text-cyan-500 hover:underline">Símbolos de Sueños</a> · <a href="/es/luzides-traeumen/" class="text-cyan-500 hover:underline">Sueños Lúcidos</a></p>
+      <p class="mt-1"><a href="https://ethyria.at/es/" class="text-cyan-500 hover:underline">ethyria.at</a> | <a href="mailto:support@ethyria.at" class="text-cyan-500 hover:underline">support@ethyria.at</a></p>
+      <p class="mt-2"><a href="/impressum.html" class="hover:text-gray-300 transition-colors">Aviso Legal</a> &nbsp;·&nbsp; <a href="/datenschutz.html" class="hover:text-gray-300 transition-colors">Privacidad</a></p>
+    </footer>
+    
+    <script src="/assets/faq-accordion.js?v=20260602" defer></script>
+    <script src="/assets/lang-switcher.js" defer></script>
+<script is:inline src="/assets/lang-switcher.js" defer></script>
+<script is:inline src="/assets/faq-accordion.js" defer></script>`;
+---
+
+<BaseLayout
+  lang="es"
+  title="Interpretación de Sueños Freud Jung: Comparación Completa | Ethyria"
+  description="Freud vs Jung en interpretación de sueños: la comparación completa. Métodos, arquetipos y cómo elegir el enfoque correcto. Analiza tu sueño gratis con las cinco perspectivas."
+  keywords=""
+  path="/traumdeutung-methoden/"
+>
+  <Fragment set:html={_body} />
+</BaseLayout>

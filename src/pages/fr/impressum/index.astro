@@ -1,0 +1,74 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+const _body = `
+    <div class="bg-blob top-[-10%] left-[-10%]"></div>
+    <nav class="container mx-auto px-6 py-6 flex justify-center items-center relative z-10">
+      <a href="index.html" class="nav-brand">
+        <img src="/assets/Logo_web.png" alt="Ethyria" width="240" height="57" class="nav-brand-logo" style="max-width:240px" decoding="async" />
+      </a>
+    </nav>
+    <main class="container mx-auto px-6 py-12 relative z-10 max-w-3xl">
+      <!-- 7-Grid: Pillar-Prosa-Kolumne vollbreit (col-7) -->
+      <div class="grid-7">
+      <h1 class="text-4xl font-bold mb-10 ethyria-gradient-text">Mentions légales</h1>
+
+      <section class="mb-10">
+        <h2 class="text-xl font-bold mb-3 text-white">Informations conformément à l'art. 5 ECG (loi autrichienne sur le commerce électronique)</h2>
+        <div class="text-gray-300 leading-relaxed space-y-1">
+          <p><strong class="text-white">Oliver Stolz</strong></p>
+          <p>Ethyria Dream Analysis</p>
+          <p>Freistädter Str. 65</p>
+          <p>4040 Linz, Autriche</p>
+        </div>
+      </section>
+
+      <section class="mb-10">
+        <h2 class="text-xl font-bold mb-3 text-white">Contact</h2>
+        <div class="text-gray-300 leading-relaxed space-y-1">
+          <p>E-mail: <!--email_off--><a href="mailto:support@ethyria.at" data-copy-email="support@ethyria.at" class="text-cyan-400 hover:underline">support@ethyria.at</a><!--/email_off--></p>
+          <p>Site web: <a href="https://ethyria.at" class="text-cyan-400 hover:underline">https://ethyria.at</a></p>
+        </div>
+      </section>
+
+      <section class="mb-10">
+        <h2 class="text-xl font-bold mb-3 text-white">Objet de l'entreprise</h2>
+        <p class="text-gray-300 leading-relaxed">Développement et exploitation de l'application Ethyria application d'interprétation des rêves et de journal onirique pour Android.</p>
+      </section>
+
+      <section class="mb-10">
+        <h2 class="text-xl font-bold mb-3 text-white">Mentions légales</h2>
+        <p class="text-gray-300 leading-relaxed mb-3">Les contenus de ce site web ont été préparés avec le plus grand soin. Nous n'assumons aucune responsabilité quant à l'exactitude, l'exhaustivité ou l'actualité des contenus.</p>
+        <p class="text-gray-300 leading-relaxed mb-3"><strong class="text-white">Clause de non-responsabilité Interprétation des rêves:</strong> Les interprétations et analyses de rêves fournies par Ethyria sont uniquement destinées à la réflexion personnelle et au divertissement. Elles ne remplacent pas un conseil psychologique ou thérapeutique professionnel.</p>
+        <p class="text-gray-300 leading-relaxed"><strong class="text-white">Droits d'auteur:</strong> Les contenus et œuvres créés par l'opérateur du site sur ces pages sont soumis au droit d'auteur autrichien. La reproduction, l'édition, la distribution et toute forme d'utilisation au-delà des limites du droit d'auteur nécessitent le consentement écrit de l'auteur respectif.</p>
+      </section>
+
+      <section class="mb-10">
+        <h2 class="text-xl font-bold mb-3 text-white">Résolution des litiges en ligne</h2>
+        <p class="text-gray-300 leading-relaxed">La Commission européenne fournit une plateforme de résolution des litiges en ligne (RLL): <a href="https://ec.europa.eu/consumers/odr" class="text-cyan-400 hover:underline" target="_blank" rel="noopener">https://ec.europa.eu/consumers/odr</a></p>
+      </section>
+
+      <div class="border-t border-white/10 pt-8 mt-8">
+        <a href="fr/" class="text-cyan-400 hover:underline text-sm">← Retour à l'accueil</a>
+        <span class="mx-4 text-white/20">|</span>
+        <a href="datenschutz.fr.html" class="text-cyan-400 hover:underline text-sm">Politique de confidentialité</a>
+      </div>
+          </div><!-- /grid-7 -->
+    </main>
+    <footer class="border-t border-white/5 py-8 text-center mt-16">
+      <div class="container mx-auto px-6">
+        <p class="text-gray-600 text-xs">© Ethyria</p>
+      </div>
+    </footer>
+    
+  `;
+---
+
+<BaseLayout
+  lang="fr"
+  title="Mentions légales | Ethyria"
+  description=""
+  keywords=""
+  path="/impressum/"
+>
+  <Fragment set:html={_body} />
+</BaseLayout>

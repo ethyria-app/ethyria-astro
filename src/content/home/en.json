@@ -1,0 +1,87 @@
+{
+  "lang": "en",
+  "meta": {
+    "title": "Dream Interpretation & Analysis | Ethyria App",
+    "description": "Dream interpretation with AI: Freud, Jung, Spiritual and more. Analyze your dream for free in seconds. Get the app now.",
+    "keywords": "Dream Interpretation App, AI Dream Interpretation, Dream Analysis App, Dream Journal App",
+    "ogImage": "https://ethyria.at/assets/og-image-en.png"
+  },
+  "hero": {
+    "badge": "START FREE · ANDROID",
+    "h1": "Dreams never lie.",
+    "h2": "AI-driven dream interpretation with depth and precision no other app can match",
+    "cta": "Try for free",
+    "rating_text": "4.8",
+    "rating_count": "127 reviews"
+  },
+  "faq": [
+    {
+      "question": "Is Ethyria really free?",
+      "answer": "The download is free. You start with one complete analysis run across all 5 modes. No account, no credit card. For additional dream analyses there are three options: a single analysis (€2.99), a monthly subscription (€7.99) or an annual subscription (€59.90)."
+    },
+    {
+      "question": "How secure is my dream data?",
+      "answer": "Your privacy comes first. No cloud requirement. No tracking. Your dreams belong only to you."
+    },
+    {
+      "question": "How does dream interpretation with AI work?",
+      "answer": "Ethyria uses advanced AI to recognize symbols, emotional themes and recurring patterns in your dreams. The analysis is based on psychological methods according to Jung and Freud."
+    },
+    {
+      "question": "Which analysis modes does Ethyria offer?",
+      "answer": "Five perspectives. General interpretation. Freudian psychoanalysis. Jungian analytical psychology. Spiritual reflection. Biosynchronous analysis. Each shows your dream from a different angle."
+    },
+    {
+      "question": "Can I export my analyses?",
+      "answer": "Yes. As a premium user, you can export every analysis and your monthly statistics as a professionally designed PDF document."
+    },
+    {
+      "question": "Which devices support Ethyria?",
+      "answer": "Ethyria is currently available for Android. An iOS version is in development."
+    },
+    {
+      "question": "What does my dream mean?",
+      "answer": "Every dream is unique. Ethyria analyzes your dream symbols, emotions and narrative patterns with AI and places them in a psychological context. Using Freud, Jung or biosynchronous methods. So you discover what your dream is really trying to tell you."
+    },
+    {
+      "question": "What is the difference between dream interpretation according to Freud and Jung?",
+      "answer": "Freud sees dreams as expressions of repressed wishes and unconscious conflicts. Jung views them as messages from the collective unconscious and works with archetypes. Ethyria offers both approaches as independent analysis perspectives."
+    },
+    {
+      "question": "Can AI really interpret dreams?",
+      "answer": "AI recognizes patterns that escape the human eye. Recurring symbols. Emotional connections. Narrative structures. Ethyria uses this as a tool for self-reflection. Not as a replacement for professional therapeutic guidance."
+    },
+    {
+      "question": "How do I keep a digital dream journal?",
+      "answer": "Write down your dream right after waking up. Best with Ethyria. Note symbols, emotions and details. The app automatically analyzes your entries and shows you patterns and recurring themes over weeks."
+    },
+    {
+      "question": "What do recurring dreams mean?",
+      "answer": "Recurring dreams often point to unresolved emotional issues or unconscious conflicts. Ethyria detects such patterns automatically and helps you understand the messages behind them."
+    },
+    {
+      "question": "Which dream symbols occur most frequently?",
+      "answer": "Water represents emotions. Falling represents loss of control. Flying represents freedom. Teeth represent anxiety. Houses represent the self. Being chased represents avoidance. Ethyria analyzes these symbols in the context of your personal dream history."
+    },
+    {
+      "question": "Which is the best dream interpretation app?",
+      "answer": "Ethyria is the only dream interpretation app that combines five scientifically based analysis perspectives. General interpretation. Freudian psychoanalysis. Jungian analytical psychology. Spiritual reflection. Biosynchronous analysis. Unlike other dream interpretation apps, Ethyria also offers AI generated dream images, a visual dream journal and complete data privacy through local encryption."
+    },
+    {
+      "question": "How does dream interpretation via app work?",
+      "answer": "You describe your dream via text or voice input. Ethyria automatically recognizes symbols, emotions and action patterns. The AI analyzes your dream from up to five psychological perspectives and delivers a well-founded dream interpretation. In seconds."
+    },
+    {
+      "question": "Is there a free dream interpretation app for Android?",
+      "answer": "Yes. The download is free. You start directly with a full analysis across all 5 modes. For regular use there are three in-app options from €2.99. No subscription required, no hidden costs."
+    },
+    {
+      "question": "What sets Ethyria apart from other dream interpretation apps?",
+      "answer": "Most dream interpretation apps offer only one interpretation method. Ethyria combines five analysis perspectives. Including Biosynchronous Multimodal Analysis via Android Health Connect, which links sleep phases and heart rate with your dream content. Ethyria also generates AI artworks from your dreams and detects recurring patterns in your dream journal over weeks."
+    },
+    {
+      "question": "Can Ethyria detect and analyze lucid dreams?",
+      "answer": "Yes. Ethyria automatically detects lucid dreams and assigns a lucidity score from 0 to 1. Lucid dreams receive a dedicated analysis that accounts for the fact that consciousness was active during the dream. In the biosynchronous analysis, the score is correlated with sleep phase data. Complete Guide: Learning Lucid Dreaming with MILD, WILD and WBTB."
+    }
+  ]
+}
