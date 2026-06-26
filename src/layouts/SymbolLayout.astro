@@ -20,9 +20,10 @@ export interface Props {
   biosync: string;
   variants: Array<{ title: string; description: string; related: string[] }>;
   faq: Array<{ question: string; answer: string }>;
+  communityStats?: { percent: number; companion: string; total: number };
 }
 
-const { lang, urlSlug, title, description, keywords, datePublished, dateModified, heroImage, heroAlt, freud, jung, spiritual, biosync, variants, faq } = Astro.props;
+const { lang, urlSlug, title, description, keywords, datePublished, dateModified, heroImage, heroAlt, freud, jung, spiritual, biosync, variants, faq, communityStats } = Astro.props;
 const t = useTranslations(lang);
 
 const langPath = lang === 'de' ? '' : `/${lang}`;
@@ -41,6 +42,42 @@ const LABELS: Record<string, Record<Locale, string>> = {
   variants_related: { de: 'Verwandt:', en: 'Related:', fr: 'Lié:', es: 'Relacionado:', ru: 'Связано:' },
   faq_h2: { de: 'Häufige Fragen', en: 'Frequently Asked Questions', fr: 'Questions fréquentes', es: 'Preguntas frecuentes', ru: 'Частые вопросы' },
   source_show: { de: 'Quelle anzeigen', en: 'Show source', fr: 'Afficher la source', es: 'Mostrar fuente', ru: 'Показать источник' },
+  freud_source: {
+    de: 'Freud, S. (1900). <em>Die Traumdeutung</em>. Franz Deuticke, Wien.',
+    en: 'Freud, S. (1900). <em>The Interpretation of Dreams</em>. Franz Deuticke, Vienna.',
+    fr: 'Freud, S. (1900). <em>L\'Interprétation des rêves</em>. Franz Deuticke, Vienne.',
+    es: 'Freud, S. (1900). <em>La interpretación de los sueños</em>. Franz Deuticke, Viena.',
+    ru: 'Фрейд, З. (1900). <em>Толкование сновидений</em>. Изд-во Франца Дойтике, Вена.',
+  },
+  jung_source: {
+    de: 'Jung, C. G. (1964). <em>Der Mensch und seine Symbole</em>. Walter-Verlag, Olten.',
+    en: 'Jung, C. G. (1964). <em>Man and His Symbols</em>. Doubleday, New York.',
+    fr: 'Jung, C. G. (1964). <em>L\'homme et ses symboles</em>. Robert Laffont, Paris.',
+    es: 'Jung, C. G. (1964). <em>El hombre y sus símbolos</em>. Luis de Caralt Editor, Barcelona.',
+    ru: 'Юнг, К. Г. (1964). <em>Человек и его символы</em>. Doubleday, Нью-Йорк.',
+  },
+  spiritual_source: {
+    de: 'Bulkeley, K. (2016). <em>Big Dreams</em>. Oxford University Press. – Fromm, E. (1951). <em>Die vergessene Sprache</em>. Rolf Heyne, München.',
+    en: 'Bulkeley, K. (2016). <em>Big Dreams</em>. Oxford University Press. – Fromm, E. (1951). <em>The Forgotten Language</em>. Rinehart & Company, New York.',
+    fr: 'Bulkeley, K. (2016). <em>Big Dreams</em>. Oxford University Press. – Fromm, E. (1951). <em>Le Langage oublié</em>. Payot, Paris.',
+    es: 'Bulkeley, K. (2016). <em>Big Dreams</em>. Oxford University Press. – Fromm, E. (1951). <em>El lenguaje olvidado</em>. Hachette, Buenos Aires.',
+    ru: 'Булкли, К. (2016). <em>Big Dreams</em>. Oxford University Press. – Фромм, Э. (1951). <em>Забытый язык</em>. Rinehart & Company, Нью-Йорк.',
+  },
+  community_pct: {
+    de: '% der Ethyria-Nutzer träumen von diesem Symbol',
+    en: '% of Ethyria users dream about this symbol',
+    fr: '% des utilisateurs Ethyria rêvent de ce symbole',
+    es: '% de los usuarios de Ethyria sueñan con este símbolo',
+    ru: '% пользователей Ethyria видят этот символ во снах',
+  },
+  community_companion: { de: 'Häufiger Begleiter', en: 'Frequent companion', fr: 'Compagnon fréquent', es: 'Acompañante frecuente', ru: 'Частый спутник' },
+  community_based: {
+    de: 'Basierend auf {total} Traumdeutungen',
+    en: 'Based on {total} dream interpretations',
+    fr: 'Basé sur {total} interprétations de rêves',
+    es: 'Basado en {total} interpretaciones de sueños',
+    ru: 'На основе {total} толкований снов',
+  },
   pillar_link: { de: 'Freud, Jung und Spiritual: Alle Traumdeutungsmethoden im Vergleich', en: 'Freud, Jung and Spiritual: All dream interpretation methods compared', fr: 'Freud, Jung et Spirituel: Toutes les méthodes comparées', es: 'Freud, Jung y Espiritual: Todos los métodos comparados', ru: 'Фрейд, Юнг и Духовное: Все методы сравниваются' },
   cta_h2: { de: 'Analysiere deinen Traum jetzt mit Ethyria', en: 'Analyze your dream now with Ethyria', fr: 'Analysez votre rêve maintenant avec Ethyria', es: 'Analiza tu sueño ahora con Ethyria', ru: 'Анализируйте свой сон сейчас с Ethyria' },
   cta_sub: { de: '5 Analyseperspektiven. KI-gestützt. Privat und verschlüsselt. Dein Traumtagebuch mit Bedeutung.', en: '5 analysis perspectives. AI-powered. Private and encrypted. Your dream journal with meaning.', fr: '5 perspectives d\'analyse. Alimenté par IA. Privé et chiffré. Votre journal de rêves avec du sens.', es: '5 perspectivas de análisis. Con IA. Privado y cifrado. Tu diario de sueños con significado.', ru: '5 аналитических перспектив. На основе ИИ. Приватно и зашифровано. Ваш дневник снов со смыслом.' },
@@ -51,6 +88,28 @@ const LABELS: Record<string, Record<Locale, string>> = {
 
 function l(key: string): string {
   return LABELS[key]?.[lang] ?? LABELS[key]?.['de'] ?? key;
+}
+
+const SYMBOL_DISPLAY: Record<string, Record<Locale, string>> = {
+  'wasser':           { de: 'Wasser',          en: 'Water',             fr: 'Eau',                    es: 'Agua',                   ru: 'Вода'            },
+  'fallen':           { de: 'Fallen',           en: 'Falling',           fr: 'Chute',                  es: 'Caída',                  ru: 'Падение'         },
+  'fliegen':          { de: 'Fliegen',          en: 'Flying',            fr: 'Vol',                    es: 'Volar',                  ru: 'Полёт'           },
+  'zaehne-verlieren': { de: 'Zähne verlieren',  en: 'Losing Teeth',      fr: 'Perdre les dents',       es: 'Perder dientes',         ru: 'Выпадение зубов' },
+  'verfolgt-werden':  { de: 'Verfolgt werden',  en: 'Being Chased',      fr: 'Être poursuivi',         es: 'Ser perseguido',         ru: 'Погоня'          },
+  'tod':              { de: 'Tod',              en: 'Death',             fr: 'Mort',                   es: 'Muerte',                 ru: 'Смерть'          },
+  'schlangen':        { de: 'Schlangen',        en: 'Snakes',            fr: 'Serpents',               es: 'Serpientes',             ru: 'Змеи'            },
+  'schwangerschaft':  { de: 'Schwangerschaft',  en: 'Pregnancy',         fr: 'Grossesse',              es: 'Embarazo',               ru: 'Беременность'    },
+  'spinnen':          { de: 'Spinnen',          en: 'Spiders',           fr: 'Araignées',              es: 'Arañas',                 ru: 'Пауки'           },
+  'pruefung':         { de: 'Prüfung',          en: 'Exam',              fr: 'Examen',                 es: 'Examen',                 ru: 'Экзамен'         },
+  'nackt-sein':       { de: 'Nackt sein',       en: 'Being Naked',       fr: 'Être nu',                es: 'Estar desnudo',          ru: 'Нагота'          },
+  'hunde-katzen':     { de: 'Hunde & Katzen',   en: 'Dogs & Cats',       fr: 'Chiens et chats',        es: 'Perros y gatos',         ru: 'Собаки и кошки'  },
+  'haus-raeume':      { de: 'Haus & Räume',     en: 'House & Rooms',     fr: 'Maison et pièces',       es: 'Casa y habitaciones',    ru: 'Дом и комнаты'   },
+  'ex-partner':       { de: 'Ex-Partner',       en: 'Ex-Partner',        fr: 'Ex-partenaire',          es: 'Ex-pareja',              ru: 'Бывший партнёр'  },
+  'auto-unfall':      { de: 'Auto-Unfall',      en: 'Car Accident',      fr: 'Accident de voiture',    es: 'Accidente de coche',     ru: 'Авария'          },
+};
+
+function getSymbolName(slug: string): string {
+  return SYMBOL_DISPLAY[slug]?.[lang] ?? SYMBOL_DISPLAY[slug]?.['de'] ?? slug;
 }
 
 // Breadcrumb
@@ -125,7 +184,7 @@ const pillarHref = `${langPath}/traumdeutung-methoden/`;
         <p class="text-gray-300 leading-relaxed" set:html={freud}></p>
         <details class="mt-6" style="border-top:1px solid rgba(255,255,255,0.06);padding-top:12px;">
           <summary class="text-xs text-gray-500 cursor-pointer hover:text-gray-400 transition-colors" style="font-family:Poppins,Arial,sans-serif;"><i class="ph-duotone ph-book-open"></i> {l('source_show')}</summary>
-          <slot name="freud-source" />
+          <p class="text-xs text-gray-500 mt-2 leading-relaxed" set:html={l('freud_source')} />
         </details>
       </section>
 
@@ -137,7 +196,7 @@ const pillarHref = `${langPath}/traumdeutung-methoden/`;
         <p class="text-gray-300 leading-relaxed" set:html={jung}></p>
         <details class="mt-6" style="border-top:1px solid rgba(255,255,255,0.06);padding-top:12px;">
           <summary class="text-xs text-gray-500 cursor-pointer hover:text-gray-400 transition-colors" style="font-family:Poppins,Arial,sans-serif;"><i class="ph-duotone ph-book-open"></i> {l('source_show')}</summary>
-          <slot name="jung-source" />
+          <p class="text-xs text-gray-500 mt-2 leading-relaxed" set:html={l('jung_source')} />
         </details>
       </section>
 
@@ -149,7 +208,7 @@ const pillarHref = `${langPath}/traumdeutung-methoden/`;
         <p class="text-gray-300 leading-relaxed" set:html={spiritual}></p>
         <details class="mt-6" style="border-top:1px solid rgba(255,255,255,0.06);padding-top:12px;">
           <summary class="text-xs text-gray-500 cursor-pointer hover:text-gray-400 transition-colors" style="font-family:Poppins,Arial,sans-serif;"><i class="ph-duotone ph-book-open"></i> {l('source_show')}</summary>
-          <slot name="spiritual-source" />
+          <p class="text-xs text-gray-500 mt-2 leading-relaxed" set:html={l('spiritual_source')} />
         </details>
       </section>
 
@@ -164,6 +223,26 @@ const pillarHref = `${langPath}/traumdeutung-methoden/`;
           <i class="ph-duotone ph-arrow-right"></i> {l('biosync_cta')}
         </a>
       </section>
+
+      <!-- Community Stats -->
+      {communityStats && (
+        <section class="mb-10 text-center p-6 rounded-2xl" style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.1);">
+          <h2 class="text-xl font-bold mb-5" style="font-family:Poppins,Arial,sans-serif;color:#22d3ee;">{l('community_h2')}</h2>
+          <div class="flex flex-wrap justify-center gap-8">
+            <div>
+              <p class="text-4xl font-bold" style="font-family:Poppins,Arial,sans-serif;background:linear-gradient(90deg,#22d3ee,#a78bfa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">{communityStats.percent}%</p>
+              <p class="text-xs text-gray-500 mt-1">{l('community_pct')}</p>
+            </div>
+            {communityStats.companion && (
+              <div>
+                <p class="text-lg font-semibold text-purple-300" style="font-family:Poppins,Arial,sans-serif;">{communityStats.companion}</p>
+                <p class="text-xs text-gray-500 mt-1">{l('community_companion')}</p>
+              </div>
+            )}
+          </div>
+          <p class="text-xs text-gray-600 mt-4">{l('community_based').replace('{total}', communityStats.total.toLocaleString())}</p>
+        </section>
+      )}
 
       <!-- Variants -->
       {variants.filter(v => v.title).length > 0 && (
@@ -180,7 +259,7 @@ const pillarHref = `${langPath}/traumdeutung-methoden/`;
                   <div class="flex flex-wrap gap-3 justify-center mt-4 pt-4 pb-0" style="border-top:1px solid rgba(255,255,255,0.05);">
                     <span class="text-xs text-gray-500 mr-1">{l('variants_related')}</span>
                     {variant.related.map(relSlug => (
-                      <a href={`${langPath}/symbols/${relSlug}/`} class="text-xs text-cyan-400 hover:text-cyan-300 transition-colors px-2 py-1 rounded-md">{relSlug}</a>
+                      <a href={`${langPath}/symbols/${relSlug}/`} class="text-xs text-cyan-400 hover:text-cyan-300 transition-colors px-2 py-1 rounded-md">{getSymbolName(relSlug)}</a>
                     ))}
                   </div>
                 )}
@@ -241,6 +320,5 @@ const pillarHref = `${langPath}/traumdeutung-methoden/`;
   </footer>
 
   <!-- Symbol scripts -->
-  <script is:inline src="/assets/faq.js" defer></script>
   <script is:inline src="/assets/symbol-popup.js" defer></script>
 </BaseLayout>

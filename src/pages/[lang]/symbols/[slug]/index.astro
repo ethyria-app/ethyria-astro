@@ -23,7 +23,7 @@ export async function getStaticPaths() {
 
 const { entry, locale } = Astro.props;
 const lang = locale as Locale;
-const { urlSlug, title, description, keywords, datePublished, dateModified, heroImage, heroAlt, freud, jung, spiritual, biosync, variants, faq } = entry.data;
+const { urlSlug, title, description, keywords, datePublished, dateModified, heroImage, heroAlt, freud, jung, spiritual, biosync, variants, faq, communityStats } = entry.data;
 ---
 
 <SymbolLayout
@@ -42,6 +42,7 @@ const { urlSlug, title, description, keywords, datePublished, dateModified, hero
   {biosync}
   {variants}
   {faq}
+  {communityStats}
 >
   <Fragment slot="h1-display" set:html={title.replace(/^.*?: /, '').replace(/\. What.*$/, '').replace(/\. Signification.*$/, '').replace(/\. ¿Qué.*$/, '').replace(/\. Что.*$/, '')} />
   <Fragment slot="intro">{description}</Fragment>
