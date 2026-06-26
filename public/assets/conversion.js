@@ -258,7 +258,9 @@ window.openLegalPopup = function (page) {
   popup.hidden = false;
   document.body.style.overflow = 'hidden';
   _legalTrapFocus(popup);
-  fetch('/' + page + '.html')
+  var _lang = (document.documentElement.lang || 'de').slice(0, 2);
+  var _prefix = _lang === 'de' ? '' : '/' + _lang;
+  fetch(_prefix + '/' + page + '/')
     .then(function (r) {
       return r.text();
     })
