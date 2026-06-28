@@ -305,11 +305,24 @@ const pillarHref = `${langPath}/traumdeutung-methoden/`;
         </a>
       </section>
 
-      <!-- Related symbols (filled by symbol-popup.js) -->
-      <nav class="border-t border-white/10 pt-8">
-        <h3 class="text-lg font-bold mb-4 text-gray-400">{l('related_h3')}</h3>
-        <div class="flex flex-wrap gap-3" id="related-symbols"></div>
-      </nav>
+      <!-- Related symbols (collected from variants.related) -->
+      {(() => {
+        const seen = new Set<string>();
+        variants.forEach(v => v.related.forEach(s => { if (!seen.has(s)) seen.add(s); }));
+        const slugs = Array.from(seen).slice(0, 8);
+        return slugs.length > 0 ? (
+          <nav class="border-t border-white/10 pt-8">
+            <h3 class="text-lg font-bold mb-4 text-gray-400">{l('related_h3')}</h3>
+            <div class="flex flex-wrap gap-3">
+              {slugs.map(slug => (
+                <a href={`${langPath}/symbols/${slug}/`} class="text-sm text-cyan-400 hover:text-cyan-300 transition-colors px-3 py-2 rounded-lg border border-cyan-400/20 hover:border-cyan-400/40 bg-cyan-400/5">
+                  {getSymbolName(slug)}
+                </a>
+              ))}
+            </div>
+          </nav>
+        ) : null;
+      })()}
 
     </div>
   </main>

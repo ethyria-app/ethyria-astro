@@ -137,6 +137,12 @@ document.addEventListener('click', function (e) {
   if (!a) return;
   var h = a.getAttribute('href');
   if (a.closest('#symbolPopup') && a.classList.contains('sp-full-link')) return;
+  // Inside popup: intercept clean Astro symbol detail URLs (e.g. /symbols/wasser/, /en/symbols/wasser/)
+  if (a.closest('#symbolPopup') && h.match(/\/symbols\/[a-z][a-z-]+\//)) {
+    e.preventDefault();
+    spLoadDetail(h);
+    return;
+  }
   if (!sp) return;
   if (h.indexOf('index.html') > -1 && !a.closest('#symbolPopup')) {
     e.preventDefault();
@@ -152,5 +158,6 @@ document.addEventListener('click', function (e) {
 });
 
 document.addEventListener('keydown', function (e) {
-  if (e.key === 'Escape' && !document.getElementById('symbolPopup').hidden) closeSymbolPopup();
+  var sp = document.getElementById('symbolPopup');
+  if (e.key === 'Escape' && sp && !sp.hidden) closeSymbolPopup();
 });
