@@ -1,6 +1,6 @@
 # CLAUDE.md — Ethyria Astro (ethyria-astro)
 
-> Letzter Stand: 2026-06-28 | Branch: `main` | Hosting: GitHub Pages + Cloudflare → ethyria.at
+> Letzter Stand: 2026-06-28 Session 16 | Branch: `main` | Letzter Commit: `0f319d0` | Hosting: GitHub Pages + Cloudflare → ethyria.at
 > Dieses Repo ist die Astro-Migration des alten Vanilla-HTML-Projekts (`Ethyria_LandingPage`).
 
 ---
@@ -127,8 +127,17 @@ fetch(_prefix + '/' + page + '/')  // z.B. /impressum/ oder /en/impressum/
 
 ### Symbol-Popup
 
-`symbol-popup.js` interceptiert nur `.html` URLs. Saubere Astro-URLs navigieren normal.
-`#symbolPopup` existiert nur in den 5 Homepages, nicht in SymbolLayout.
+`symbol-popup.js` — zwei URL-Kontexte:
+- **Ausserhalb #symbolPopup:** nur `.html` URLs werden interceptiert (Legacy-Kompatibilitaet mit Homepage-Grid-Links)
+- **Innerhalb #symbolPopup:** auch saubere Astro-URLs (`/symbols/slug/`, `/en/symbols/slug/`) werden interceptiert → Related-Symbol-Klicks bleiben im Popup
+- `_spCleanUrl()` konvertiert `.html` -> saubere URL; saubere URLs passieren unveraendert durch
+- `#symbolPopup` existiert NUR in den 5 Homepages — auf anderen Seiten greift `if (!sp) return` Guard
+
+### data-legal-popup Attribut (gefixt 2026-06-28)
+
+Fremdsprachen-Homepages verwenden `data-legal-popup="impressum"` (OHNE Sprachsuffix).
+`conversion.js` fuegt den Sprachpfad selbst hinzu: `/en/` + `impressum` + `/` = `/en/impressum/`.
+Fehler war: `data-legal-popup="impressum.en"` → fetch `/en/impressum.en/` → 404.
 
 ### Pfade
 
@@ -145,6 +154,11 @@ Alle Seiten (auch en/fr/es/ru) verwenden absolute Pfade: `/assets/`, `/fonts/`, 
 | `aa31f41` | 2026-06-26 | faq.js->faq-accordion.js, popup is:global, Doppel-Load Fix |
 | `61f1d91` | 2026-06-26 | Legal Popup leerer Content: language-aware URL |
 | `14760b2` | 2026-06-28 | Quellenangaben, communityStats, Slug-Labels, faq.js SymbolLayout |
+| `69c8cc0` | 2026-06-28 | EN Analysis Levels: ?? Platzhalter -> Phosphor Icons |
+| `04b1e7a` | 2026-06-28 | Symbol heroImages korrigiert (3 Dateien, 5 Sprachen), Canonical-URL-Fix, Popup-Null-Guard |
+| `050830d` | 2026-06-28 | Legal-Pages: grid-7 entfernt (doppelter Abstand fix), Symbol-Hero margin-bottom |
+| `63743e1` | 2026-06-28 | Popup: clean Astro-URLs abfangen innerhalb Popup; #related-symbols befullt |
+| `0f319d0` | 2026-06-28 | Legal-Popup Fremdsprachen: data-legal-popup Sprachsuffix entfernt |
 
 ---
 
@@ -152,9 +166,8 @@ Alle Seiten (auch en/fr/es/ru) verwenden absolute Pfade: `/assets/`, `/fonts/`, 
 
 | Issue | Prio |
 |---|---|
-| Symbol-Popup auf Detail-Seiten -- Pillar-Link navigiert statt Popup | Low |
-| `#related-symbols` Div leer auf Detail-Seiten | Low |
-| Pillar Pages Tiefenanalyse (Quellenangaben, JS) ausstehend | Mittel |
+| Pillar Pages Tiefenanalyse (Quellenangaben, JS, Popup) ausstehend | Mittel |
+| Symbol-Popup auf Detail-Seiten: Pillar-Link navigiert statt Popup | Low |
 
 ---
 
