@@ -137,6 +137,7 @@ document.addEventListener('click', function (e) {
   if (!a) return;
   var h = a.getAttribute('href');
   if (a.closest('#symbolPopup') && a.classList.contains('sp-full-link')) return;
+  if (!sp) return;
   if (h.indexOf('index.html') > -1 && !a.closest('#symbolPopup')) {
     e.preventDefault();
     openSymbolPopup();
@@ -144,7 +145,7 @@ document.addEventListener('click', function (e) {
   }
   if (h.indexOf('index.html') === -1 && h.match(/symbols\/[a-z].*\.html/)) {
     e.preventDefault();
-    if (document.getElementById('symbolPopup').hidden) openSymbolPopup();
+    if (sp.hidden) openSymbolPopup();
     spLoadDetail(h);
     return;
   }
